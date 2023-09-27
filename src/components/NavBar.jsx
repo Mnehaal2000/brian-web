@@ -19,7 +19,7 @@ const NavBar = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="#action1"><span className='text-xs lg:text-sm font-bold xl:ml-[60px]'>Who we are</span></Nav.Link>
+                            <Nav.Link href="/login"><span className='text-xs lg:text-sm font-bold xl:ml-[60px]'>Who we are</span></Nav.Link>
                             <Nav.Link href="#action2"><span className='text-xs lg:text-sm font-bold'>What we do</span></Nav.Link>
                             <Nav.Link href="#action3"><span className='text-xs lg:text-sm font-bold'>Energy & Innovation</span></Nav.Link>
                             <Nav.Link href="#action4"><span className='text-xs lg:text-sm font-bold'>Ecocentury Startups &ventures</span></Nav.Link>

@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Footer from './components/Footer'
 import NavBar from "./components/NavBar"
+import SignInPage from './pages/SignInPage'; './pages/SignInPage'
 
 function App() {
   const router = createBrowserRouter([
@@ -15,6 +16,11 @@ function App() {
                 <Footer/>
               </div>,
     },
+    {
+      path: "/login",
+      element: <SignInPage/>,
+    },
+    
   ]);
   return (
     <>
