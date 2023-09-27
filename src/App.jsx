@@ -15,6 +15,7 @@ function App() {
       path: "/",
       element: <div>
                 <NavBar/>
+                <SignInPage/>
                 <Footer/>
               </div>,
     },
