@@ -9,7 +9,7 @@ import logo from "../assets/navitems/LOGO.png"
 const NavBar = () => {
     return (
         <>
-            <Navbar sticky="top" expand="md">
+            <Navbar sticky="top" expand="md" className=' bg-white'>
                 <Container fluid>
                     <Navbar.Brand href="#"><img src={logo} alt="logo" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />

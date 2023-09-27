@@ -1,4 +1,6 @@
 import './App.css'
+import SignUpPage from './pages/SignUpPage'
+// import SignInPage from './pages/SignInPage'
 import {
   createBrowserRouter,
   RouterProvider,

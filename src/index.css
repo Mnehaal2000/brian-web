@@ -13,6 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }  */
+.navbar-collapse button {
+  background-color: #198754 !important;
+}
 
 a {
   color: black;
