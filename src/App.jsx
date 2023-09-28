@@ -6,6 +6,7 @@ import {
 import Footer from './components/Footer'
 import NavBar from "./components/NavBar"
 import SignInPage from './pages/SignInPage'; 
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
     <BrowserRouter>
       <NavBar/>
       <Routes>
+        <Route exact path='/' element={<HomePage/>}/>
         <Route exact path='/signup' element={<SignUpPage/>}/>
         <Route exact path='/login' element={<SignInPage/>}/>
       </Routes>

@@ -7,10 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary-green":"#059C4B",
+        "green-primary":"#059C4B",
+        "green-secondary":"#079B4C",
         "footer":"#E0E0CE"
       },
     },
   },
+  
   plugins: [],
+  important:true,
 }

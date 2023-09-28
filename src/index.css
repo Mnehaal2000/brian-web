@@ -28,3 +28,45 @@ body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.home-bg1 {
+  background-image: url('./assets/homepage/bg-1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-bg2 {
+  background-image: url('./assets/homepage/bg-2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-bg3 {
+  background-image: url('./assets/homepage/bg-3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-bg4 {
+  background-image: url('./assets/homepage/bg-4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-bg5 {
+  background-image: url('./assets/homepage/bg-5.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-bg6 {
+  background-image: url('./assets/homepage/bg-6.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

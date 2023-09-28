@@ -9,7 +9,7 @@ const Footer = () => {
     <>
       <div className=" bg-footer w-full flex flex-col items-center justify-center gap-8 md:gap-12">
 
-        <div className=" bg-primary-green rounded-br-[40px] w-full max-w-[986px] md:px-0 px-4 pt-7 pb-7 md:pb-12 flex flex-col gap-8 md:gap-12 items-center justify-center text-white ">
+        <div className=" bg-green-primary rounded-br-[40px] w-full max-w-[986px] md:px-0 px-4 pt-7 pb-7 md:pb-12 flex flex-col gap-8 md:gap-12 items-center justify-center text-white ">
           <div className=" w-full max-w-[730px] flex md:flex-row flex-col md:justify-between justify-center md:items-start items-center gap-4 md:gap-0">
             <div className=" flex items-start ">
               <div className=" rounded-lg text-xs py-2 px-3 text-center border border-white">Year Founded</div>
