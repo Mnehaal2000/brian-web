@@ -1,33 +1,23 @@
 import './App.css'
 import SignUpPage from './pages/SignUpPage'
-// import SignInPage from './pages/SignInPage'
 import {
-  createBrowserRouter,
-  RouterProvider,
+   Route, Routes, BrowserRouter
 } from "react-router-dom";
 import Footer from './components/Footer'
 import NavBar from "./components/NavBar"
-import SignInPage from './pages/SignInPage'; './pages/SignInPage'
+import SignInPage from './pages/SignInPage'; 
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <div>
-                <NavBar/>
-                <SignInPage/>
-                <Footer/>
-              </div>,
-    },
-    {
-      path: "/login",
-      element: <SignInPage/>,
-    },
-    
-  ]);
   return (
     <>
-    <RouterProvider router={router} />
+    <BrowserRouter>
+      <NavBar/>
+      <Routes>
+        <Route exact path='/signup' element={<SignUpPage/>}/>
+        <Route exact path='/login' element={<SignInPage/>}/>
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
     </>
   )
 }
