@@ -11,7 +11,7 @@ const NavBar = () => {
         <>
             <Navbar sticky="top" expand="md" className=' bg-white'>
                 <Container fluid>
-                    <Navbar.Brand href="#"><img src={logo} alt="logo" /></Navbar.Brand>
+                    <Navbar.Brand href="/"><img src={logo} alt="logo" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
