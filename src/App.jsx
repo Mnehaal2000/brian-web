@@ -6,6 +6,7 @@ import {
 import Footer from './components/Footer'
 import NavBar from "./components/NavBar"
 import SignInPage from './pages/SignInPage'; 
+import NewsPage from './pages/NewsPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route exact path='/signup' element={<SignUpPage/>}/>
         <Route exact path='/signin' element={<SignInPage/>}/>
+        <Route exact path='/news' element={<NewsPage/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
