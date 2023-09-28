@@ -70,3 +70,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.home-bg7 {
+  background-image: url('./assets/homepage/bg-7.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

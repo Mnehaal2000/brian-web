@@ -1,4 +1,6 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
+import { Transition } from '@headlessui/react'
 import img1a from "../assets/homepage/img-1a.png"
 import img1b from "../assets/homepage/img-1b.png"
 import img2 from "../assets/homepage/img-2.png"
@@ -14,9 +16,56 @@ import money from "../assets/homepage/earning 1.png"
 import tag from "../assets/homepage/tag 1.png"
 import sale from "../assets/homepage/sale 1.png"
 import coupon from "../assets/homepage/coupon 1.png"
+import plus from "../assets/homepage/plus 5.png"
 
 
 const HomePage =()=> {
+  const [faqStates, setFaqStates] = useState(Array(8).fill(false)); // Adjust the size based on the number of FAQs
+
+  // Function to toggle the FAQ item
+  const toggleAnswer = (index) => {
+    const newFaqStates = [...faqStates];
+    newFaqStates[index] = !newFaqStates[index];
+    setFaqStates(newFaqStates);
+  };
+
+
+  const faqs = [
+    {
+      question: "When should I start looking for a student room in London?",
+      answer: "It's great to start looking for student accommodation in London as soon as you decide you want to go to uni here. This gives you longer to do your research and find the best-suited accommodation for you. You don't need to place a booking until your place at the university you applied for has been confirmed. We can help you with your booking and we have plenty of information on our website that tells you everything you need to know about our London locations and local amenities.",
+    },
+    {
+      question: "When should I start looking for a student room in London?",
+      answer: "It's great to start looking for student accommodation in London as soon as you decide you want to go to uni here. This gives you longer to do your research and find the best-suited accommodation for you. You don't need to place a booking until your place at the university you applied for has been confirmed. We can help you with your booking and we have plenty of information on our website that tells you everything you need to know about our London locations and local amenities.",
+    },
+    {
+      question: "When should I start looking for a student room in London?",
+      answer: "It's great to start looking for student accommodation in London as soon as you decide you want to go to uni here. This gives you longer to do your research and find the best-suited accommodation for you. You don't need to place a booking until your place at the university you applied for has been confirmed. We can help you with your booking and we have plenty of information on our website that tells you everything you need to know about our London locations and local amenities.",
+    },
+    {
+      question: "When should I start looking for a student room in London?",
+      answer: "It's great to start looking for student accommodation in London as soon as you decide you want to go to uni here. This gives you longer to do your research and find the best-suited accommodation for you. You don't need to place a booking until your place at the university you applied for has been confirmed. We can help you with your booking and we have plenty of information on our website that tells you everything you need to know about our London locations and local amenities.",
+    },
+    {
+      question: "When should I start looking for a student room in London?",
+      answer: "It's great to start looking for student accommodation in London as soon as you decide you want to go to uni here. This gives you longer to do your research and find the best-suited accommodation for you. You don't need to place a booking until your place at the university you applied for has been confirmed. We can help you with your booking and we have plenty of information on our website that tells you everything you need to know about our London locations and local amenities.",
+    },
+    {
+      question: "When should I start looking for a student room in London?",
+      answer: "It's great to start looking for student accommodation in London as soon as you decide you want to go to uni here. This gives you longer to do your research and find the best-suited accommodation for you. You don't need to place a booking until your place at the university you applied for has been confirmed. We can help you with your booking and we have plenty of information on our website that tells you everything you need to know about our London locations and local amenities.",
+    },
+    {
+      question: "When should I start looking for a student room in London?",
+      answer: "It's great to start looking for student accommodation in London as soon as you decide you want to go to uni here. This gives you longer to do your research and find the best-suited accommodation for you. You don't need to place a booking until your place at the university you applied for has been confirmed. We can help you with your booking and we have plenty of information on our website that tells you everything you need to know about our London locations and local amenities.",
+    },
+    {
+      question: "Another FAQ question",
+      answer: "Answer to another FAQ question.",
+    },
+    // Add more FAQs here
+  ];
+
   return (
     <>
       <div className=" home-bg1 w-full min-h-[750px] flex justify-center items-center relative text-white text-2xl">
@@ -144,7 +193,38 @@ const HomePage =()=> {
         </div>
       </div>
       <div className=" home-bg7 w-full min-h-[890px] px-28 pt-20 pb-16 flex flex-col gap-10 items-center relative text-white text-2xl">
-        
+        <h2 className=" text-[40px] font-bold text-[#12664F]">Frequently Asked Questions</h2>
+        <div className="item2 flex flex-col justify-center items-center  mb-8 md:mb-20">
+
+          {/* <!-- Map over your FAQs --> */}
+          {faqs.map((faq, index) => (
+            <div className="element mb-4 md:mb-1 text bg-[#7FCCF0] p-3 w-[90%] md:w-[600px]" key={index}>
+              <div
+                className="table-question cursor-pointer"
+                onClick={() => toggleAnswer(index)}
+              >
+                <div className=""><span><img className='inline-flex mr-2' src={plus} alt="" /></span>{faq.question}
+                </div>
+              </div>
+              <Transition
+                show={faqStates[index]}
+                enter="transition-all ease-in-out duration-500 delay-[200ms]"
+                enterFrom="opacity-0 translate-y-6"
+                enterTo="opacity-100 translate-y-0"
+                leave="transition-all ease-in-out duration-100"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <div
+                  className={`table-answer mt-2 mb-2 mr-2 ml-2`}
+                >
+                  {faq.answer}
+                </div>
+              </Transition>
+            </div>
+          ))}
+
+        </div>
       </div>
     </>
   )
