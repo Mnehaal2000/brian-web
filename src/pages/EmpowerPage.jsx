@@ -80,10 +80,10 @@ const EmpowerPage = () => {
                     <img className='w-[452px] h-[452px]' src={img7} alt="1" />
                 </div>
                 <div className="seventh w-full gap-10 flex flex-col items-center justify-around">
-                    <h3 className='font-bold text-3xl'>Conclusion</h3>
+                    <h3 className='font-bold text-3xl text-center'>Conclusion</h3>
                     <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>Education is the first step towards creating a sustainable future. Whether you're new to the world of energy or a seasoned enthusiast, our Energy Education resources are here to empower you with knowledge and inspire positive change. Together, we can build a brighter, greener tomorrow.
                         Empower Your Future with Sustainable Investments! Take the first step toward a brighter, more prosperous tomorrow!</p>
-                <button className='mb-[70px] bg-[#059C4B] w-[280px] h-[71px] text-white text-2xl'>
+                <button className='cursor-pointer mb-[70px] bg-[#059C4B] w-[280px] h-[51px] text-white text-2xl'>
                 Join Us
                 </button>
                 </div>

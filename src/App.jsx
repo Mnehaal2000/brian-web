@@ -10,6 +10,7 @@ import NewsPage from './pages/NewsPage';
 import StorePage from './pages/StorePage';
 import EmpowerPage from './pages/EmpowerPage';
 import CommunityPage from './pages/CommunityPage';
+import StartupsPage from './pages/StartupsPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route exact path='/store' element={<StorePage/>}/>
         <Route exact path='/empower' element={<EmpowerPage/>}/>
         <Route exact path='/community' element={<CommunityPage/>}/>
+        <Route exact path='/startups' element={<StartupsPage/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
