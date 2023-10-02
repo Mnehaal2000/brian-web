@@ -12,6 +12,7 @@ import EmpowerPage from './pages/EmpowerPage';
 import CommunityPage from './pages/CommunityPage';
 import StartupsPage from './pages/StartupsPage';
 import EnergyPage from './pages/EnergyPage';
+import EnvironmentPage from './pages/EnvironmentPage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route exact path='/community' element={<CommunityPage/>}/>
         <Route exact path='/startups' element={<StartupsPage/>}/>
         <Route exact path='/energy' element={<EnergyPage/>}/>
+        <Route exact path='/environment' element={<EnvironmentPage/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

@@ -8,7 +8,7 @@ const EnergyPage = () => {
   return (
     <>
      <div className="min-h-screen gap-10 flex flex-col" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
-                <div className="first w-full mb-[100px] mt-[20px] gap-10 flex flex-col lg:flex-row items-center justify-around">
+                <div className="first w-full mt-[20px] gap-10 flex flex-col lg:flex-row items-center justify-around">
                     <div>
                         <div className="heading w-[300px] lg:w-[680px]">
                             <h3 className='font-bold text-2xl md:text-3xl'>Energy and Innovation: Powering Progress Through Cutting-Edge Solutions</h3>
