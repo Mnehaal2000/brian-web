@@ -13,6 +13,7 @@ import CommunityPage from './pages/CommunityPage';
 import StartupsPage from './pages/StartupsPage';
 import EnergyPage from './pages/EnergyPage';
 import EnvironmentPage from './pages/EnvironmentPage';
+import WhoPage from './pages/WhoPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route exact path='/startups' element={<StartupsPage/>}/>
         <Route exact path='/energy' element={<EnergyPage/>}/>
         <Route exact path='/environment' element={<EnvironmentPage/>}/>
+        <Route exact path='/whoweare' element={<WhoPage/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
