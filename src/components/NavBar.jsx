@@ -22,12 +22,12 @@ const NavBar = () => {
                             <Nav.Link href="/whoweare"><span className='text-xs lg:text-sm font-bold xl:ml-[60px]'>Who we are</span></Nav.Link>
                             <Nav.Link href="/whatwedo"><span className='text-xs lg:text-sm font-bold'>What we do</span></Nav.Link>
                             <Nav.Link href="/energy"><span className='text-xs lg:text-sm font-bold'>Energy & Innovation</span></Nav.Link>
-                            <Nav.Link href="/startups"><span className='text-xs lg:text-sm font-bold'>Ecocentury Startups &ventures</span></Nav.Link>
-                            <Nav.Link href="/signin"><span className='text-xs lg:text-sm font-bold'>Resources</span></Nav.Link>
+                            <Nav.Link href="/startups"><span className='text-xs lg:text-sm font-bold'>Ecocentury Startups & Ventures</span></Nav.Link>
+                            <Nav.Link href="/news"><span className='text-xs lg:text-sm font-bold'>Resources</span></Nav.Link>
                             <Nav.Link href="/store"><span className='text-xs lg:text-sm font-bold'>Store</span></Nav.Link>
                         </Nav>
 
-                        <Button className='xl:w-[120px]' variant="success">Login</Button>
+                        <Nav.Link href="/signin"><Button className='xl:w-[120px]' variant="success">Login</Button></Nav.Link>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
