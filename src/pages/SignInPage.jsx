@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import LoginPic from '../assets/loginpage/loginpagepic.png';
 import './Style.css';
+import { Link } from 'react-router-dom';
 
 const SignInPage = () => {
     useEffect(()=>{
@@ -90,7 +91,7 @@ const SignInPage = () => {
                                 <button onClick={handleSignIn} className="bg-[#059C4B] text-white px-3 py-1 font-bold w-full">Sign In</button>
                             </div>
                             <div className="mb-2">
-                                <button className="bg-[#307473] text-white px-3 py-1 font-bold w-full">Sign Up</button>
+                                <Link><button className="bg-[#307473] text-white px-3 py-1 font-bold w-full">Sign Up</button></Link>
                             </div>
                         </div>
                     </div>
