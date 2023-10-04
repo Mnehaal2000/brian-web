@@ -28,3 +28,76 @@ body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.home-bg1 {
+  background-image: url('./assets/homepage/bg-1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-bg2 {
+  background-image: url('./assets/homepage/bg-2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-bg3 {
+  background-image: url('./assets/homepage/bg-3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width:330px) {
+  .home-bg3 {
+    min-height: 1650px !important;
+  }
+}
+
+.home-bg4 {
+  background-image: url('./assets/homepage/bg-4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-bg5 {
+  background-image: url('./assets/homepage/bg-5.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-bg6 {
+  background-image: url('./assets/homepage/bg-6.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-bg7 {
+  background-image: url('./assets/homepage/bg-7.png');
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: #ffa600;
+}
+
+/* All the snapping stuff */
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-align: center;
+}
+
+#loom-companion-mv3 {
+  display: none;
+}

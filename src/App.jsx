@@ -6,6 +6,7 @@ import {
 import Footer from './components/Footer'
 import NavBar from "./components/NavBar"
 import SignInPage from './pages/SignInPage'; 
+import HomePage from './pages/HomePage';
 import NewsPage from './pages/NewsPage';
 import StorePage from './pages/StorePage';
 import EmpowerPage from './pages/EmpowerPage';
@@ -22,6 +23,7 @@ function App() {
     <BrowserRouter>
       <NavBar/>
       <Routes>
+        <Route exact path='/' element={<HomePage/>}/>
         <Route exact path='/signup' element={<SignUpPage/>}/>
         <Route exact path='/signin' element={<SignInPage/>}/>
         <Route exact path='/news' element={<NewsPage/>}/>
