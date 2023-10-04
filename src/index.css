@@ -92,11 +92,11 @@ body {
   scroll-snap-type: y mandatory;
 }
 
-section {
+/* section {
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-align: center;
-}
+} */
 
 #loom-companion-mv3 {
   display: none;
