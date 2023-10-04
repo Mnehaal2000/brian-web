@@ -9,28 +9,13 @@ import { LiaCoinsSolid } from "react-icons/lia";
 
 const SideNav = () => {
   const menus = [
-    { name: "Dashboard", link: "/", icon: MdOutlineDashboard },
-    { name: "Clients", link: "/clients", icon: AiOutlineUser },
-    { name: "Invoices", link: "/invoices", icon: TbReportAnalytics, margin: true },
-    { name: "Payments", link: "/payments", icon: FaMoneyCheckDollar },
-    { name: "Item & Services", link: "/item-services", icon: FiShoppingCart },
-    { name: "Delivery Notes", link: "/delivery-notes", icon: FiFile },
-    { name: "Cheques", link: "/cheques", icon: LiaCoinsSolid },
-    { name: "Item & Services", link: "/item-services", icon: FiShoppingCart },
-    { name: "Delivery Notes", link: "/delivery-notes", icon: FiFile },
-    { name: "Cheques", link: "/cheques", icon: LiaCoinsSolid },
-    { name: "Item & Services", link: "/item-services", icon: FiShoppingCart },
-    { name: "Delivery Notes", link: "/delivery-notes", icon: FiFile },
-    { name: "Cheques", link: "/cheques", icon: LiaCoinsSolid },
-    { name: "Item & Services", link: "/item-services", icon: FiShoppingCart },
-    { name: "Delivery Notes", link: "/delivery-notes", icon: FiFile },
-    { name: "Cheques", link: "/cheques", icon: LiaCoinsSolid },
-    { name: "Item & Services", link: "/item-services", icon: FiShoppingCart },
-    { name: "Delivery Notes", link: "/delivery-notes", icon: FiFile },
-    { name: "Cheques", link: "/cheques", icon: LiaCoinsSolid },
-    { name: "Item & Services", link: "/item-services", icon: FiShoppingCart },
-    { name: "Delivery Notes", link: "/delivery-notes", icon: FiFile },
-    { name: "Cheques", link: "/cheques", icon: LiaCoinsSolid },
+    { name: "Dashboard", link: "#", icon: MdOutlineDashboard },
+    { name: "Clients", link: "#", icon: AiOutlineUser },
+    { name: "Invoices", link: "#", icon: TbReportAnalytics, margin: true },
+    { name: "Payments", link: "#", icon: FaMoneyCheckDollar },
+    { name: "Item & Services", link: "#", icon: FiShoppingCart },
+    { name: "Delivery Notes", link: "#", icon: FiFile },
+    { name: "Cheques", link: "#", icon: LiaCoinsSolid },
 
   ];
 
