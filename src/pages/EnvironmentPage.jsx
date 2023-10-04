@@ -44,7 +44,7 @@ const EnvironmentPage = () => {
                             <div className="w-full lg:w-3/4 text-center">
                                 <label htmlFor="country">Country</label>
                                 <input
-                                    className="input-field"
+                                    className="input-field bg-[#edeff1]"
                                     type="text"
                                     name="country"
                                     id="country"
@@ -53,7 +53,7 @@ const EnvironmentPage = () => {
                             <div className="w-full lg:w-3/4 text-center">
                                 <label htmlFor="zip">ZIP Code</label>
                                 <input
-                                    className="input-field"
+                                    className="input-field bg-[#edeff1]"
                                     type="text"
                                     name="zip"
                                     id="zip"
@@ -64,7 +64,7 @@ const EnvironmentPage = () => {
                             <div className="w-full lg:w-3/4 text-center">
                                 <label htmlFor="address">Address</label>
                                 <input
-                                    className="input-field"
+                                    className="input-field bg-[#edeff1]"
                                     type="text"
                                     name="address"
                                     id="address"
@@ -73,7 +73,7 @@ const EnvironmentPage = () => {
                             <div className="w-full lg:w-3/4 text-center">
                                 <label htmlFor="des">Description of Concern</label>
                                 <input
-                                    className="input-field"
+                                    className="input-field bg-[#edeff1]"
                                     type="text"
                                     name="des"
                                     id="des"
