@@ -2,21 +2,27 @@ import React, { useState, useEffect } from "react";
 import { MdOutlineDashboard } from "react-icons/md";
 import { TbReportAnalytics } from "react-icons/tb";
 import { AiOutlineUser } from "react-icons/ai";
-import { FiShoppingCart,FiFile } from "react-icons/fi";
+import { FiSettings } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
-import { LiaCoinsSolid } from "react-icons/lia";
+import { IoIosLogOut } from "react-icons/io";
+import { FcSupport } from "react-icons/fc";
+import { BsCart,BsBell,BsTrophy } from "react-icons/bs";
+import {RiRefund2Line} from "react-icons/ri";
 
 const SideNav = () => {
   const menus = [
     { name: "Dashboard", link: "#", icon: MdOutlineDashboard },
-    { name: "Clients", link: "#", icon: AiOutlineUser },
-    { name: "Invoices", link: "#", icon: TbReportAnalytics, margin: true },
-    { name: "Payments", link: "#", icon: FaMoneyCheckDollar },
-    { name: "Item & Services", link: "#", icon: FiShoppingCart },
-    { name: "Delivery Notes", link: "#", icon: FiFile },
-    { name: "Cheques", link: "#", icon: LiaCoinsSolid },
-
+    { name: "Funding", link: "#", icon: RiRefund2Line },
+    { name: "Green futures", link: "#", icon: AiOutlineUser },
+    { name: "Withdrawal", link: "#", icon: FaMoneyCheckDollar },
+    { name: "Notifications", link: "#", icon: BsBell },
+    { name: "Achievements", link: "#", icon: BsTrophy },
+    { name: "Cart", link: "#", icon: BsCart },
+    { name: "Reports", link: "#", icon: TbReportAnalytics, margin: true },
+    { name: "Support", link: "#", icon: FcSupport },
+    { name: "Settings", link: "#", icon: FiSettings },
+    { name: "Logout", link: "#", icon: IoIosLogOut },
   ];
 
   // State to manage the open/closed state of the side navigation
