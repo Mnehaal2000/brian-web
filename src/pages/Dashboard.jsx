@@ -11,6 +11,9 @@ const Dashboard = () => {
                     <div className="min-w-[200vw] sm:min-w-[100vw] md:min-w-[1024px] lg:min-w-full">
                         <TopBar />
                     </div>
+                    <div className=' w-full'>
+{/* Here i want /Home or /dashboard when i naviagete */}
+                    </div>
                 </div>
             </div>
         </>
