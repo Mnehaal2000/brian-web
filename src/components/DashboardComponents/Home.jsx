@@ -1,9 +1,9 @@
 import React from 'react'
 
-const DashboardHome = () => {
+const Home = () => {
   return (
     <div>DashboardHome</div>
   )
 }
 
-export default DashboardHome
+export default Home

@@ -1,6 +1,7 @@
 import React from 'react'
 import SideNav from "../components/DashboardComponents/SideNav"
 import TopBar from '../components/DashboardComponents/TopBar'
+import { Outlet } from 'react-router-dom'
 
 const Dashboard = () => {
     return (
@@ -12,7 +13,7 @@ const Dashboard = () => {
                         <TopBar />
                     </div>
                     <div className=' w-full'>
-{/* Here i want /Home or /dashboard when i naviagete */}
+                        <Outlet/>
                     </div>
                 </div>
             </div>

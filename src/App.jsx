@@ -17,9 +17,10 @@ import EnvironmentPage from './pages/EnvironmentPage';
 import WhoPage from './pages/WhoPage';
 import WhatPage from './pages/WhatPage';
 import Dashboard from './pages/Dashboard';
+import Home from './components/DashboardComponents/Home';
 
 function App() {
-  const isDashboardRoute = window.location.pathname === '/dashboard';
+  const isDashboardRoute = window.location.pathname.startsWith('/dashboard');
 
   return (
     <>
@@ -38,7 +39,9 @@ function App() {
           <Route exact path='/environment' element={<EnvironmentPage />} />
           <Route exact path='/whoweare' element={<WhoPage />} />
           <Route exact path='/whatwedo' element={<WhatPage />} />
-          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="home" element={<Home />} />
+          </Route>
         </Routes>
         {!isDashboardRoute && <Footer />}
       </BrowserRouter>

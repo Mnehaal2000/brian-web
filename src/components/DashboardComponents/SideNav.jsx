@@ -12,7 +12,7 @@ import {RiRefund2Line} from "react-icons/ri";
 
 const SideNav = () => {
   const menus = [
-    { name: "Dashboard", link: "#", icon: MdOutlineDashboard },
+    { name: "Dashboard", link: "home", icon: MdOutlineDashboard },
     { name: "Funding", link: "#", icon: RiRefund2Line },
     { name: "Green futures", link: "#", icon: AiOutlineUser },
     { name: "Withdrawal", link: "#", icon: FaMoneyCheckDollar },
