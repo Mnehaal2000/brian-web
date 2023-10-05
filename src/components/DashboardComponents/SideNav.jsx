@@ -7,15 +7,34 @@ import { Link, useLocation } from "react-router-dom";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { IoIosLogOut } from "react-icons/io";
 import { FcSupport } from "react-icons/fc";
-import { BsCart,BsBell,BsTrophy } from "react-icons/bs";
-import {RiRefund2Line} from "react-icons/ri";
+import { BsCart, BsBell, BsTrophy } from "react-icons/bs";
+import { RiRefund2Line } from "react-icons/ri";
 
 const SideNav = () => {
+  const [isFundingOpen, setIsFundingOpen] = useState(false);
+  const [isWithdrawalOpen, setIsWithdrawalOpen] = useState(false);
+
   const menus = [
     { name: "Dashboard", link: "home", icon: MdOutlineDashboard },
-    { name: "Funding", link: "#", icon: RiRefund2Line },
+    {
+      name: "Funding",
+      link: "#",
+      icon: RiRefund2Line,
+      submenus: [
+        { name: "Deposit Money", link: "funding", icon: RiRefund2Line },
+        { name: "Deposit History", link: "funding-history", icon: RiRefund2Line },
+      ],
+      isOpen: isFundingOpen,
+    },
+    {
+      name: "Withdrawal", link: "#", icon: FaMoneyCheckDollar,
+      submenus: [
+        { name: "Withdraw Money", link: "withdraw", icon: FaMoneyCheckDollar },
+        { name: "Withdrawal History", link: "withdraw-history", icon: FaMoneyCheckDollar },
+      ],
+      isOpen: isWithdrawalOpen,
+    },
     { name: "Green futures", link: "#", icon: AiOutlineUser },
-    { name: "Withdrawal", link: "#", icon: FaMoneyCheckDollar },
     { name: "Notifications", link: "#", icon: BsBell },
     { name: "Achievements", link: "#", icon: BsTrophy },
     { name: "Cart", link: "#", icon: BsCart },
@@ -24,6 +43,8 @@ const SideNav = () => {
     { name: "Settings", link: "#", icon: FiSettings },
     { name: "Logout", link: "#", icon: IoIosLogOut },
   ];
+
+
 
   // State to manage the open/closed state of the side navigation
   const [open, setOpen] = useState(true);
@@ -50,42 +71,105 @@ const SideNav = () => {
   return (
     <section className="flex">
       <div
-        className={` bg-transparent border-r border-white overflow-y-auto min-h-screen  shadow-md ${
-          open ? "w-72" : " w-14 lg:w-[75px]"
-        } duration-500 text-gray-100 px-2 lg:px-4 py-1 sm:py-2 md:py-2 lg:py-4 xl:py-6 2xl:py-6`}
+        className={` bg-transparent border-r border-white overflow-y-auto min-h-screen  shadow-md ${open ? "w-72" : " w-14 lg:w-[75px]"
+          } duration-500 text-gray-100 px-2 lg:px-4 py-1 sm:py-2 md:py-2 lg:py-4 xl:py-6 2xl:py-6`}
       >
-          {menus?.map((menu, i) => (
-            <Link
-              to={menu?.link}
-              key={i}
-              className={`${
-                menu?.margin && ""
-              } group flex items-center text-base  gap-3.5 font-poppins hover:bg-[#027D6B] hover:text-white hover:duration-100 rounded-md ${
-                open && "p-2" // Add the p-2 class when open is true
-              } ${location.pathname === menu?.link ? "bg-[#027D6B] text-white" : "text-white"}`}
-            >
-              <div className="p-2 lg:p-3 rounded-md bg-[#00000] text-white">
-                {React.createElement(menu?.icon, { size: "20" })}
-              </div>
-              <h2
-                style={{
-                  transitionDelay: `${i + 2}00ms`,
-                }}
-                className={`whitespace-pre duration-200 ${
-                  !open && "opacity-0 translate-x-28 overflow-hidden"
-                }`}
+
+        {menus?.map((menu, i) => (
+          <div key={i}>
+            {menu.submenus ? (
+              <>
+                <div
+                  className={`group flex items-center text-base gap-3.5 font-poppins hover:bg-[#027D6B] hover:text-white hover:duration-100 rounded-md ${open && "p-2"
+                    }`}
+                  onClick={() => {
+                    // Toggle the open/close state of the respective submenu
+                    if (menu.name === "Funding") {
+                      setIsFundingOpen(!isFundingOpen);
+                    } else if (menu.name === "Withdrawal") {
+                      setIsWithdrawalOpen(!isWithdrawalOpen);
+                    }
+                  }}
+                >
+                  <div className="p-2 lg:p-3 rounded-md bg-[#00000] text-white">
+                    {React.createElement(menu?.icon, { size: "20" })}
+                  </div>
+                  <h2
+                    style={{
+                      transitionDelay: `${i + 2}00ms`,
+                    }}
+                    className={`whitespace-pre duration-200 ${!open && "opacity-0 translate-x-28 overflow-hidden"
+                      }`}
+                  >
+                    {menu?.name}
+                  </h2>
+                  <div className={`ml-auto transform ${menu.name === "Funding" ? (isFundingOpen ? 'rotate-0' : '-rotate-90') : (isWithdrawalOpen ? 'rotate-0' : '-rotate-90')} transition-transform`}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 text-white"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M6.293 7.293a1 1 0 011.414 0L10 10.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  className={`max-h-0 overflow-hidden transition-max-h ${(menu.name === "Funding" && isFundingOpen) ||
+                      (menu.name === "Withdrawal" && isWithdrawalOpen)
+                      ? "max-h-full"
+                      : ""
+                    }`}
+                >
+                  {menu.submenus.map((submenu, j) => (
+                    <Link
+                      to={submenu.link}
+                      key={j}
+                      className={`group flex items-center text-base gap-3.5 font-poppins hover:bg-[#027D6B] hover:text-white hover:duration-100 rounded-md ${location.pathname === submenu.link
+                          ? "bg-[#027D6B] text-white"
+                          : "text-white"
+                        }`}
+                    >
+                      <div className="p-2 lg:p-3 rounded-md bg-[#00000] text-white">
+                        {React.createElement(submenu.icon, { size: "20" })}
+                      </div>
+                      <h2>{submenu.name}</h2>
+                    </Link>
+                  ))}
+                </div>
+              </>
+            ) : (
+              // Render regular menu items
+              <Link
+                to={menu?.link}
+                className={`${menu?.margin && ""
+                  } group flex items-center text-base  gap-3.5 font-poppins hover:bg-[#027D6B] hover:text-white hover:duration-100 rounded-md ${open && "p-2"
+                  } ${location.pathname === menu?.link ? "bg-[#027D6B] text-white" : "text-white"
+                  }`}
               >
-                {menu?.name}
-              </h2>
-              {/* <h2
-                className={`${
-                  open && "hidden"
-                } absolute left-48 bg-white font-poppins whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
-              >
-                {menu?.name}
-              </h2> */}
-            </Link>
-          ))}
+                <div className="p-2 lg:p-3 rounded-md bg-[#00000] text-white">
+                  {React.createElement(menu?.icon, { size: "20" })}
+                </div>
+                <h2
+                  style={{
+                    transitionDelay: `${i + 2}00ms`,
+                  }}
+                  className={`whitespace-pre duration-200 ${!open && "opacity-0 translate-x-28 overflow-hidden"
+                    }`}
+                >
+                  {menu?.name}
+                </h2>
+              </Link>
+            )}
+          </div>
+        ))}
+
+
+
       </div>
     </section>
   );

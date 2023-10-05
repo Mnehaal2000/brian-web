@@ -17,6 +17,10 @@ import WhoPage from './pages/WhoPage';
 import WhatPage from './pages/WhatPage';
 import Dashboard from './pages/Dashboard';
 import Home from './components/DashboardComponents/Home';
+import Funding from './components/DashboardComponents/Funding';
+import Withdraw from './components/DashboardComponents/Withdraw';
+import FundingHistory from './components/DashboardComponents/FundingHistory';
+import WithdrawHistory from './components/DashboardComponents/WithdrawHistory';
 
 function App() {
   const isDashboardRoute = window.location.pathname.startsWith('/dashboard');
@@ -40,6 +44,10 @@ function App() {
           <Route exact path='/whatwedo' element={<WhatPage />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="home" element={<Home />} />
+            <Route path="funding" element={<Funding />} />
+            <Route path="funding-history" element={<FundingHistory />} />
+            <Route path="withdraw" element={<Withdraw />} />
+            <Route path="withdraw-history" element={<WithdrawHistory />} />
           </Route>
         </Routes>
         {!isDashboardRoute && <Footer />}
