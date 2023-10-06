@@ -21,6 +21,11 @@ import Funding from './components/DashboardComponents/Funding';
 import Withdraw from './components/DashboardComponents/Withdraw';
 import FundingHistory from './components/DashboardComponents/FundingHistory';
 import WithdrawHistory from './components/DashboardComponents/WithdrawHistory';
+import Cart from './components/DashboardComponents/Cart';
+import AccountStatement from './components/DashboardComponents/AccountStatement';
+import Partner from './components/DashboardComponents/Partner';
+import Logout from './components/DashboardComponents/Logout';
+import GreenFutures from './components/DashboardComponents/GreenFutures';
 
 function App() {
   const isDashboardRoute = window.location.pathname.startsWith('/dashboard');
@@ -48,6 +53,11 @@ function App() {
             <Route path="funding-history" element={<FundingHistory />} />
             <Route path="withdraw" element={<Withdraw />} />
             <Route path="withdraw-history" element={<WithdrawHistory />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="partner" element={<Partner />} />
+            <Route path="acc-statement" element={<AccountStatement />} />
+            <Route path="green-futures" element={<GreenFutures />} />
+            <Route path="logout" element={<Logout />} />
           </Route>
         </Routes>
         {!isDashboardRoute && <Footer />}

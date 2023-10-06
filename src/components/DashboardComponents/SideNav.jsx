@@ -9,6 +9,7 @@ import { IoIosLogOut } from "react-icons/io";
 import { FcSupport } from "react-icons/fc";
 import { BsCart, BsBell, BsTrophy } from "react-icons/bs";
 import { RiRefund2Line } from "react-icons/ri";
+import { FaPersonCane } from "react-icons/fa6";
 
 const SideNav = () => {
   const [isFundingOpen, setIsFundingOpen] = useState(false);
@@ -34,14 +35,16 @@ const SideNav = () => {
       ],
       isOpen: isWithdrawalOpen,
     },
-    { name: "Green futures", link: "#", icon: AiOutlineUser },
-    { name: "Notifications", link: "#", icon: BsBell },
-    { name: "Achievements", link: "#", icon: BsTrophy },
-    { name: "Cart", link: "#", icon: BsCart },
-    { name: "Reports", link: "#", icon: TbReportAnalytics, margin: true },
-    { name: "Support", link: "#", icon: FcSupport },
-    { name: "Settings", link: "#", icon: FiSettings },
-    { name: "Logout", link: "#", icon: IoIosLogOut },
+    { name: "Cart", link: "cart", icon: BsCart },
+    { name: "Account Statement", link: "acc-statement", icon: TbReportAnalytics },
+    { name: "Green futures", link: "green-futures", icon: FaPersonCane },
+    { name: "Partner", link: "partner", icon: AiOutlineUser },
+    { name: "Notifications", link: "notifications", icon: BsBell },
+    { name: "Achievements", link: "achievements", icon: BsTrophy },
+    { name: "Reports", link: "reports", icon: TbReportAnalytics, margin: true },
+    { name: "Support", link: "support", icon: FcSupport },
+    { name: "Settings", link: "settings", icon: FiSettings },
+    { name: "Logout", link: "logout", icon: IoIosLogOut },
   ];
 
 
