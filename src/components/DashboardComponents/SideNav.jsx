@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MdOutlineDashboard } from "react-icons/md";
+import { MdOutlineDashboard, MdOutlineCardMembership } from "react-icons/md";
 import { TbReportAnalytics } from "react-icons/tb";
 import { AiOutlineUser } from "react-icons/ai";
 import { FiSettings } from "react-icons/fi";
@@ -9,7 +9,9 @@ import { IoIosLogOut } from "react-icons/io";
 import { FcSupport } from "react-icons/fc";
 import { BsCart, BsBell, BsTrophy } from "react-icons/bs";
 import { RiRefund2Line } from "react-icons/ri";
-import { FaPersonCane } from "react-icons/fa6";
+import { FaPersonCane, FaClipboardUser } from "react-icons/fa6";
+import { FaPeopleCarry } from "react-icons/fa";
+import usericon from "../../assets/dashboard/profile.jpg"
 
 const SideNav = () => {
   const [isFundingOpen, setIsFundingOpen] = useState(false);
@@ -37,8 +39,11 @@ const SideNav = () => {
     },
     { name: "Cart", link: "cart", icon: BsCart },
     { name: "Account Statement", link: "acc-statement", icon: TbReportAnalytics },
+    { name: "Portfolio", link: "portfolio", icon: FaClipboardUser },
     { name: "Green futures", link: "green-futures", icon: FaPersonCane },
     { name: "Partner", link: "partner", icon: AiOutlineUser },
+    { name: "Membership", link: "membership", icon: MdOutlineCardMembership },
+    { name: "Referral", link: "referral", icon: FaPeopleCarry },
     { name: "Notifications", link: "notifications", icon: BsBell },
     { name: "Achievements", link: "achievements", icon: BsTrophy },
     { name: "Reports", link: "reports", icon: TbReportAnalytics, margin: true },
@@ -123,9 +128,9 @@ const SideNav = () => {
                 </div>
                 <div
                   className={`max-h-0 overflow-hidden transition-max-h ${(menu.name === "Funding" && isFundingOpen) ||
-                      (menu.name === "Withdrawal" && isWithdrawalOpen)
-                      ? "max-h-full"
-                      : ""
+                    (menu.name === "Withdrawal" && isWithdrawalOpen)
+                    ? "max-h-full"
+                    : ""
                     }`}
                 >
                   {menu.submenus.map((submenu, j) => (
@@ -133,8 +138,8 @@ const SideNav = () => {
                       to={submenu.link}
                       key={j}
                       className={`group flex items-center text-base gap-3.5 font-poppins hover:bg-[#027D6B] hover:text-white hover:duration-100 rounded-md ${location.pathname === submenu.link
-                          ? "bg-[#027D6B] text-white"
-                          : "text-white"
+                        ? "bg-[#027D6B] text-white"
+                        : "text-white"
                         }`}
                     >
                       <div className="p-2 lg:p-3 rounded-md bg-[#00000] text-white">
@@ -171,7 +176,10 @@ const SideNav = () => {
           </div>
         ))}
 
-
+        <div className="flex mt-[5px] flex-row gap-4 hover:ring-2 cursor-pointer transition-all justify-center items-center w-[240px] h-[70px] rounded-xl" style={{ background: "linear-gradient(#29A9E3,#232731)" }}>
+          <img className="w-[46px] h-[46px] rounded-full" src={usericon} alt="" />
+          <span className="text-white font-medium text-2xl">Brian</span>
+        </div>
 
       </div>
     </section>

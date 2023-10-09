@@ -1,30 +1,24 @@
-/* custom-scrollbar.css */
-
-/* Track */
 ::-webkit-scrollbar {
-    width: 10px; /* Width of the entire scrollbar */
+    width: 10px; 
   }
   
-  /* Handle */
+
   ::-webkit-scrollbar-thumb {
-    background: #198754; /* Color of the scrollbar handle */
-    border-radius: 10px; /* Rounded corners of the handle */
+    background: #198754; 
+    border-radius: 10px; 
   }
-  
-  /* Handle on hover */
+
   ::-webkit-scrollbar-thumb:hover {
-    background: #198754 /* Color of the scrollbar handle on hover */
+    background: #198754 
   }
   
-  /* Track on hover */
+
   ::-webkit-scrollbar-track:hover {
-    background: #198754 /* Color of the scrollbar track on hover */
+    background: #198754
   }
   
-  /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Color of the scrollbar track */
+    background: #f1f1f1;
   }
-  
-  /* Add some padding at the bottom to prevent content from being hidden */
+
   

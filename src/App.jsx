@@ -26,6 +26,10 @@ import AccountStatement from './components/DashboardComponents/AccountStatement'
 import Partner from './components/DashboardComponents/Partner';
 import Logout from './components/DashboardComponents/Logout';
 import GreenFutures from './components/DashboardComponents/GreenFutures';
+import Membership from './components/DashboardComponents/Membership';
+import Referral from './components/DashboardComponents/Referral';
+import Support from './components/DashboardComponents/Support';
+import Portfolio from './components/DashboardComponents/Portfolio';
 
 function App() {
   const isDashboardRoute = window.location.pathname.startsWith('/dashboard');
@@ -55,7 +59,11 @@ function App() {
             <Route path="withdraw-history" element={<WithdrawHistory />} />
             <Route path="cart" element={<Cart />} />
             <Route path="partner" element={<Partner />} />
+            <Route path="membership" element={<Membership />} />
+            <Route path="referral" element={<Referral />} />
             <Route path="acc-statement" element={<AccountStatement />} />
+            <Route path="portfolio" element={<Portfolio />} />
+            <Route path="support" element={<Support />} />
             <Route path="green-futures" element={<GreenFutures />} />
             <Route path="logout" element={<Logout />} />
           </Route>
