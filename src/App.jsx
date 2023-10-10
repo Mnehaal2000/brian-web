@@ -30,6 +30,10 @@ import Membership from './components/DashboardComponents/Membership';
 import Referral from './components/DashboardComponents/Referral';
 import Support from './components/DashboardComponents/Support';
 import Portfolio from './components/DashboardComponents/Portfolio';
+import Settings from './components/DashboardComponents/Settings';
+import Achievements from './components/DashboardComponents/Achievements';
+import Notifications from './components/DashboardComponents/Notifications';
+import Reports from './components/DashboardComponents/Reports';
 
 function App() {
   const isDashboardRoute = window.location.pathname.startsWith('/dashboard');
@@ -61,10 +65,14 @@ function App() {
             <Route path="partner" element={<Partner />} />
             <Route path="membership" element={<Membership />} />
             <Route path="referral" element={<Referral />} />
+            <Route path="achievements" element={<Achievements />} />
+            <Route path="notifications" element={<Notifications />} />
+            <Route path="reports" element={<Reports />} />
             <Route path="acc-statement" element={<AccountStatement />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="support" element={<Support />} />
             <Route path="green-futures" element={<GreenFutures />} />
+            <Route path="settings" element={<Settings />} />
             <Route path="logout" element={<Logout />} />
           </Route>
         </Routes>
