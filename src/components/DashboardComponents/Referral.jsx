@@ -104,7 +104,7 @@ const Referral = () => {
     return (
         <>
             <div className="main w-full flex mb-[50px] flex-col justify-center items-center">
-                <div className="main w-[1000px] mt-[20px] flex flex-row justify-center gap-[23px] items-center">
+                <div className="main w-[900px] mt-[20px] flex flex-row justify-center gap-[23px] items-center">
                     <div className='w-[536px] h-[326px] flex flex-col rounded-lg justify-center items-center gap-4 ' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
                         <img className='w-[70] h-[70]' src={icon1} alt="" />
                         <h3 className='font-bold text-white text-3xl'>Refer & Earn</h3>
@@ -120,7 +120,7 @@ const Referral = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-[1000px] gap-2 flex flex-col'>
+                <div className='w-[900px] gap-2 flex flex-col'>
                     <h3 className='mt-[20px] mb-[20px] text-white font-bold text-2xl'>Business Builder Benefits</h3>
                     <div className="flex flex-col">
                         <label className="text-white" htmlFor="payment">
@@ -141,7 +141,7 @@ const Referral = () => {
                     <p className='text-[18px] text-white font-light'>• Bonus in Achievements</p>
                 </div>
                 <div
-                    className="w-[1000px] h-[471px] mt-[20px] flex flex-col p-5 rounded-md"
+                    className="w-[900px] h-[471px] mt-[20px] flex flex-col p-5 rounded-md"
                     style={{ background: "linear-gradient(#29A9E3, #272C36)" }}
                 >
                     <ThemeProvider theme={tableTheme}>

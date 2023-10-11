@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <>
       <div className="main w-full flex flex-col justify-center items-center">
-        <div className='w-[1000px] mt-[30px] flex flex-row lg:gap-[200px] justify-center'>
+        <div className='w-[900px] mt-[30px] flex flex-row lg:gap-[200px] justify-center'>
           <div className="w-[493px] h-[110px] flex justify-around flex-row p-5 rounded-md" style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
             <div>
               <h3 className='font-bold text-white text-4xl'>63,356 $</h3>
@@ -30,7 +30,7 @@ const Home = () => {
 
 
 
-        <div className='w-[1000px] mt-[30px] flex flex-row lg:gap-[57px] justify-center'>
+        <div className='w-[900px] mt-[30px] flex flex-row lg:gap-[57px] justify-center'>
           <div className="w-[320px] h-[168px] flex flex-col justify-center gap-1 items-center p-5 rounded-md" style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
             <img src={c1} alt="" />
             <h3 className='font-bold text-white text-4xl'>63,356 $</h3>
@@ -48,8 +48,8 @@ const Home = () => {
           </div>
         </div>
 
-        <div className='w-[1000px] mt-[30px] flex flex-row lg:gap-[200px] justify-center items-center'>
-          <div className="w-[300px] h-[168px] flex flex-col justify-center gap-1 items-center p-5 rounded-md" style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
+        <div className='w-[900px] mt-[30px] flex flex-row justify-center items-center'>
+          <div className="w-[270px] h-[168px] flex flex-col justify-center gap-1 items-center p-5 rounded-md" style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
             <img src={c4} alt="" />
             <h3 className='font-bold text-white text-4xl'>63,356 $</h3>
             <p className='text-white'>Earnings</p>
@@ -57,8 +57,8 @@ const Home = () => {
         </div>
 
 
-        <div className='w-[1000px] h-[465px] mt-[30px] flex flex-row lg:gap-[7px] rounded-md justify-center items-center' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
-          <div className='w-[450px] flex flex-col gap-7'>
+        <div className='w-[900px] h-[465px] mt-[30px] flex flex-row gap-[3px] rounded-md justify-center items-center' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
+          <div className='w-[340px] flex flex-col gap-7'>
             <h3 className='font-bold text-white text-4xl'>Revenue Updates</h3>
             <div>
               <h3 className='font-bold text-white text-4xl'>124,513 $ <span className='text-[#00FFE3] text-[25px]'>23 %</span></h3>
@@ -80,33 +80,33 @@ const Home = () => {
 
 
 
-        <div className='w-[1000px] h-[465px] mt-[30px] flex flex-col gap-10 rounded-md justify-center items-center' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
+        <div className='w-[900px] h-[465px] mt-[30px] flex flex-col gap-10 rounded-md justify-center items-center' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
           <img src={box} alt="" />
           <h3 className='font-bold text-white text-4xl'>Refer & Earn</h3>
           <p className='text-white w-[500px] text-center'>Refer your friends & Earn 20% Sponsor bonus, plus 5% for every customer that completes 1 deposit in the platform.</p>
           <button className='w-[258px] h-[81px] rounded-md text-3xl font-bold text-white' style={{ background: "linear-gradient(#115A56, #001F1B)" }}>Refer</button>
         </div>
 
-        <div className='w-[1000px] h-[120px] flex flex-col rounded-md justify-center'>
+        <div className='w-[900px] h-[120px] flex flex-col rounded-md justify-center'>
           <p className='text-4xl font-bold text-white'>Recently Activity</p>
         </div>
 
         <div className='mb-[60px]'>
-        <div className='w-[1000px] h-[120px] mb-[10px] flex flex-row gap-[30px] rounded-md justify-start items-center' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
+        <div className='w-[900px] h-[120px] mb-[10px] flex flex-row gap-[30px] rounded-md justify-start items-center' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
           <img className='ml-[40px] w-[80px] h-[80px]' src={s1} alt="" />
           <p className='text-white text-center'>You have recieved a bonus of $100</p>
           <span className='text-[#00FFE3] text-[25px] font-bold'>+100</span>
         </div>
-        <div className='w-[1000px] h-[120px] mb-[10px] flex flex-row gap-[30px] rounded-md justify-start items-center' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
+        <div className='w-[900px] h-[120px] mb-[10px] flex flex-row gap-[30px] rounded-md justify-start items-center' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
           <img className='ml-[40px] w-[80px] h-[80px]' src={s2} alt="" />
           <p className='text-white text-center'>John signed up using your referal code</p>
         </div>
-        <div className='w-[1000px] h-[120px] mb-[10px] flex flex-row gap-[30px] rounded-md justify-start items-center' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
+        <div className='w-[900px] h-[120px] mb-[10px] flex flex-row gap-[30px] rounded-md justify-start items-center' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
           <img className='ml-[40px] w-[80px] h-[80px]' src={s3} alt="" />
           <p className='text-white text-center'>You have completed a deposited of $500</p>
           <span className='text-[#00FFE3] text-[25px] font-bold'>+500</span>
         </div>
-        <div className='w-[1000px] h-[120px]  flex flex-row gap-[30px] rounded-md justify-start items-center' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
+        <div className='w-[900px] h-[120px]  flex flex-row gap-[30px] rounded-md justify-start items-center' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
           <img className='ml-[40px] w-[80px] h-[80px]' src={s4} alt="" />
           <p className='text-white text-center'>Your order of Solar Panel $800 is completed</p>
           <span className='text-[#FF0000] text-[25px] font-bold'>-500</span>

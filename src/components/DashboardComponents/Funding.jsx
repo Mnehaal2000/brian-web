@@ -3,7 +3,7 @@ import React from 'react';
 const Funding = () => {
     return (
         <div className="main w-full flex flex-col justify-center items-center">
-            <div className="w-[1000px] mt-[30px] flex flex-col gap-[20px] justify-center">
+            <div className="w-[900px] mt-[30px] flex flex-col gap-[20px] justify-center">
                 <p className="text-3xl font-bold text-white">Deposit Money</p>
                 <div
                     className="w-[783px] h-[352px] flex flex-col p-5 rounded-md"
