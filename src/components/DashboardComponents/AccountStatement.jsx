@@ -105,12 +105,12 @@ const AccountStatement = () => {
         <>
             <div className="main w-full flex mb-[50px] flex-col justify-center items-center">
                 <div className="main w-[900px] mt-[20px] flex flex-row justify-center gap-[23px] items-center">
-                    <div className='w-[400px] xl:w-[450px] h-[326px] flex flex-col rounded-lg justify-center items-center gap-4 ' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
+                    <div className='w-[400px] xl:w-[450px] h-[326px] flex flex-col rounded-lg justify-center items-center gap-4 ' style={{ background: "linear-gradient(to right, #29A9E3, #272C36)" }}>
                         <img className='w-[70] h-[70]' src={icon1} alt="" />
                         <h3 className='font-bold text-white text-3xl'>Current Balance</h3>
                         <h3 className='font-bold text-white text-3xl'>$ 15,626</h3>
                     </div>
-                    <div className='w-[400px] xl:w-[450px] h-[326px] flex flex-col rounded-lg justify-center items-center gap-4 ' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
+                    <div className='w-[400px] xl:w-[450px] h-[326px] flex flex-col rounded-lg justify-center items-center gap-4 ' style={{ background: "linear-gradient(to right, #29A9E3, #272C36)" }}>
                         <img className='w-[70] h-[70]' src={icon2} alt="" />
                         <h3 className='font-bold text-white text-3xl'>Current Balance</h3>
                         <h3 className='font-bold text-white text-3xl'>$ 15,626</h3>

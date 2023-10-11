@@ -80,7 +80,7 @@ const Cart = () => {
                         ))}
 
                     </div>
-                    <div className='w-[540px] flex flex-col h-[540px] border rounded-lg border-black' style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
+                    <div className='w-[540px] flex flex-col h-[540px] border rounded-lg border-black' style={{ background: "linear-gradient(to right, #29A9E3, #272C36)" }}>
                         <div className='flex h-[84px] pl-5 flex-start items-center border border-l-0 border-t-0 border-r-0 border-b-1'>
                             <h2 className='font-bold text-white text-2xl'>Summary</h2>
                         </div>

@@ -8,7 +8,7 @@ const Settings = () => {
 
 
 
-                <div className='w-[900px] items-center mt-[30px] rounded-lg h-[846px] border border-white flex flex-col gap-[23px]' style={{ background: "linear-gradient(#29A9E3,#272C36)" }}>
+                <div className='w-[900px] items-center mt-[30px] rounded-lg h-[846px] border border-white flex flex-col gap-[23px]' style={{ background: "linear-gradient(to right, #29A9E3,#272C36)" }}>
                     <div className='w-[750px] mt-[20px] flex flex-col gap-5 justify-start'>
                         <img className='w-[100px] h-[100px]' src={usericon} alt="" />
                         <button className='bg-transparent text-white w-[269px] h-[41px] rounded-lg border border-white'>UPLOAD A NEW PROFILE PHOTO</button>
@@ -178,8 +178,8 @@ const Settings = () => {
                     </div>
 
                     <div className='w-[750px] mt-[20px] flex flex-row items-center gap-5 justify-end'>
-                        <button className='text-white font-bold w-[186px] h-[56px] rounded-lg' style={{ background: "linear-gradient(#BB000E,#212121)" }}>Reset</button>
-                        <button className='text-white font-bold w-[186px] h-[56px] rounded-lg' style={{ background: "linear-gradient(#29A9E3,#272C36)" }}>Save Changes</button>
+                        <button className='text-white font-bold w-[186px] h-[56px] rounded-lg' style={{ background: "linear-gradient(to right, #BB000E,#212121)" }}>Reset</button>
+                        <button className='text-white font-bold w-[186px] h-[56px] rounded-lg' style={{ background: "linear-gradient(to right, #29A9E3,#272C36)" }}>Save Changes</button>
                     </div>
                 </div>
 
@@ -187,7 +187,7 @@ const Settings = () => {
 
 
 
-                <div className='w-[900px] items-center mt-[30px] rounded-lg h-[346px] border border-white flex flex-col gap-[23px]' style={{ background: "linear-gradient(#29A9E3,#272C36)" }}>
+                <div className='w-[900px] items-center mt-[30px] rounded-lg h-[346px] border border-white flex flex-col gap-[23px]' style={{ background: "linear-gradient(to right, #29A9E3,#272C36)" }}>
                     <div className='w-[750px] mt-[20px] flex flex-col gap-5 justify-start'>
                         <div className='w-[750px] mt-[20px] flex flex-col gap-5 justify-start'>
                             <h3 className='text-white text-2xl font-bold'>Update Password</h3>
@@ -224,8 +224,8 @@ const Settings = () => {
                             </div>
                         </div>
                         <div className='w-[750px] mt-[20px] flex flex-row items-center gap-5 justify-end'>
-                            <button className='text-white font-bold w-[186px] h-[56px] rounded-lg' style={{ background: "linear-gradient(#BB000E,#212121)" }}>Reset</button>
-                            <button className='text-white font-bold w-[186px] h-[56px] rounded-lg' style={{ background: "linear-gradient(#29A9E3,#272C36)" }}>Save Changes</button>
+                            <button className='text-white font-bold w-[186px] h-[56px] rounded-lg' style={{ background: "linear-gradient(to right, #BB000E,#212121)" }}>Reset</button>
+                            <button className='text-white font-bold w-[186px] h-[56px] rounded-lg' style={{ background: "linear-gradient(to right, #29A9E3,#272C36)" }}>Save Changes</button>
                         </div>
                     </div>
                 </div>

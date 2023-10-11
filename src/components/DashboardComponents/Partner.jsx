@@ -27,7 +27,7 @@ const Partner = () => {
                                 setisBus(false);
                             }}
                             className='w-[310px]  hover:bg-blue-600 hover:text-white transition-all duration-150 hover:ring-4 hover:ring-blue-400 cursor-pointer rounded-lg h-[85px] font-bold text-white text-3xl'
-                            style={{ background: "linear-gradient(#29A9E3, #272C36)" }}
+                            style={{ background: "linear-gradient(to right, #29A9E3, #272C36)" }}
                         >
                             Individual
                         </button>
@@ -42,7 +42,7 @@ const Partner = () => {
                                 setisBus(true);
                             }}
                             className='w-[310px] hover:bg-blue-600 hover:text-white transition-all duration-150 hover:ring-4 hover:ring-blue-400 cursor-pointer rounded-lg h-[85px] font-bold text-white text-3xl'
-                            style={{ background: "linear-gradient(#29A9E3, #272C36)" }}
+                            style={{ background: "linear-gradient(to right, #29A9E3, #272C36)" }}
                         >
                             Business
                         </button>

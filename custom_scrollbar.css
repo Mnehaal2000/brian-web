@@ -21,4 +21,6 @@
     background: #f1f1f1;
   }
 
-  
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Invert the colors to make it white */
+}
