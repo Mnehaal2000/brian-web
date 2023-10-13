@@ -1,10 +1,17 @@
-import React from 'react';
+import { useContext, useEffect, useState } from "react";
 import Select from 'react-select';
 import AsyncSelect from 'react-select/async';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useNavigate } from "react-router-dom";
+import { auth, db } from "../firebase";
+import { doc, setDoc } from "firebase/firestore";
+import { createUserWithEmailAndPassword} from "firebase/auth";
 
 const SignUpPage = () => {
+     const [err, setErr] = useState(false);
+     const [loading, setLoading] = useState(false);
+     const navigate = useNavigate();
 
     const loadCountries = async (inputValue) => {
         if(inputValue)
@@ -75,8 +82,38 @@ const SignUpPage = () => {
             ZIPCode: '',
         },
         validationSchema,
-        onSubmit: (values) => {
+        onSubmit: async(values) => {
             // Your form submission logic here
+            setLoading(true);
+          
+            try {
+              // Create user
+              const res = await createUserWithEmailAndPassword(auth,values.Email,values.ConfirmPassword);
+          
+              // Create user on firestore in "users" collection
+              await setDoc(doc(db, "users", res.user.uid), {
+                uid: res.user.uid,
+                FirstName:values.FirstName,
+                LastName:values.LastName,
+                Emai:values.Email,
+                Phone:values.Phone,
+                UserName:values.UserName,
+                Gender:values.Gender,
+                Country:values.Country,
+                Name:values.Name,
+                AddressLine1:values.AddressLine1,
+                AddressLine2:values.AddressLine2,
+                City:values.City,
+                State:values.State,
+                ZIPCode:values.ZIPCode,
+
+              });
+              navigate("/dashboard/home")
+            } catch (err) {
+              console.log(err);
+              setErr(true);
+              setLoading(false);
+            }
             console.log(values);
         },
     });
@@ -332,6 +369,8 @@ const SignUpPage = () => {
                         I consent to receive electronic communications regarding my activity on this portal and agree to the Terms of Use & Privacy Policy.
                     </span>
                     <button type='submit' className='bg-[#12664F] w-full md:w-[400px] h-[40px] text-md font-bold text-white'>Sign Up</button>
+                    {loading && "Registering..."}
+                    {err && <span>Something went wrong</span>}
                 </div>
             </form>
 

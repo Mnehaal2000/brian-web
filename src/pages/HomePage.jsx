@@ -68,7 +68,7 @@ const HomePage =()=> {
       {/* section */}
       <div className=" home-bg1 w-full min-h-[600px] lg:min-h-[750px] flex justify-center items-start lg:py-0 py-20 lg:items-center relative text-white text-lg lg:text-2xl">
         <div className=" flex flex-col gap-5 lg:gap-8 items-center w-full max-w-[520px] -mt-6 text-center z-10">
-          <h2 className=" text-3xl lg:text-[44px] font-bold">Energizing Today, Empowering Tomorrow!</h2>
+          <h2 className=" text-3xl lg:text-[44px] lg:leading-[54px] font-bold">Energizing Today, Empowering Tomorrow!</h2>
           <p>Join us today to revolutionize the world`s ecosystem by bringing sustainable and accessible energy to all. Together, we empower people to live their best lives!</p>
           <Link className=" text-xl lg:text-3xl py-5 px-14 rounded bg-green-secondary font-semibold w-fit">Join Us Now</Link>
         </div>

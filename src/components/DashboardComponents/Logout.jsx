@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import LogoutFn from '../LogoutFn'
 
 const Logout = () => {
     const navigate = useNavigate()
@@ -10,7 +11,7 @@ const Logout = () => {
                     <p className='font-bold text-white text-3xl text-center'>Are you sure you want to logout?</p>
                     <div className='w-[540px] h-[70px] flex flex-row gap-6 justify-center'>
                         <button onClick={()=>{navigate("/dashboard/home")}} className='rounded-md w-[229px] h-[56px] font-bold text-white' style={{background: "linear-gradient(to right, #BB000E,#212121)"}}>Cancel</button>
-                        <button className='rounded-md w-[229px] h-[56px] font-bold text-white' style={{background: "linear-gradient(to right, #29A9E3,#272C36)"}}>Confirm</button>
+                        <button className='rounded-md w-[229px] h-[56px] font-bold text-white' style={{background: "linear-gradient(to right, #29A9E3,#272C36)"}}><LogoutFn/></button>
                     </div>
                 </div>
             </div>
