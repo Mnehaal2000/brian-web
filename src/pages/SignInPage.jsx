@@ -1,18 +1,23 @@
 import { useEffect, useState } from 'react';
 import LoginPic from '../assets/loginpage/loginpagepic.png';
 import './Style.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import {signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../firebase';
 
 const SignInPage = () => {
     useEffect(()=>{
         window.scrollTo(0, 0)
     },[])
 
+    const navigate = useNavigate();
+
     const [ischecked, setIsChecked] = useState(false);
     const [emailError, setEmailError] = useState('');
     const [passError, setPassError] = useState('');
     const [email,setEmail] = useState('')
     const [pass,setPass] = useState('')
+    const [errorMsg, setErrorMsg]=useState('')
 
     const handleCheckBox = () => {
         setIsChecked(!ischecked);
@@ -47,7 +52,20 @@ const SignInPage = () => {
     };
 
     function handleSignIn(){
-       
+        signInWithEmailAndPassword(auth, email, pass)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            navigate("/dashboard/home")
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode)
+            console.log(errorMessage)
+            setErrorMsg(errorMessage);
+        });
     }
   return (
     <>
@@ -86,7 +104,7 @@ const SignInPage = () => {
                                 </label>
                                 {passError && <span style={{ color: 'red' }}>{passError}</span>}
                             </div>
-    
+                            {errorMsg && <p className=' py-2 text-red-700'>{errorMsg}</p>}
                             <div className="mb-2">
                                 <button onClick={handleSignIn} className="bg-[#059C4B] text-white px-3 py-1 font-bold w-full">Sign In</button>
                             </div>
