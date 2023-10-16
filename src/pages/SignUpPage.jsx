@@ -95,7 +95,7 @@ const SignUpPage = () => {
                 uid: res.user.uid,
                 FirstName:values.FirstName,
                 LastName:values.LastName,
-                Emai:values.Email,
+                Email:values.Email,
                 Phone:values.Phone,
                 UserName:values.UserName,
                 Gender:values.Gender,

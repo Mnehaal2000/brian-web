@@ -1,12 +1,60 @@
-import React from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import usericon from "../../assets/dashboard/settings/usericon.png"
+import { auth, db } from "../../firebase";
+import { doc, setDoc, getDoc } from "firebase/firestore";
+import AuthContext from "../../AuthContext"
 
 const Settings = () => {
+
+    const { currentUser, userRole } = useContext(AuthContext);
+
+    const [FirstName, setFirstName] = useState('');
+    const [LastName, setLastName] = useState('');
+    const [Email, setEmail] = useState('');
+    const [ContactNumber, setContactNumber] = useState('');
+    const [MembershipType, setMembershipType] = useState('');
+    const [Partner, setPartner] = useState('');
+    const [AccountNumber, setAccountNumber] = useState('');
+    const [Balance, setBalance] = useState('');
+    const [Investments, setInvestments] = useState('');
+    const [AmountWithdrawn, setAmountWithdrawn] = useState('');
+    const [AvailableWithdrawal, setAvailableWithdrawal] = useState('');
+    const [PendingStatus, setPendingStatus] = useState('');
+    const [Referrals, setReferrals] = useState('');
+    const [Achievements, setAchievements] = useState('');
+    const [SupportTickets, setSupportTickets] = useState('');
+    const [Purchases, setPurchases] = useState('');
+    const [AmountSpent, setAmountSpent] = useState('');
+    const [Currency, setCurrency] = useState('');
+
+    const getUserData = async () => {
+
+        if (Object.keys(currentUser).length !== 0) {
+            const docRef = doc(db, "users", currentUser.uid);
+            try {
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    // console.log(docSnap.data());
+                    setEmail(docSnap.data().Email)
+                    setFirstName(docSnap.data().FirstName)
+                    setLastName(docSnap.data().LastName)
+                    setContactNumber(docSnap.data().Phone)
+                } else {
+                    console.log("Document does not exist")
+                }
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+    }
+
+    getUserData()
+
     return (
         <>
             <div className="main w-[1000px] lg:w-full flex mb-[50px] flex-col justify-center items-center">
-
-
 
                 <div className='w-[900px] items-center mt-[30px] rounded-lg h-[846px] border border-white flex flex-col gap-[23px]' style={{ background: "linear-gradient(to right, #29A9E3,#272C36)" }}>
                     <div className='w-[750px] mt-[20px] flex flex-col gap-5 justify-start'>
@@ -21,6 +69,9 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={FirstName ? FirstName : ""}
+                                    onChange={(e) => setFirstName(e.target.value)}
+                                    disabled
                                 />
                             </div>
 
@@ -30,6 +81,9 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={LastName ? LastName : ""}
+                                    onChange={(e) => setLastName(e.target.value)}
+                                    disabled
                                 />
                             </div>
 
@@ -39,6 +93,9 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={Email ? Email : ""}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    disabled
                                 />
                             </div>
 
@@ -48,6 +105,9 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={ContactNumber ? ContactNumber : ""}
+                                    onChange={(e) => setContactNumber(e.target.value)}
+                                    disabled
                                 />
                             </div>
 
@@ -57,6 +117,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={MembershipType ? MembershipType : ""}
+                                    onChange={(e) => setMembershipType(e.target.value)}
                                 />
                             </div>
 
@@ -66,6 +128,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={Partner ? Partner : ""}
+                                    onChange={(e) => setPartner(e.target.value)}
                                 />
                             </div>
 
@@ -75,6 +139,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={AccountNumber ? AccountNumber : ""}
+                                    onChange={(e) => setAccountNumber(e.target.value)}
                                 />
                             </div>
 
@@ -84,6 +150,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={Balance ? Balance : ""}
+                                    onChange={(e) => setBalance(e.target.value)}
                                 />
                             </div>
 
@@ -93,6 +161,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={Investments ? Investments : ""}
+                                    onChange={(e) => setInvestments(e.target.value)}
                                 />
                             </div>
                             <div className='flex flex-col'>
@@ -100,6 +170,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={AmountWithdrawn ? AmountWithdrawn : ""}
+                                    onChange={(e) => setAmountWithdrawn(e.target.value)}
                                 />
                             </div>
 
@@ -109,6 +181,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={AvailableWithdrawal ? AvailableWithdrawal : ""}
+                                    onChange={(e) => setAvailableWithdrawal(e.target.value)}
                                 />
                             </div>
 
@@ -118,6 +192,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={PendingStatus ? PendingStatus : ""}
+                                    onChange={(e) => setPendingStatus(e.target.value)}
                                 />
                             </div>
 
@@ -127,6 +203,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={Referrals ? Referrals : ""}
+                                    onChange={(e) => setReferrals(e.target.value)}
                                 />
                             </div>
 
@@ -136,6 +214,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={Achievements ? Achievements : ""}
+                                    onChange={(e) => setAchievements(e.target.value)}
                                 />
                             </div>
 
@@ -145,6 +225,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={SupportTickets ? SupportTickets : ""}
+                                    onChange={(e) => setSupportTickets(e.target.value)}
                                 />
                             </div>
 
@@ -154,6 +236,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={Purchases ? Purchases : ""}
+                                    onChange={(e) => setPurchases(e.target.value)}
                                 />
                             </div>
 
@@ -163,6 +247,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={AmountSpent ? AmountSpent : ""}
+                                    onChange={(e) => setAmountSpent(e.target.value)}
                                 />
                             </div>
 
@@ -172,6 +258,8 @@ const Settings = () => {
                                 <input
                                     className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
                                     type='text'
+                                    value={Currency ? Currency : ""}
+                                    onChange={(e) => setCurrency(e.target.value)}
                                 />
                             </div>
                         </div>
