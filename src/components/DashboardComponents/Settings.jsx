@@ -209,7 +209,7 @@ const Settings = () => {
                                     <label className='text-white'>New Password</label>
                                     <input
                                         className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
-                                        type='text'
+                                        type='password'
                                     />
                                 </div>
 
@@ -218,7 +218,7 @@ const Settings = () => {
                                     <label className='text-white'>Confirm Password</label>
                                     <input
                                         className='bg-transparent outline-none text-white rounded-sm pt-2 pl-1 pr-1 pb-2 border border-white'
-                                        type='text'
+                                        type='password'
                                     />
                                 </div>
                             </div>
