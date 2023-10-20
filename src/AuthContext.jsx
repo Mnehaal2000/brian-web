@@ -21,7 +21,7 @@ export const AuthContextProvider = ({ children }) => {
             setUserRole("manager");
           } else {
 
-            setUserRole("employee");
+            setUserRole("user");
           }
         } catch (err) {
           console.log(err);

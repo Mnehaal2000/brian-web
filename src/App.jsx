@@ -37,63 +37,77 @@ import Reports from './components/DashboardComponents/Reports';
 import { AuthContextProvider } from './AuthContext';
 import AuthContext from "./AuthContext"
 import { useContext, useEffect, useState } from 'react';
+import AdminPortal from "./pages/AdminPortal"
 
 function App() {
 
-  const isDashboardRoute = window.location.pathname.startsWith('/dashboard');
-  const { currentUser } = useContext(AuthContext)
+  const isDashboardRoute = window.location.pathname.startsWith('/dashboard') || window.location.pathname.startsWith('/adminportal');
+  const { currentUser, userRole } = useContext(AuthContext)
   const [isLoggedIn, setisLoggedIn] = useState(false);
-  
+
   useEffect(() => {
     if (currentUser && Object.keys(currentUser).length !== 0) {
+      // console.log(userRole, currentUser)
       setisLoggedIn(true);
     } else {
       setisLoggedIn(false);
     }
   }, [currentUser]);
-  
+
 
   return (
     <>
       <BrowserRouter>
         {!isDashboardRoute && <NavBar />}
         <Routes>
-         {isLoggedIn===false?
-         ( <><Route exact path='/' element={<HomePage />} />
-          <Route exact path='/signup' element={<SignUpPage />} />
-          <Route exact path='/signin' element={<SignInPage />} />
-          <Route exact path='/news' element={<NewsPage />} />
-          <Route exact path='/store' element={<StorePage />} />
-          <Route exact path='/empower' element={<EmpowerPage />} />
-          <Route exact path='/community' element={<CommunityPage />} />
-          <Route exact path='/startups' element={<StartupsPage />} />
-          <Route exact path='/energy' element={<EnergyPage />} />
-          <Route exact path='/environment' element={<EnvironmentPage />} />
-          <Route exact path='/whoweare' element={<WhoPage />} />
-          <Route exact path='/whatwedo' element={<WhatPage />} /></>
-          ):
-          (
-          <Route path="/dashboard" element={<AuthContextProvider><Dashboard /></AuthContextProvider>}>
-            <Route path="home" element={<AuthContextProvider><Home /></AuthContextProvider>} />
-            <Route path="funding" element={<AuthContextProvider><Funding /></AuthContextProvider>} />
-            <Route path="funding-history" element={<AuthContextProvider><FundingHistory /></AuthContextProvider>} />
-            <Route path="withdraw" element={<AuthContextProvider><Withdraw /></AuthContextProvider>} />
-            <Route path="withdraw-history" element={<AuthContextProvider><WithdrawHistory /></AuthContextProvider>} />
-            <Route path="cart" element={<AuthContextProvider><Cart /></AuthContextProvider>} />
-            <Route path="partner" element={<AuthContextProvider><Partner /></AuthContextProvider>} />
-            <Route path="membership" element={<AuthContextProvider><Membership /></AuthContextProvider>} />
-            <Route path="referral" element={<AuthContextProvider><Referral /></AuthContextProvider>} />
-            <Route path="achievements" element={<AuthContextProvider><Achievements /></AuthContextProvider>} />
-            <Route path="notifications" element={<AuthContextProvider><Notifications /></AuthContextProvider>} />
-            <Route path="reports" element={<AuthContextProvider><Reports /></AuthContextProvider>} />
-            <Route path="acc-statement" element={<AuthContextProvider><AccountStatement /></AuthContextProvider>} />
-            <Route path="portfolio" element={<AuthContextProvider><Portfolio /></AuthContextProvider>} />
-            <Route path="support" element={<AuthContextProvider><Support /></AuthContextProvider>} />
-            <Route path="green-futures" element={<AuthContextProvider><GreenFutures /></AuthContextProvider>} />
-            <Route path="settings" element={<AuthContextProvider><Settings /></AuthContextProvider>} />
-            <Route path="logout" element={<AuthContextProvider><Logout /></AuthContextProvider>} />
-          </Route>
-          )}
+          {isLoggedIn === false ?
+            (<><Route exact path='/' element={<HomePage />} />
+              <Route exact path='/signup' element={<SignUpPage />} />
+              <Route exact path='/signin' element={<SignInPage />} />
+              <Route exact path='/news' element={<NewsPage />} />
+              <Route exact path='/store' element={<StorePage />} />
+              <Route exact path='/empower' element={<EmpowerPage />} />
+              <Route exact path='/community' element={<CommunityPage />} />
+              <Route exact path='/startups' element={<StartupsPage />} />
+              <Route exact path='/energy' element={<EnergyPage />} />
+              <Route exact path='/environment' element={<EnvironmentPage />} />
+              <Route exact path='/whoweare' element={<WhoPage />} />
+              <Route exact path='/whatwedo' element={<WhatPage />} /></>
+            ) :
+            (
+              <>
+                {userRole === 'user' && (
+                  <Route path="/dashboard/*" element={<AuthContextProvider><Dashboard /></AuthContextProvider>}>
+                    <Route path="home" element={<AuthContextProvider><Home /></AuthContextProvider>} />
+                    <Route path="funding" element={<AuthContextProvider><Funding /></AuthContextProvider>} />
+                    <Route path="funding-history" element={<AuthContextProvider><FundingHistory /></AuthContextProvider>} />
+                    <Route path="withdraw" element={<AuthContextProvider><Withdraw /></AuthContextProvider>} />
+                    <Route path="withdraw-history" element={<AuthContextProvider><WithdrawHistory /></AuthContextProvider>} />
+                    <Route path="cart" element={<AuthContextProvider><Cart /></AuthContextProvider>} />
+                    <Route path="partner" element={<AuthContextProvider><Partner /></AuthContextProvider>} />
+                    <Route path="membership" element={<AuthContextProvider><Membership /></AuthContextProvider>} />
+                    <Route path="referral" element={<AuthContextProvider><Referral /></AuthContextProvider>} />
+                    <Route path="achievements" element={<AuthContextProvider><Achievements /></AuthContextProvider>} />
+                    <Route path="notifications" element={<AuthContextProvider><Notifications /></AuthContextProvider>} />
+                    <Route path="reports" element={<AuthContextProvider><Reports /></AuthContextProvider>} />
+                    <Route path="acc-statement" element={<AuthContextProvider><AccountStatement /></AuthContextProvider>} />
+                    <Route path="portfolio" element={<AuthContextProvider><Portfolio /></AuthContextProvider>} />
+                    <Route path="support" element={<AuthContextProvider><Support /></AuthContextProvider>} />
+                    <Route path="green-futures" element={<AuthContextProvider><GreenFutures /></AuthContextProvider>} />
+                    <Route path="settings" element={<AuthContextProvider><Settings /></AuthContextProvider>} />
+                    <Route path="logout" element={<AuthContextProvider><Logout /></AuthContextProvider>} />
+                  </Route>
+                )}
+
+                {userRole === "manager" && (
+                  <Route path="/adminportal/*" element={<AuthContextProvider><AdminPortal /></AuthContextProvider>} >
+                    
+                    <Route path="logout" element={<AuthContextProvider><Logout /></AuthContextProvider>} />
+                  </Route>)}
+
+              </>
+            )}
+
         </Routes>
         {!isDashboardRoute && <Footer />}
       </BrowserRouter>
@@ -102,3 +116,10 @@ function App() {
 }
 
 export default App
+
+
+
+// {userRole === 'manager' && (
+//   <Route path="adminportal" element={<AuthContextProvider><AdminPortal /></AuthContextProvider>} >
+//   </Route>
+// )}
