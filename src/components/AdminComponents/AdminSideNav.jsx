@@ -24,7 +24,7 @@ const AdminSideNav = () => {
       link: "#",
       icon: RiRefund2Line,
       submenus: [
-        { name: "Deposit Money", link: "funding", icon: RiRefund2Line },
+        { name: "Deposit Money", link: "deposit", icon: RiRefund2Line },
         // { name: "Deposit History", link: "funding-history", icon: RiRefund2Line },
       ],
       isOpen: isFundingOpen,

@@ -2,6 +2,11 @@ import SignUpPage from './pages/SignUpPage'
 import {
   Route, Routes, BrowserRouter
 } from "react-router-dom";
+import { AuthContextProvider } from './AuthContext';
+import AuthContext from "./AuthContext"
+import { useContext, useEffect, useState } from 'react';
+
+//basic web pages start
 import Footer from './components/Footer'
 import NavBar from "./components/NavBar"
 import SignInPage from './pages/SignInPage';
@@ -15,6 +20,10 @@ import EnergyPage from './pages/EnergyPage';
 import EnvironmentPage from './pages/EnvironmentPage';
 import WhoPage from './pages/WhoPage';
 import WhatPage from './pages/WhatPage';
+//basic web pages end
+
+
+//user dashboard start
 import Dashboard from './pages/Dashboard';
 import Home from './components/DashboardComponents/Home';
 import Funding from './components/DashboardComponents/Funding';
@@ -34,10 +43,14 @@ import Settings from './components/DashboardComponents/Settings';
 import Achievements from './components/DashboardComponents/Achievements';
 import Notifications from './components/DashboardComponents/Notifications';
 import Reports from './components/DashboardComponents/Reports';
-import { AuthContextProvider } from './AuthContext';
-import AuthContext from "./AuthContext"
-import { useContext, useEffect, useState } from 'react';
+//user dashboard end
+
+
+// admin components start
 import AdminPortal from "./pages/AdminPortal"
+import AdminHome from "./components/AdminComponents/Home"
+import AdminDeposit from "./components/AdminComponents/Deposit"
+// admin components end
 
 function App() {
 
@@ -101,10 +114,10 @@ function App() {
 
                 {userRole === "manager" && (
                   <Route path="/adminportal/*" element={<AuthContextProvider><AdminPortal /></AuthContextProvider>} >
-                    
+                    <Route path="home" element={<AuthContextProvider><AdminHome /></AuthContextProvider>} />
+                    <Route path="deposit" element={<AuthContextProvider><AdminDeposit /></AuthContextProvider>} />
                     <Route path="logout" element={<AuthContextProvider><Logout /></AuthContextProvider>} />
                   </Route>)}
-
               </>
             )}
 
