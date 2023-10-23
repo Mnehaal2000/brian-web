@@ -1,6 +1,74 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { db } from "../../firebase"
+import { addDoc, collection } from 'firebase/firestore';
 
 const PartnerBus = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('');
+  const [accountDetails, setAccountDetails] = useState('');
+  const [referralCode, setReferralCode] = useState('');
+  const [facebook, setFacebook] = useState('');
+  const [instagram, setInstagram] = useState('');
+  const [twitter, setTwitter] = useState('');
+  const [others, setOthers] = useState('');
+  const [amountInUSD, setamountInUSD] = useState('');
+
+  const [organizationName, setOrganizationName] = useState('');
+  const [address, setAddress] = useState('');
+  const [website, setWebsite] = useState('');
+  const [orgEmail, setOrgEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [socialMedias, setSocialMedias] = useState('');
+  const [industry, setIndustry] = useState('');
+  const [q1, setq1] = useState('');
+  const [q2, setq2] = useState('');
+  const [q3, setq3] = useState('');
+  
+  
+
+  const submithandler = async () => {
+    try {
+      const busData = {
+        partner_type: "business",
+        firstName,
+        lastName,
+        email,
+        paymentMethod,
+        accountDetails,
+        referralCode,
+        socialMedia: {
+          facebook,
+          instagram,
+          twitter,
+          others,
+        },
+        amountInUSD,
+        organizationName,
+        address,
+        website,
+        orgEmail,
+        phoneNumber,
+        socialMedias,
+        industry,
+        q1,
+        q2,
+        q3
+      };
+
+      addDoc(collection(db, 'partners'), busData)
+        .then(() => {
+          console.log('business added to Firebase');
+        })
+        .catch((error) => {
+          console.error('Error adding business to Firebase: ', error);
+        });
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
   return (
     <>
       <div className="main w-full flex mb-[50px] flex-col justify-center items-center">
@@ -11,15 +79,15 @@ const PartnerBus = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col">
               <label htmlFor="firstname" className="text-white">First Name</label>
-              <input type="text" id="firstname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" id="firstname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="lastname" className="text-white">Last Name</label>
-              <input type="text" id="lastname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" id="lastname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="email" className="text-white">Email Address</label>
-              <input type="text" id="email" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" id="email" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="payment" className="text-white">Payment Method</label>
@@ -27,11 +95,11 @@ const PartnerBus = () => {
             </div>
             <div className="flex flex-col">
               <label htmlFor="account" className="text-white">Account Details</label>
-              <input type="text" id="account" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={accountDetails} onChange={(e) => setAccountDetails(e.target.value)} type="text" id="account" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="phone" className="text-white">Referral Code</label>
-              <input type="text" id="phone" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={referralCode} onChange={(e) => setReferralCode(e.target.value)} type="text" id="phone" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
           </div>
         </div>
@@ -42,19 +110,19 @@ const PartnerBus = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col">
               <label htmlFor="facebook" className="text-white">Facebook</label>
-              <input type="text" id="facebook" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={facebook} onChange={(e) => setFacebook(e.target.value)} type="text" id="facebook" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="instagram" className="text-white">Instagram</label>
-              <input type="text" id="instagram" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={instagram} onChange={(e) => setInstagram(e.target.value)} type="text" id="instagram" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="twitter" className="text-white">Twitter</label>
-              <input type="text" id="twitter" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={twitter} onChange={(e) => setTwitter(e.target.value)} type="text" id="twitter" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="others" className="text-white">Others</label>
-              <input type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={others} onChange={(e) => setOthers(e.target.value)} type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
           </div>
         </div>
@@ -65,27 +133,45 @@ const PartnerBus = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col">
               <label htmlFor="firstname" className="text-white">Organization Name</label>
-              <input type="text" id="firstname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input
+                value={organizationName}
+                onChange={(e) => setOrganizationName(e.target.value)}
+                type="text" id="firstname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="lastname" className="text-white">Address</label>
-              <input type="text" id="lastname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                type="text" id="lastname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="email" className="text-white">Website</label>
-              <input type="text" id="email" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                type="text" id="email" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="payment" className="text-white">Email</label>
-              <input type="text" id="payment" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input
+                value={orgEmail}
+                onChange={(e) => setOrgEmail(e.target.value)}
+                type="text" id="payment" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="account" className="text-white">Phone Number</label>
-              <input type="text" id="account" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                type="text" id="account" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="phone" className="text-white">Social Medias</label>
-              <input type="text" placeholder='You can add up to 5 social medias' id="phone" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input
+                value={socialMedias}
+                onChange={(e) => setSocialMedias(e.target.value)}
+                type="text" placeholder='You can add up to 5 social medias' id="phone" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
           </div>
         </div>
@@ -95,19 +181,16 @@ const PartnerBus = () => {
         <div className='w-[1000px] mt-[40px]'>
           <div className="grid grid-cols-2 gap-4">
 
-
-
-
-
             <div className="flex flex-col">
               <select
                 className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white"
-                name="payment"
-                id="payment"
+                name="industry"
+                id="industry"
+                value={industry}
+                onChange={(e)=>setIndustry(e.target.value)}
               >
-                <option className='text-black' value="" disabled selected hidden>Select the name of your industry</option>
-                <option className='text-black' value="bank-transfer">Bank Transfer</option>
-                <option className='text-black' value="paypal">PayPal</option>
+                <option className='text-black' value="eco">Eco</option>
+                <option className='text-black' value="solar">Solar</option>
               </select>
             </div>
             <div className="flex flex-col"></div>
@@ -115,18 +198,27 @@ const PartnerBus = () => {
 
             <div className="flex flex-col">
               <label htmlFor="twitter" className="text-white">Tell us more about your business</label>
-              <input type="text" id="twitter" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input
+              value={q1}
+              onChange={(e)=>setq1(e.target.value)}
+              type="text" id="twitter" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="others" className="text-white">What do you want to get the most from this partnership ?</label>
-              <input type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input
+              value={q2}
+              onChange={(e)=>setq2(e.target.value)}
+              type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
 
 
 
             <div className="flex w-[1000px] flex-col">
               <label htmlFor="others" className="text-white">How did you hear about us? Through a friend or sponsor? (Attach Sponsor ID) optional</label>
-              <input type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[1000px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input
+              value={q3}
+              onChange={(e)=>setq3(e.target.value)}
+               type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[1000px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col"></div>
 
@@ -140,6 +232,8 @@ const PartnerBus = () => {
                 className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white"
                 name="payment"
                 id="payment"
+                value={paymentMethod}
+                onChange={(e)=>setPaymentMethod(e.target.value)}
               >
                 <option className='text-black' value="credit-card">Crypto</option>
                 <option className='text-black' value="bank-transfer">Bank Transfer</option>
@@ -157,6 +251,8 @@ const PartnerBus = () => {
                 type='number'
                 placeholder='0.0'
                 min={0}
+                value={amountInUSD}
+                onChange={(e) => setamountInUSD(e.target.value)}
               />
             </div>
           </div>
@@ -171,6 +267,7 @@ const PartnerBus = () => {
           <button
             className='w-[500px]  hover:bg-blue-600 hover:text-white transition-all duration-150 cursor-pointer rounded-lg h-[85px] font-bold text-white text-3xl'
             style={{ background: "linear-gradient(#29A9E3, #272C36)" }}
+            onClick={submithandler}
           >
             Make Payment
           </button>

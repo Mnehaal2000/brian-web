@@ -12,20 +12,20 @@ import { collection, getDocs,deleteDoc, updateDoc } from "firebase/firestore";
 import { db } from '../../firebase';
 import AuthContext from "../../AuthContext"
 
-const Deposit = () => {
+const Withdraw = () => {
 
     const { userRole } = useContext(AuthContext)
 
     useEffect(() => {
-        getAllDeposits();
+        getAllWithdraws();
     }, [])
 
     let data = [
     ];
 
-    const getAllDeposits = async () => {
+    const getAllWithdraws = async () => {
         try {
-            const querySnapshot = await getDocs(collection(db, "deposits"));
+            const querySnapshot = await getDocs(collection(db, "withdraws"));
             querySnapshot.forEach((doc) => {
                 if(doc.data().Status==="pending")
                 {
@@ -38,11 +38,11 @@ const Deposit = () => {
         }
     }
 
-    const handleDepositReject = async (selectedRowId) => {
+    const handleWithdrawReject = async (selectedRowId) => {
         try {
-            const depositsCollectionRef = collection(db, "deposits");
+            const withdrawCollectionRef = collection(db, "withdraws");
 
-            const querySnapshot = await getDocs(depositsCollectionRef);
+            const querySnapshot = await getDocs(withdrawCollectionRef);
 
             for (const doc of querySnapshot.docs) {
                 const data = doc.data();
@@ -63,11 +63,11 @@ const Deposit = () => {
     };
 
 
-    const handleDepositApprove = async (selectedRowId) => {
+    const handleWithdrawApprove = async (selectedRowId) => {
         try {
-            const depositsCollectionRef = collection(db, "deposits");
+            const withdrawCollectionRef = collection(db, "withdraws");
 
-            const querySnapshot = await getDocs(depositsCollectionRef);
+            const querySnapshot = await getDocs(withdrawCollectionRef);
 
             for (const doc of querySnapshot.docs) {
                 const data = doc.data();
@@ -95,8 +95,8 @@ const Deposit = () => {
         if (!Object.keys(validationErrors).length) {
             const selectedRowId = values.transactionId;
             try {
-                const depositsCollectionRef = collection(db, "deposits");
-                const querySnapshot = await getDocs(depositsCollectionRef);
+                const withdrawsCollectionRef = collection(db, "withdraws");
+                const querySnapshot = await getDocs(withdrawsCollectionRef);
     
                 for (const doc of querySnapshot.docs) {
                     const data = doc.data();
@@ -130,8 +130,8 @@ const Deposit = () => {
           }
       
           try {
-            const depositsCollectionRef = collection(db, "deposits");
-            const querySnapshot = await getDocs(depositsCollectionRef);
+            const withdrawsCollectionRef = collection(db, "withdraws");
+            const querySnapshot = await getDocs(withdrawsCollectionRef);
       
             for (const doc of querySnapshot.docs) {
               const data = doc.data();
@@ -162,13 +162,13 @@ const Deposit = () => {
                 size: 140,
             },
             {
-                accessorKey: 'depositMethod',
-                header: 'Deposit Method',
+                accessorKey: 'withdrawMethod',
+                header: 'Withdraw Method',
                 size: 140,
             },
             {
-                accessorKey: 'depositAmount',
-                header: 'Deposit Amount',
+                accessorKey: 'withdrawAmount',
+                header: 'Withdraw Amount',
             },
             {
                 accessorKey: 'transactionId',
@@ -253,8 +253,8 @@ const Deposit = () => {
                                         if (selectedRows.length === 1) {
                                             const selectedRow = selectedRows[0];
                                             const selectedRowId = selectedRow.original.transactionId;
-                                            alert('Rejecting Deposit with TransactionId: ' + selectedRowId);
-                                            handleDepositReject(selectedRowId)
+                                            alert('Rejecting Withdraw with TransactionId: ' + selectedRowId);
+                                            handleWithdrawReject(selectedRowId)
                                         } else {
                                             alert('Please select a single row to reject.');
                                         }
@@ -265,8 +265,8 @@ const Deposit = () => {
                                         if (selectedRows.length === 1) {
                                             const selectedRow = selectedRows[0];
                                             const selectedRowId = selectedRow.original.transactionId;
-                                            alert('Approving Deposit with TransactionId: ' + selectedRowId);
-                                            handleDepositApprove(selectedRowId)
+                                            alert('Approving Withdraw with TransactionId: ' + selectedRowId);
+                                            handleWithdrawApprove(selectedRowId)
                                         } else {
                                             alert('Please select a single row to approve.');
                                         }
@@ -304,4 +304,4 @@ const Deposit = () => {
     )
 }
 
-export default Deposit
+export default Withdraw

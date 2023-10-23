@@ -50,6 +50,9 @@ import Reports from './components/DashboardComponents/Reports';
 import AdminPortal from "./pages/AdminPortal"
 import AdminHome from "./components/AdminComponents/Home"
 import AdminDeposit from "./components/AdminComponents/Deposit"
+import AdminWithdraw from "./components/AdminComponents/Withdraw"
+import AdminPortfolio from "./components/AdminComponents/Portfolio"
+import AdminBank from "./components/AdminComponents/BankDetails"
 // admin components end
 
 function App() {
@@ -116,6 +119,9 @@ function App() {
                   <Route path="/adminportal/*" element={<AuthContextProvider><AdminPortal /></AuthContextProvider>} >
                     <Route path="home" element={<AuthContextProvider><AdminHome /></AuthContextProvider>} />
                     <Route path="deposit" element={<AuthContextProvider><AdminDeposit /></AuthContextProvider>} />
+                    <Route path="withdraw" element={<AuthContextProvider><AdminWithdraw /></AuthContextProvider>} />
+                    <Route path="portfolio" element={<AuthContextProvider><AdminPortfolio /></AuthContextProvider>} />
+                    <Route path="bank" element={<AuthContextProvider><AdminBank /></AuthContextProvider>} />
                     <Route path="logout" element={<AuthContextProvider><Logout /></AuthContextProvider>} />
                   </Route>)}
               </>
@@ -129,10 +135,3 @@ function App() {
 }
 
 export default App
-
-
-
-// {userRole === 'manager' && (
-//   <Route path="adminportal" element={<AuthContextProvider><AdminPortal /></AuthContextProvider>} >
-//   </Route>
-// )}

@@ -44,7 +44,7 @@ const Funding = () => {
             <div className="w-[900px] mt-[30px] mb-[30px] flex flex-col gap-[20px] justify-center">
                 <p className="text-3xl font-bold text-white">Deposit Money</p>
                 <div
-                    className="w-[783px] h-[510px] flex flex-col p-5 rounded-md"
+                    className="w-[783px] flex flex-col p-5 rounded-md"
                     style={{ background: "linear-gradient(#29A9E3, #272C36)" }}
                 >
                     <label className="text-white" htmlFor="payment">
@@ -73,17 +73,19 @@ const Funding = () => {
                         value={Amount}
                         min={0}
                     />
-                    <label className="text-white" htmlFor="payment">
-                        Transaction ID * (The id on which your paypal transaction is processed)
-                    </label>
-                    <input
-                        className="bg-transparent p-5 mt-[10px] mb-[30px] w-[600px] h-[70px] border border-white outline-none rounded-md text-lg text-white"
-                        name="transactionid"
-                        id="transactionid"
-                        type='text'
-                        onChange={(e) => setTransactionId(e.target.value)}
-                        value={TransactionId}
-                    />
+                    {paymentMethod === "PayPal" && (
+                        <><label className="text-white" htmlFor="payment">
+                            Transaction ID * (The id on which your paypal transaction is processed)
+                        </label>
+                            <input
+                                className="bg-transparent p-5 mt-[10px] mb-[30px] w-[600px] h-[70px] border border-white outline-none rounded-md text-lg text-white"
+                                name="transactionid"
+                                id="transactionid"
+                                type='text'
+                                onChange={(e) => setTransactionId(e.target.value)}
+                                value={TransactionId}
+                            />
+                        </>)}
                     <button onClick={submithandler} className='w-[199px] h-[68px] bg-[#0AC15F] text-white font-bold text-2xl rounded-lg'>{buttonStatus}</button>
                 </div>
             </div>

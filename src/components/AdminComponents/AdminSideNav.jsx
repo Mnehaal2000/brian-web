@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { MdOutlineDashboard, MdOutlineCardMembership } from "react-icons/md";
-import { TbReportAnalytics } from "react-icons/tb";
+import { MdOutlineDashboard } from "react-icons/md";
 import { AiOutlineUser } from "react-icons/ai";
-import { FiSettings } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { IoIosLogOut } from "react-icons/io";
-import { FcSupport } from "react-icons/fc";
-import { BsCart, BsBell, BsTrophy } from "react-icons/bs";
 import { RiRefund2Line } from "react-icons/ri";
-import { FaPersonCane, FaClipboardUser } from "react-icons/fa6";
-import { FaPeopleCarry } from "react-icons/fa";
+import { FaClipboardUser } from "react-icons/fa6";
+import { BsBank } from "react-icons/bs";
 import usericon from "../../assets/dashboard/profile.jpg"
 
 const AdminSideNav = () => {
@@ -42,6 +38,7 @@ const AdminSideNav = () => {
     { name: "Portfolio", link: "portfolio", icon: FaClipboardUser },
     // { name: "Green futures", link: "green-futures", icon: FaPersonCane },
     { name: "Partner", link: "partner", icon: AiOutlineUser },
+    { name: "Bank Details", link: "bank", icon: BsBank },
     // { name: "Membership", link: "membership", icon: MdOutlineCardMembership },
     // { name: "Referral", link: "referral", icon: FaPeopleCarry },
     // { name: "Notifications", link: "notifications", icon: BsBell },

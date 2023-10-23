@@ -24,7 +24,7 @@ const AdminTopBar = () => {
                 <div className="dash flex flex-col gap-1 ml-[40px]">
                     <p className='text-4xl text-white font-bold'>Admin Dashboard</p>
                     <div className="bg-black p-4 rounded-lg shadow-lg">
-                        <p className="text-green-400 text-2xl text-center">{currentTime.toLocaleTimeString().slice(0,4)} PM</p>
+                        <p className="text-green-400 text-2xl text-center">{currentTime.toLocaleTimeString().slice(0,5)} PM</p>
                     </div>
                 </div>
 
