@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { MdOutlineDashboard } from "react-icons/md";
 import { AiOutlineUser } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
@@ -8,10 +8,12 @@ import { RiRefund2Line } from "react-icons/ri";
 import { FaClipboardUser } from "react-icons/fa6";
 import { BsBank } from "react-icons/bs";
 import usericon from "../../assets/dashboard/profile.jpg"
+import AuthContext from "../../AuthContext"
 
 const AdminSideNav = () => {
   const [isFundingOpen, setIsFundingOpen] = useState(false);
   const [isWithdrawalOpen, setIsWithdrawalOpen] = useState(false);
+  const {currentUser} = useContext(AuthContext)
 
   const menus = [
     { name: "Dashboard", link: "home", icon: MdOutlineDashboard },
@@ -175,7 +177,7 @@ const AdminSideNav = () => {
 
         <div className="flex mt-[5px] flex-row gap-4 hover:ring-2 cursor-pointer transition-all justify-center items-center w-[240px] h-[70px] rounded-xl" style={{ background: "linear-gradient(#29A9E3,#232731)" }}>
           <img className="w-[46px] h-[46px] rounded-full" src={usericon} alt="" />
-          <span className="text-white font-medium text-2xl">Brian</span>
+          <span className="text-white font-medium text-[13px]">{currentUser.email?currentUser.email:"Brian"}</span>
         </div>
 
       </div>
