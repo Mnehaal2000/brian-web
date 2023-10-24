@@ -1,7 +1,8 @@
-import React, { useState, useEffect,useContext } from 'react';
-import {db} from "../../firebase"
-import { addDoc,collection } from 'firebase/firestore';
-// import AuthContext from "../../AuthContext"
+import React, { useState } from 'react';
+import { db } from "../../firebase"
+import { addDoc, collection } from 'firebase/firestore';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const PartnerInd = () => {
   const [firstName, setFirstName] = useState('');
@@ -17,7 +18,6 @@ const PartnerInd = () => {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('credit-card');
   const [amountInUSD, setAmountInUSD] = useState(0);
 
-  // const {currentUser} = useContext(AuthContext)
 
   const handlePaymentMethodChange = (e) => {
     setSelectedPaymentMethod(e.target.value);
@@ -26,7 +26,7 @@ const PartnerInd = () => {
   const submithandler = async () => {
     try {
       const invData = {
-        partner_type:"individual",
+        partner_type: "individual",
         firstName,
         lastName,
         email,
@@ -42,15 +42,23 @@ const PartnerInd = () => {
         selectedPaymentMethod,
         amountInUSD,
       };
-      // const docRef = doc(db, "users", currentUser.uid);
-      // const docSnap = await getDoc(docRef);
+
       addDoc(collection(db, 'partners'), invData)
-      .then(() => {
-          console.log('partner added to Firebase');
-      })
-      .catch((error) => {
+        .then(() => {
+          toast.success('🦄 Individual Partner Request Submitted!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        })
+        .catch((error) => {
           console.error('Error adding partner to Firebase: ', error);
-      });
+        });
     } catch (error) {
       console.log(error)
     }
@@ -158,6 +166,18 @@ const PartnerInd = () => {
           >
             Make Payment
           </button>
+          <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
           <h3 className='text-white font-light text-[24px] mt-[30px]'>Your partnership is pending, you will receive an email when approved. You can now visit the membership page to view the status of your partnership.</h3>
           <h3 className='text-white font-light text-[24px]'>By partnering as an individual you become a recommended representative, get first hand information, join our Trailblazers circle, you will receive our trailblazers exclusive package, you earn more rewards and can participate in our special deals for individual partners*</h3>
         </div>

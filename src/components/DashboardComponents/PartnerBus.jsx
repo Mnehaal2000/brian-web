@@ -25,8 +25,8 @@ const PartnerBus = () => {
   const [q1, setq1] = useState('');
   const [q2, setq2] = useState('');
   const [q3, setq3] = useState('');
-  
-  
+
+
 
   const submithandler = async () => {
     try {
@@ -59,7 +59,16 @@ const PartnerBus = () => {
 
       addDoc(collection(db, 'partners'), busData)
         .then(() => {
-          console.log('business added to Firebase');
+          toast.success('🦄 Business Partner Request Submitted!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         })
         .catch((error) => {
           console.error('Error adding business to Firebase: ', error);
@@ -187,7 +196,7 @@ const PartnerBus = () => {
                 name="industry"
                 id="industry"
                 value={industry}
-                onChange={(e)=>setIndustry(e.target.value)}
+                onChange={(e) => setIndustry(e.target.value)}
               >
                 <option className='text-black' value="eco">Eco</option>
                 <option className='text-black' value="solar">Solar</option>
@@ -199,16 +208,16 @@ const PartnerBus = () => {
             <div className="flex flex-col">
               <label htmlFor="twitter" className="text-white">Tell us more about your business</label>
               <input
-              value={q1}
-              onChange={(e)=>setq1(e.target.value)}
-              type="text" id="twitter" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+                value={q1}
+                onChange={(e) => setq1(e.target.value)}
+                type="text" id="twitter" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="others" className="text-white">What do you want to get the most from this partnership ?</label>
               <input
-              value={q2}
-              onChange={(e)=>setq2(e.target.value)}
-              type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+                value={q2}
+                onChange={(e) => setq2(e.target.value)}
+                type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
 
 
@@ -216,9 +225,9 @@ const PartnerBus = () => {
             <div className="flex w-[1000px] flex-col">
               <label htmlFor="others" className="text-white">How did you hear about us? Through a friend or sponsor? (Attach Sponsor ID) optional</label>
               <input
-              value={q3}
-              onChange={(e)=>setq3(e.target.value)}
-               type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[1000px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+                value={q3}
+                onChange={(e) => setq3(e.target.value)}
+                type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[1000px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col"></div>
 
@@ -233,7 +242,7 @@ const PartnerBus = () => {
                 name="payment"
                 id="payment"
                 value={paymentMethod}
-                onChange={(e)=>setPaymentMethod(e.target.value)}
+                onChange={(e) => setPaymentMethod(e.target.value)}
               >
                 <option className='text-black' value="credit-card">Crypto</option>
                 <option className='text-black' value="bank-transfer">Bank Transfer</option>
@@ -271,6 +280,18 @@ const PartnerBus = () => {
           >
             Make Payment
           </button>
+          <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
           <h3 className='text-white font-light text-[24px] mt-[30px]'>Your partnership is pending, you will receive an email when approved. You can now visit the membership page to view the status of your partnership.</h3>
           <h3 className='text-white font-light text-[24px]'>By partnering as a business, you enjoy a host of premium benefits, including access to our exclusive marketplace to list your products, exclusive Trailblazer Omega’s package, higher rewards, participation in exclusive deals, and much more. Embrace the future of sustainability with Trailblazers Omega.</h3>
         </div>
