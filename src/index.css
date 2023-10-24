@@ -17,6 +17,7 @@
   background-color: #198754 !important;
 }
 
+
 a {
   color: black;
 }
@@ -100,6 +101,30 @@ body {
 
 #loom-companion-mv3 {
   display: none;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: black !important;
+  font-size: 28px !important;
+}
+
+.slick-next {
+  right: -55px !important;
+}
+
+.slick-prev {
+  left: -55px !important;
+}
+
+.slick-dots {
+  bottom: -35px;
+}
+
+@media (max-width: 767px) {
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+  }
 }
 
 /* .css-1jts3tn-MuiPaper-root {

@@ -118,9 +118,9 @@ const StorePage = () => {
         },
     ]
 
-    const firstrowofcards = StoreCardData.slice(0, 6);
-    const secondrowofcards = StoreCardData.slice(6, 12);
-    const thirdrowofcards = StoreCardData.slice(12, 18);
+    const firstrowofcards = StoreCardData.slice(0, 3);
+    const secondrowofcards = StoreCardData.slice(3, 6);
+    const thirdrowofcards = StoreCardData.slice(6, 18);
 
 
     return (
@@ -156,22 +156,36 @@ const StorePage = () => {
                 </div>
                 <div className="min-h-screen flex flex-col" style={{ backgroundImage: `url(${storesecondbg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                     <div className="items flex flex-col justify-center items-center">
-                        <h3 className='text-3xl text-white mt-5 font-bold'>Trending Today</h3>
+                        <div className="promos flex flex-col justify-center mt-5 mb-3 items-center">
+                            <div className="promo flex flex-row">
+                                <span className='text-black p-1  font-bold'>Can’t find a product you’re looking for? Use the search icon to search the category or name of the product.</span>
+                            </div>
+                        </div>
+                        <div className="search flex flex-col justify-center mb-5 items-center">
+                            <div className="promo flex flex-row">
+                                <input className="w-[300px] lg:w-[800px] mt-2 mb-2 p-4 h-[50px] rounded" type="text" placeholder='Search' />
+                                <button className="bg-[#059C4B] hover:bg-[#059C4B] text-white font-bold mt-2 mb-2 h-[50px] w-[62px] lg:w-[100px] rounded flex items-center">
+                                    <span className="hidden m-auto lg:inline">Search</span>
+                                    <svg className="lg:hidden h-5 w-5 m-auto fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C9.343 3 7.088 4.81 6.307 7.324l-5.122 17.048a1 1 0 001.186 1.187l17.048-5.122A8.969 8.969 0 0012 3zm0 2a6.963 6.963 0 011.313.125L9.99 8.377a7.017 7.017 0 01-6.252 1.046l15.554-4.664a6.96 6.96 0 01-7.292 0zm0 18c-3.47 0-6.628-1.348-9.019-3.785L16.215 8.57a7.032 7.032 0 01-.263 8.486l-7.162 7.16A10.91 10.91 0 0012 23z" /></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 className='text-3xl text-black mt-5 font-bold'>Trending Today</h3>
                         <div className="grid mb-10 grid-cols-1 gap-2 lg:grid-cols-3">
                             {firstrowofcards.map((product) => (
                                 <Storecard key={product.id} product={product} />
                             ))}
                         </div>
-                        <div className="promos flex w-[300px] lg:w-[600px] flex-col justify-center items-center">
-                            <div className="promo flex flex-row">
+                        <div className="promos flex w-[300px] lg:w-[800px] flex-col gap-3 justify-center items-start">
+                            <div className="promo flex flex-row-reverse items-center gap-4">
                                 <span className='text-[#059C4B] font-bold'>Unlimited Savings! Enjoy discounts of as low as 2% on every discounted product.</span>
                                 <img className='w-[30px] h-[30px] lg:w-[40px] lg:h-[40px]' src={sale} alt="img" />
                             </div>
-                            <div className="promo flex flex-row">
+                            <div className="promo flex flex-row-reverse items-center gap-4">
                                 <span className='text-[#059C4B] font-bold'>Unmatched Discounts! And the best part? The maximum discount you can get is unlimited!</span>
                                 <img className='w-[30px] h-[30px] lg:w-[40px] lg:h-[40px]' src={sale2} alt="img2" />
                             </div>
-                            <div className="promo flex flex-row">
+                            <div className="promo flex flex-row-reverse items-center gap-4">
                                 <span className='text-[#059C4B] font-bold'>Exclusive Promo Codes! Keep an eye out for limited-time offers with special promo codes.</span>
                                 <img className='w-[30px] h-[30px] lg:w-[40px] lg:h-[40px]' src={sale3} alt="img3" />
                             </div>
@@ -180,20 +194,6 @@ const StorePage = () => {
                             {secondrowofcards.map((product) => (
                                 <Storecard key={product.id} product={product} />
                             ))}
-                        </div>
-                        <div className="promos flex flex-col justify-center mb-10 items-center">
-                            <div className="promo flex flex-row">
-                                <span className='text-[#059C4B] p-1 w-[300px] lg:w-[600px] font-bold'>Can’t find a product you’re looking for? Use the search icon to search the category or name of the product.</span>
-                            </div>
-                        </div>
-                        <div className="search flex flex-col justify-center mb-10 items-center">
-                            <div className="promo flex flex-row">
-                                <input className="w-[300px] lg:w-[800px] mt-2 mb-2 p-4 h-[50px] rounded" type="text" placeholder='Search' />
-                                <button className="bg-[#059C4B] hover:bg-[#059C4B] text-white font-bold mt-2 mb-2 h-[50px] w-[62px] lg:w-[100px] rounded flex items-center">
-                                    <span className="hidden m-auto lg:inline">Search</span>
-                                    <svg className="lg:hidden h-5 w-5 m-auto fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C9.343 3 7.088 4.81 6.307 7.324l-5.122 17.048a1 1 0 001.186 1.187l17.048-5.122A8.969 8.969 0 0012 3zm0 2a6.963 6.963 0 011.313.125L9.99 8.377a7.017 7.017 0 01-6.252 1.046l15.554-4.664a6.96 6.96 0 01-7.292 0zm0 18c-3.47 0-6.628-1.348-9.019-3.785L16.215 8.57a7.032 7.032 0 01-.263 8.486l-7.162 7.16A10.91 10.91 0 0012 23z" /></svg>
-                                </button>
-                            </div>
                         </div>
                         <div className="grid mb-10 grid-cols-1 gap-2 lg:grid-cols-3">
                             {thirdrowofcards.map((product) => (
