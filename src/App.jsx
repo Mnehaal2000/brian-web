@@ -76,19 +76,21 @@ function App() {
       <BrowserRouter>
         {!isDashboardRoute && <NavBar />}
         <Routes>
+            <Route exact path='/' element={<HomePage />} />
+            <Route exact path='/news' element={<NewsPage />} />
+            <Route exact path='/store' element={<StorePage />} />
+            <Route exact path='/empower' element={<EmpowerPage />} />
+            <Route exact path='/community' element={<CommunityPage />} />
+            <Route exact path='/startups' element={<StartupsPage />} />
+            <Route exact path='/energy' element={<EnergyPage />} />
+            <Route exact path='/environment' element={<EnvironmentPage />} />
+            <Route exact path='/whoweare' element={<WhoPage />} />
+            <Route exact path='/whatwedo' element={<WhatPage />} />
           {isLoggedIn === false ?
-            (<><Route exact path='/' element={<HomePage />} />
-              <Route exact path='/signup' element={<SignUpPage />} />
-              <Route exact path='/signin' element={<SignInPage />} />
-              <Route exact path='/news' element={<NewsPage />} />
-              <Route exact path='/store' element={<StorePage />} />
-              <Route exact path='/empower' element={<EmpowerPage />} />
-              <Route exact path='/community' element={<CommunityPage />} />
-              <Route exact path='/startups' element={<StartupsPage />} />
-              <Route exact path='/energy' element={<EnergyPage />} />
-              <Route exact path='/environment' element={<EnvironmentPage />} />
-              <Route exact path='/whoweare' element={<WhoPage />} />
-              <Route exact path='/whatwedo' element={<WhatPage />} /></>
+            ( <>
+                <Route exact path='/signup' element={<SignUpPage />} />
+                <Route exact path='/signin' element={<SignInPage />} />
+              </>
             ) :
             (
               <>
