@@ -18,14 +18,16 @@ import sale from "../assets/homepage/sale 1.png"
 import coupon from "../assets/homepage/coupon 1.png"
 import plus from "../assets/homepage/plus 5.png"
 import minus from "../assets/homepage/minus.png"
+import minus from "../assets/homepage/minus.png"
 import mobileFb from "../assets/homepage/mobile-fb.png"
 import mobileInsta from "../assets/homepage/mobile-insta.png"
 import mobileLinked from "../assets/homepage/mobile-linkedin.png"
 import mobileTele from "../assets/homepage/mobile-telegram.png"
 import mobileTwitter from "../assets/homepage/mobile-twitter.png"
+import FeedbackSlider from "../components/FeedbackSlider"
 
 
-const HomePage = () => {
+const HomePage =()=> {
   const [openFaqIndex, setOpenFaqIndex] = useState(-1);
 
   const toggleAnswer = (index) => {
@@ -71,20 +73,20 @@ const HomePage = () => {
   return (
     <>
       {/* section */}
-      <div className=" home-bg1 w-full min-h-[600px] lg:min-h-[750px] flex justify-center items-start lg:py-0 py-20 lg:items-center relative text-white text-lg lg:text-2xl">
-        <div className=" flex flex-col gap-5 lg:gap-8 items-center w-full max-w-[520px] -mt-6 text-center z-10">
+      <div className=" home-bg1 w-full min-h-[100vh] lg:min-h-[100vh] flex justify-center lg:px-0 px-3 lg:py-0 py-20 items-center relative text-white text-lg lg:text-2xl">
+        <div className=" flex flex-col gap-5 lg:gap-8 items-center w-full max-w-[520px] -mt-20 lg:-mt-6 text-center z-10">
           <h2 className=" text-3xl lg:text-[44px] lg:leading-[54px] font-bold">Energizing Today, Empowering Tomorrow!</h2>
           <p>Join us today to revolutionize the world`s ecosystem by bringing sustainable and accessible energy to all. Together, we empower people to live their best lives!</p>
-          <Link className=" text-xl lg:text-3xl py-5 px-14 rounded bg-green-secondary font-semibold w-fit">Join Us Now</Link>
+          <Link className=" text-xl lg:text-2xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit">Join Us Now</Link>
         </div>
         <img src={img1a} className=" w-[70%] lg:w-auto absolute bottom-[10px] lg:bottom-[unset] left-0" />
-        <img src={img1b} className=" w-1/2 lg:w-auto absolute bottom-0 lg:bottom-[unset] right-0" />
+        <img src={img1b} className=" w-1/2 lg:w-auto absolute bottom-0 lg:bottom-[unset] right-[14px]" />
       </div>
       {/* section */}
       <div className=" home-bg2 w-full min-h-[680px] lg:min-h-[700px] flex justify-start items-start lg:py-0 py-20 lg:items-center relative text-black text-xl lg:text-2xl px-5 lg:px-32">
         <div className=" flex flex-col gap-8 items-start w-full max-w-[614px] z-10">
           <p>While the need for energy is universal, our approach is distinctive. At Ecocentury Energy, we're not just meeting energy needs; we're transforming the energy landscape. We're not only reducing emissions; we're pioneering the path to a net-zero future. Our relentless pursuit of sustainable solutions ensures a cleaner, healthier planet for generations to come</p>
-          <Link className=" text-xl lg:text-3xl py-3 lg:py-5 px-10 lg:px-14 rounded bg-green-secondary font-semibold w-fit text-white">Learn More</Link>
+          <Link className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px]  bg-green-secondary font-semibold w-fit text-white">Learn More</Link>
         </div>
         <img src={img2} className=" w-[50%] lg:w-auto absolute bottom-3 right-3 lg:bottom-[unset] lg:right-[110px]" />
       </div>
@@ -103,7 +105,7 @@ const HomePage = () => {
         </div>
         <div className=" flex flex-col items-center gap-4 lg:gap-8 px-3 lg:px-10 text-center mt-8 lg:mt-16">
           <p>Ecocentury Energy is where purpose meets passion, and commitment meets change. Join us in energizing today and empowering tomorrow!</p>
-          <Link className=" text-xl lg:text-3xl py-3 lg:py-5 px-5 lg:px-14 rounded bg-green-secondary font-semibold w-fit text-white">Join The Revolution</Link>
+          <Link className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit text-white">Join The Revolution</Link>
         </div>
         <div className=" mt-8 lg:mt-40 pt-6 relative">
           <img src={img4} className=" absolute right-0 bottom-[-220px] lg:bottom-[unset] lg:top-0 z-0" />
@@ -159,7 +161,7 @@ const HomePage = () => {
               <p>Access resources for educators to inspire the next generation of eco-conscious leaders, Join Us in Learning and Leading:</p>
               <p>Ready to expand your energy knowledge? Join our community of learners, and together, we can pave the way for a more sustainable future. </p>
               <p className=" font-bold">Join Us In the Journey to a Brighter Future!</p>
-              <Link className=" mt-0 lg:mt-5 text-xl lg:text-3xl py-3 lg:py-5 px-8 lg:px-14 rounded bg-green-secondary font-semibold w-fit text-white">Join Us</Link>
+              <Link className=" mt-0 lg:mt-5 text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit text-white">Join Us</Link>
             </div>
           </div>
         </div>
@@ -169,7 +171,7 @@ const HomePage = () => {
         <div className=" flex flex-col gap-8 items-center w-full max-w-[820px] lg:-mt-6 text-center">
           <h2 className=" text-[26px] lg:text-[44px] font-bold">Partner with Us: Become a Trailblazers or a Trailblazers Omega?</h2>
           <p className="w-full max-w-[620px]">At Ecocentury Energy, we believe that the journey to a sustainable future is best travelled together. Our partnership opportunities are designed to welcome both individuals and businesses into our vibrant community.<span className=" block mt-4">Become a partner to enjoy a range of incentives and impact your business today!</span></p>
-          <Link className=" text-xl lg:text-3xl py-3 lg:py-5 px-8 lg:px-14 rounded bg-green-secondary font-semibold w-fit mt-0 lg:mt-5">Partner With Us</Link>
+          <Link className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit mt-0 lg:mt-5">Partner With Us</Link>
         </div>
       </div>
       {/* section */}
@@ -197,7 +199,7 @@ const HomePage = () => {
         </div>
         <div className=" flex flex-col gap-8 items-center w-full text-center">
           <p className="w-full max-w-[820px]">Start Shopping Today! Browse our store now to discover a wide range of sustainable products that align with your values and lifestyle.</p>
-          <Link className=" text-xl lg:text-3xl py-3 lg:py-5 px-8 lg:px-14 rounded bg-green-secondary font-semibold w-fit lg:mt-5">Shop With Us</Link>
+          <Link className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit lg:mt-5">Shop With Us</Link>
         </div>
       </div>
       {/* section */}
@@ -237,14 +239,15 @@ const HomePage = () => {
         </div>
         <div className=" gap-5 lg:gap-14 flex lg:flex-row flex-col items-center">
           <h2 className=" text-[24px] lg:text-[32px] font-bold text-black">Frequently Asked Questions</h2>
-          <Link className=" text-xl lg:text-3xl py-5 px-8 rounded bg-green-secondary font-semibold w-fit">Send us an Email</Link>
+         <Link className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit">Send us an Email</Link>
         </div>
       </div>
       {/* section */}
       <div className=" w-full px-5 lg:px-52 py-10 lg:py-20 flex flex-col gap-6 lg:gap-12 items-center">
         <div className=" w-full flex flex-col gap-7 lg:gap-14 items-center">
           <h2 className=" text-[30px] lg:text-[40px] text-green-secondary mx-auto">Investor Feedback</h2>
-          <div className=" w-full flex lg:flex-row flex-col lg:gap-0 gap-8 items-center lg:items-start justify-between">
+          <FeedbackSlider/>
+          {/* <div className=" w-full flex lg:flex-row flex-col lg:gap-0 gap-8 items-center lg:items-start justify-between">
             <div className=" lg:pb-0 pb-6 border-b lg:border-b-0 border-gray-300 flex flex-col items-center text-center lg:text-start lg:items-start gap-5 w-full max-w-[455px] text-xl lg:text-[28px] text-black">
               <p className=" text-[24px] lg:text-[32px] font-semibold">“ Investing with Impact ”</p>
               <p className="">“ Ecocentury Energy isn't just about returns, it's about investing with impact. I've found a partner that cares about the planet!! and my portfolio!!! ”</p>
@@ -261,8 +264,8 @@ const HomePage = () => {
                 <p className=" text-base lg:text-xl">Ecocentury Energy Investor</p>
               </div>
             </div>
-          </div>
-          <Link className=" text-xl lg:text-3xl py-5 px-8 rounded bg-green-secondary text-white font-semibold w-fit mx-auto">Add a Feedback</Link>
+          </div> */}
+         <Link className=" text-xl lg:text-2xl py-4 px-12 rounded-[36px] bg-green-secondary text-white font-semibold w-fit mx-auto">Add a Feedback</Link>
 
         </div>
         <div className=" w-full flex flex-col gap-5 lg:gap-8 items-center mt-10 lg:mt-14">

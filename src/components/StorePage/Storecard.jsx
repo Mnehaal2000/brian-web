@@ -12,7 +12,7 @@ const Storecard = ({ product }) => {
                     <div className='mt-10 flex gap-2 flex-row'>
                         <div className='flex flex-row justify-between gap-20'>
                             <span className='text-[#64AA6E] font-bold'>${product.price}</span>
-                            <button className='rounded-md text-white w-[150px] h-[40px] bg-[#64AA6E]'>Add to Cart</button>
+                            <button className='rounded-3xl text-white w-[150px] h-[40px] bg-[#64AA6E]'>Add to Cart</button>
                         </div>
                     </div>
                 </div>

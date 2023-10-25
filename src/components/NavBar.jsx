@@ -4,12 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from "../assets/navitems/LOGO.png"
-import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
         <>
-            <Navbar sticky="top" expand="md" className=' bg-white'>
+            <Navbar expand="md" className='bg-transparent hover:bg-white group absolute top-0 left-0 right-0 z-10'>
                 <Container fluid>
                     <Navbar.Brand href="/"><img src={logo} alt="logo" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -19,15 +18,15 @@ const NavBar = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="/whoweare"><span className='text-xs lg:text-sm font-bold xl:ml-[60px]'>Who we are</span></Nav.Link>
-                            <Nav.Link href="/whatwedo"><span className='text-xs lg:text-sm font-bold'>What we do</span></Nav.Link>
-                            <Nav.Link href="/energy"><span className='text-xs lg:text-sm font-bold'>Energy & Innovation</span></Nav.Link>
-                            <Nav.Link href="/startups"><span className='text-xs lg:text-sm font-bold'>Ecocentury Startups & Ventures</span></Nav.Link>
-                            <Nav.Link href="/news"><span className='text-xs lg:text-sm font-bold'>Resources</span></Nav.Link>
-                            <Nav.Link href="/store"><span className='text-xs lg:text-sm font-bold'>Store</span></Nav.Link>
+                            <Nav.Link href="/whoweare"><span className='text-xs lg:text-sm font-bold xl:ml-[60px] text-white group-hover:text-black'>Who we are</span></Nav.Link>
+                            <Nav.Link href="/whatwedo"><span className='text-xs lg:text-sm font-bold text-white group-hover:text-black'>What we do</span></Nav.Link>
+                            <Nav.Link href="/energy"><span className='text-xs lg:text-sm font-bold text-white group-hover:text-black'>Energy & Innovation</span></Nav.Link>
+                            <Nav.Link href="/startups"><span className='text-xs lg:text-sm font-bold text-white group-hover:text-black'>Ecocentury Startups & Ventures</span></Nav.Link>
+                            <Nav.Link href="/news"><span className='text-xs lg:text-sm font-bold text-white group-hover:text-black'>Resources</span></Nav.Link>
+                            <Nav.Link href="/store"><span className='text-xs lg:text-sm font-bold text-white group-hover:text-black'>Store</span></Nav.Link>
                         </Nav>
 
-                        <Nav.Link href="/signin"><Button className='xl:w-[120px]' variant="success">Login</Button></Nav.Link>
+                        <Nav.Link href="/signin"><Button className='xl:w-[120px] rounded-3xl' variant="success">Login</Button></Nav.Link>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
