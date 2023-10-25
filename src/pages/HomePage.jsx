@@ -17,6 +17,7 @@ import tag from "../assets/homepage/tag 1.png"
 import sale from "../assets/homepage/sale 1.png"
 import coupon from "../assets/homepage/coupon 1.png"
 import plus from "../assets/homepage/plus 5.png"
+import minus from "../assets/homepage/minus.png"
 import mobileFb from "../assets/homepage/mobile-fb.png"
 import mobileInsta from "../assets/homepage/mobile-insta.png"
 import mobileLinked from "../assets/homepage/mobile-linkedin.png"
@@ -24,42 +25,46 @@ import mobileTele from "../assets/homepage/mobile-telegram.png"
 import mobileTwitter from "../assets/homepage/mobile-twitter.png"
 
 
-const HomePage =()=> {
-  const [faqStates, setFaqStates] = useState(Array(8).fill(false)); // Adjust the size based on the number of FAQs
+const HomePage = () => {
+  const [openFaqIndex, setOpenFaqIndex] = useState(-1);
 
-  // Function to toggle the FAQ item
   const toggleAnswer = (index) => {
-    const newFaqStates = [...faqStates];
-    newFaqStates[index] = !newFaqStates[index];
-    setFaqStates(newFaqStates);
+    if (index === openFaqIndex) {
+      // Clicking on the currently open FAQ should close it
+      setOpenFaqIndex(-1);
+    } else {
+      // Clicking on a different FAQ should open it
+      setOpenFaqIndex(index);
+    }
   };
+
 
 
   const faqs = [
     {
       question: "What Sets Ecocentury Energy Apart in the Industry?",
       answer: "Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future. At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission",
-},
+    },
     {
       question: "What Sets Ecocentury Energy Apart in the Industry?",
       answer: "Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future. At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission",
-},
+    },
     {
       question: "What Sets Ecocentury Energy Apart in the Industry?",
       answer: "Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future. At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission",
-},
+    },
     {
       question: "What Sets Ecocentury Energy Apart in the Industry?",
       answer: "Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future. At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission",
-},
+    },
     {
       question: "What Sets Ecocentury Energy Apart in the Industry?",
       answer: "Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future. At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission",
-},
+    },
     {
       question: "What Sets Ecocentury Energy Apart in the Industry?",
       answer: "Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future. At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission",
-},
+    },
     // Add more FAQs here
   ];
 
@@ -112,38 +117,38 @@ const HomePage =()=> {
       <div className=" home-bg4 w-full min-h-[1640px] px-5 lg:px-28 pt-20 pb-16 relative text-black text-lg lg:text-2xl">
         <div className=" grid grid-cols-1 lg:grid-cols-3 space-y-6 lg:space-y-0 lg:space-x-8  text-center">
           <div className=" flex flex-col justify-start items-center gap-5">
-            <img src={efficiency} className=" w-[70px] h-[70px]"/>
+            <img src={efficiency} className=" w-[70px] h-[70px]" />
             <h3 className=" font-semibold">Maximizing Efficiency</h3>
             <p className=" text-[18px]">Efficiency is at the core of our operations. From developing innovative solutions that maximize the energy potential of every resource, to optimizing energy-intensive processes, we strive to make every unit of energy work harder, reducing waste and resource consumption</p>
           </div>
           <div className=" flex flex-col justify-start items-center gap-5">
-            <img src={energy} className=" w-[70px] h-[70px]"/>
+            <img src={energy} className=" w-[70px] h-[70px]" />
             <h3 className=" font-semibold">Enhancing Energy Access</h3>
             <p className=" text-[18px]">We are dedicated to making energy more accessible and affordable for all, ensuring that more people can enjoy its benefits. Through continuous innovation, we aim to bridge the energy divide</p>
           </div>
           <div className=" flex flex-col justify-start items-center  gap-5">
-            <img src={plant} className=" w-[70px] h-[70px]"/>
+            <img src={plant} className=" w-[70px] h-[70px]" />
             <h3 className=" font-semibold">Mitigating Emissions</h3>
             <p className=" text-[18px]">At Ecocentury Energy, we understand our responsibility in managing climate-change risks. We are committed to reducing our carbon footprint and minimizing emissions to create a sustainable, low-impact future for our planet.</p>
           </div>
           <div className=" flex flex-col justify-start items-center gap-5">
-            <img src={earth} className=" w-[70px] h-[70px]"/>
+            <img src={earth} className=" w-[70px] h-[70px]" />
             <h3 className=" font-semibold">Fostering Sustainability</h3>
             <p className=" text-[18px]">From the local communities to the global economy we actively support long-term economic growth. Through community engagement and empowerment, we’re helping to create a more resilient, sustainable world</p>
           </div>
           <div className=" flex flex-col justify-start items-center  gap-5">
-            <img src={hands} className=" w-[70px] h-[70px]"/>
+            <img src={hands} className=" w-[70px] h-[70px]" />
             <h3 className=" font-semibold">Promoting Conservation</h3>
             <p className=" text-[18px]">Our dedication to conservation ensures that we safeguard the environment for future generations</p>
           </div>
           <div className=" flex flex-col justify-start items-center gap-5">
-            <img src={money} className=" w-[70px] h-[70px]"/>
+            <img src={money} className=" w-[70px] h-[70px]" />
             <h3 className=" font-semibold">Invest with purpose.</h3>
             <p className=" text-[18px]">Our investment opportunities provide a sustainable return for you, while also contributing to a healthier planet. Together, we can make a difference</p>
           </div>
         </div>
         <div className=" flex lg:flex-row flex-col items-center mt-10 lg:mt-28">
-          <img className=" lg:w-1/2" src={img5}/>
+          <img className=" lg:w-1/2" src={img5} />
           <div className=" lg:w-1/2">
             <h2 className=" text-[30px] lg:text-[44px] font-bold mb-2 lg:mb-5">Our Commitment</h2>
             <div className=" flex flex-col gap-4">
@@ -175,17 +180,17 @@ const HomePage =()=> {
         </div>
         <div className=" grid grid-cols-1 lg:grid-cols-3 space-x-0 lg:space-x-8 lg:space-y-0 space-y-6 text-center">
           <div className=" flex flex-col justify-start items-center gap-5">
-            <img src={tag} className=" w-[70px] h-[70px]"/>
+            <img src={tag} className=" w-[70px] h-[70px]" />
             <h3 className=" font-semibold">Unbeatable Prices</h3>
             <p className=" text-[18px]">Enjoy competitive pricing that ensures you get the best value for your money.</p>
           </div>
           <div className=" flex flex-col justify-start items-center gap-5">
-            <img src={sale} className=" w-[70px] h-[70px]"/>
+            <img src={sale} className=" w-[70px] h-[70px]" />
             <h3 className=" font-semibold">Endless Discounts</h3>
             <p className=" text-[18px]">Save even more with discounts as low as 2% off. The amount of discount you can receive is limitless, allowing you to shop sustainably without breaking the bank.</p>
           </div>
           <div className=" flex flex-col justify-start items-center  gap-5">
-            <img src={coupon} className=" w-[70px] h-[70px]"/>
+            <img src={coupon} className=" w-[70px] h-[70px]" />
             <h3 className=" font-semibold">Exclusive Promo Codes</h3>
             <p className=" text-[18px]">Elevate your shopping experience with our exclusive promo codes. Unlock additional savings and special offers as you embark on your eco-conscious journey.</p>
           </div>
@@ -207,13 +212,13 @@ const HomePage =()=> {
                 className="table-question cursor-pointer"
                 onClick={() => toggleAnswer(index)}
               >
-                <div className=" flex items-center justify-between">
+                <div className="flex items-center justify-between">
                   {faq.question}
-                  <span><img className='inline-flex mr-2' src={plus} alt="" /></span>
+                  <span><img className='inline-flex mr-2' src={index === openFaqIndex ? minus : plus} alt="" /></span>
                 </div>
               </div>
               <Transition
-                show={faqStates[index]}
+                show={index === openFaqIndex} // Show only if the index matches the openFaqIndex
                 enter="transition-all ease-in-out duration-500 delay-[200ms]"
                 enterFrom="opacity-0 translate-y-6"
                 enterTo="opacity-100 translate-y-0"
@@ -221,19 +226,18 @@ const HomePage =()=> {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
               >
-                <div
-                  className={`table-answer mt-2 mb-2 mr-2 ml-2`}
-                >
+                <div className={`table-answer mt-2 mb-2 mr-2 ml-2`}>
                   {faq.answer}
                 </div>
               </Transition>
             </div>
           ))}
 
+
         </div>
         <div className=" gap-5 lg:gap-14 flex lg:flex-row flex-col items-center">
           <h2 className=" text-[24px] lg:text-[32px] font-bold text-black">Frequently Asked Questions</h2>
-         <Link className=" text-xl lg:text-3xl py-5 px-8 rounded bg-green-secondary font-semibold w-fit">Send us an Email</Link>
+          <Link className=" text-xl lg:text-3xl py-5 px-8 rounded bg-green-secondary font-semibold w-fit">Send us an Email</Link>
         </div>
       </div>
       {/* section */}
@@ -258,7 +262,7 @@ const HomePage =()=> {
               </div>
             </div>
           </div>
-         <Link className=" text-xl lg:text-3xl py-5 px-8 rounded bg-green-secondary text-white font-semibold w-fit mx-auto">Add a Feedback</Link>
+          <Link className=" text-xl lg:text-3xl py-5 px-8 rounded bg-green-secondary text-white font-semibold w-fit mx-auto">Add a Feedback</Link>
 
         </div>
         <div className=" w-full flex flex-col gap-5 lg:gap-8 items-center mt-10 lg:mt-14">
@@ -272,15 +276,15 @@ const HomePage =()=> {
             <div className=" w-full max-w-[256px] flex flex-col items-center justify-center text-center gap-1 lg:gap-8 text-xl text-green-secondary">
               <img src={mobileFb} />
               <p>Join our green revolution on Facebook</p>
-            </div>            
+            </div>
             <div className=" w-full max-w-[256px] flex flex-col items-center justify-center text-center gap-1 lg:gap-8 text-xl text-green-secondary">
               <img src={mobileTwitter} />
               <p>Tweet along with us for sustainability updates on</p>
-            </div>            
+            </div>
             <div className=" w-full max-w-[256px] flex flex-col items-center justify-center text-center gap-1 lg:gap-8 text-xl text-green-secondary">
               <img src={mobileTele} />
               <p>Stay in the loop with our Telegram channel</p>
-            </div>            
+            </div>
             <div className=" w-full max-w-[256px] flex flex-col items-center justify-center text-center gap-1 lg:gap-8 text-xl text-green-secondary">
               <img src={mobileLinked} />
               <p>Connect with us professionally on LinkedIn</p>
