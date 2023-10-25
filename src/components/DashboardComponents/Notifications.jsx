@@ -102,7 +102,7 @@ const Notifications = () => {
 
   return (
     <>
-      <div className="main w-full mb-[90px] flex flex-col justify-center items-center">
+      <div className="main w-[1000px] lg:w-full mb-[90px] flex flex-col justify-center items-center">
         <div className="w-[900px] mt-[30px]">
           <h3 className='text-white font-bold text-2xl'>Notifications</h3>
         </div>

@@ -9,7 +9,7 @@ const GreenFutures = () => {
 
     return (
         <>
-            <div className="main w-[full] mt-[20px] mb-[50px] flex flex-col justify-center items-center">
+            <div className="main w-[1000px] lg:w-full mt-[20px] mb-[50px] flex flex-col justify-center items-center">
                 <div className='w-[900px] flex flex-col justify-start'>
                     <h3 className='font-bold text-white text-2xl'>Your Eco-Friendly Retirement Path</h3>
                     <p className='text-white mt-[20px] font-light'>Our retirement portfolio options are meticulously curated to align with your retirement goals while contributing to a greener planet. By choosing Green Futures, you're making a statement – one that resonates with eco-consciousnes s and financial prudence</p>

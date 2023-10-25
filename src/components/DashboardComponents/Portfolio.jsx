@@ -54,7 +54,7 @@ const Portfolio = () => {
 
     return (
         <>
-            <div className="main w-[full] mt-[20px] mb-[50px] flex flex-col justify-center items-center">
+            <div className="main w-[1000px] lg:w-full mt-[20px] mb-[50px] flex flex-col justify-center items-center">
                 <div className='w-[900px] flex flex-col justify-start'>
                     <PaymentOptions />
                     <div className='flex flex-col'>

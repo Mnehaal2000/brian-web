@@ -16,7 +16,7 @@ import s4 from "../../assets/dashboard/home/s4.png"
 const Home = () => {
   return (
     <>
-      <div className="main w-full flex flex-col justify-center items-center">
+      <div className="main w-[1000px] lg:w-full flex flex-col justify-center items-center">
         <div className='w-[900px] mt-[30px] flex flex-row lg:gap-[200px] justify-center'>
           <div className="w-[493px] h-[110px] flex justify-around flex-row p-5 rounded-md" style={{ background: "linear-gradient(to right, #29A9E3, #272C36)" }}>
             <div>

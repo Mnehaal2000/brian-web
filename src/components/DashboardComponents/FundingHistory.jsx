@@ -102,7 +102,7 @@ const FundingHistory = () => {
 
     return (
         <>
-            <div className="main w-full flex flex-col justify-center items-center">
+            <div className="main w-[1000px] lg:w-full flex flex-col justify-center items-center">
                 <div className="w-[900px] mt-[30px] flex flex-col gap-[20px] justify-center">
                     <p className="text-3xl font-bold text-white">Deposit History</p>
                     <div

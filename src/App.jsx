@@ -53,6 +53,7 @@ import AdminDeposit from "./components/AdminComponents/Deposit"
 import AdminWithdraw from "./components/AdminComponents/Withdraw"
 import AdminPortfolio from "./components/AdminComponents/Portfolio"
 import AdminBank from "./components/AdminComponents/BankDetails"
+import AdminPartner from "./components/AdminComponents/Partner"
 // admin components end
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
   const isDashboardRoute = window.location.pathname.startsWith('/dashboard') || window.location.pathname.startsWith('/adminportal');
   const { currentUser, userRole } = useContext(AuthContext)
   const [isLoggedIn, setisLoggedIn] = useState(false);
+  
 
   useEffect(() => {
     if (currentUser && Object.keys(currentUser).length !== 0) {
@@ -76,21 +78,22 @@ function App() {
       <BrowserRouter>
         {!isDashboardRoute && <NavBar />}
         <Routes>
-            <Route exact path='/' element={<HomePage />} />
-            <Route exact path='/news' element={<NewsPage />} />
-            <Route exact path='/store' element={<StorePage />} />
-            <Route exact path='/empower' element={<EmpowerPage />} />
-            <Route exact path='/community' element={<CommunityPage />} />
-            <Route exact path='/startups' element={<StartupsPage />} />
-            <Route exact path='/energy' element={<EnergyPage />} />
-            <Route exact path='/environment' element={<EnvironmentPage />} />
-            <Route exact path='/whoweare' element={<WhoPage />} />
-            <Route exact path='/whatwedo' element={<WhatPage />} />
+          <Route exact path='/' element={<HomePage />} />
+          <Route exact path='/news' element={<NewsPage />} />
+          <Route exact path='/store' element={<StorePage />} />
+          <Route exact path='/empower' element={<EmpowerPage />} />
+          <Route exact path='/community' element={<CommunityPage />} />
+          <Route exact path='/startups' element={<StartupsPage />} />
+          <Route exact path='/energy' element={<EnergyPage />} />
+          <Route exact path='/environment' element={<EnvironmentPage />} />
+          <Route exact path='/whoweare' element={<WhoPage />} />
+          <Route exact path='/whatwedo' element={<WhatPage />} />
           {isLoggedIn === false ?
-            ( <>
-                <Route exact path='/signup' element={<SignUpPage />} />
-                <Route exact path='/signin' element={<SignInPage />} />
-              </>
+            (<>
+              <Route exact path='/signup' element={<SignUpPage />} />
+              <Route exact path='/signin' element={<SignInPage />} />
+              <Route path="*" element={<SignInPage />} />
+            </>
             ) :
             (
               <>
@@ -123,6 +126,7 @@ function App() {
                     <Route path="deposit" element={<AuthContextProvider><AdminDeposit /></AuthContextProvider>} />
                     <Route path="withdraw" element={<AuthContextProvider><AdminWithdraw /></AuthContextProvider>} />
                     <Route path="portfolio" element={<AuthContextProvider><AdminPortfolio /></AuthContextProvider>} />
+                    <Route path="partner" element={<AuthContextProvider><AdminPartner /></AuthContextProvider>} />
                     <Route path="bank" element={<AuthContextProvider><AdminBank /></AuthContextProvider>} />
                     <Route path="logout" element={<AuthContextProvider><Logout /></AuthContextProvider>} />
                   </Route>)}

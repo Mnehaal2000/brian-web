@@ -66,7 +66,7 @@ const PartnerInd = () => {
 
   return (
     <>
-      <div className="main w-full flex mb-[50px] flex-col justify-center items-center">
+      <div className="main w-[1000px] lg:w-full flex mb-[50px] flex-col justify-center items-center">
         <div className='title w-full mt-[40px] flex flex-row justify-start'>
           <p className='text-white text-2xl font-bold ml-[40px]'>Become an Individual Partner</p>
         </div>
