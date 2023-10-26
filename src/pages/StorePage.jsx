@@ -125,7 +125,7 @@ const StorePage = () => {
 
     return (
         <>
-            <div className="main w-full">
+            <div className="main w-full ">
                 <div
                     className="h-[622px] flex flex-col relative"
                     style={{
@@ -157,16 +157,18 @@ const StorePage = () => {
                 <div className="min-h-screen flex flex-col" style={{ backgroundImage: `url(${storesecondbg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                     <div className="items flex flex-col justify-center items-center">
                         <div className="promos flex flex-col justify-center mt-5 mb-3 items-center">
-                            <div className="promo flex flex-row">
+                            <div className="promo flex flex-row px-5 text-center">
                                 <span className='text-black p-1  font-bold'>Can’t find a product you’re looking for? Use the search icon to search the category or name of the product.</span>
                             </div>
                         </div>
                         <div className="search flex flex-col justify-center mb-5 items-center">
                             <div className="promo flex flex-row">
                                 <input className="w-[300px] lg:w-[800px] mt-2 mb-2 p-4 h-[50px] rounded" type="text" placeholder='Search' />
-                                <button className="bg-[#059C4B] hover:bg-[#059C4B] text-white font-bold mt-2 mb-2 h-[50px] w-[62px] lg:w-[100px] rounded flex items-center">
+                                <button className="bg-[#059C4B] hover:bg-[#059C4B] text-white font-bold mt-2 mb-2 h-[50px] w-[62px] lg:w-[100px] rounded flex justify-center items-center">
                                     <span className="hidden m-auto lg:inline">Search</span>
-                                    <svg className="lg:hidden h-5 w-5 m-auto fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C9.343 3 7.088 4.81 6.307 7.324l-5.122 17.048a1 1 0 001.186 1.187l17.048-5.122A8.969 8.969 0 0012 3zm0 2a6.963 6.963 0 011.313.125L9.99 8.377a7.017 7.017 0 01-6.252 1.046l15.554-4.664a6.96 6.96 0 01-7.292 0zm0 18c-3.47 0-6.628-1.348-9.019-3.785L16.215 8.57a7.032 7.032 0 01-.263 8.486l-7.162 7.16A10.91 10.91 0 0012 23z" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" className="text-white lg:hidden" fill="currentColor" viewBox="0 0 50 50">
+                                        <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
+                                    </svg>
                                 </button>
                             </div>
                         </div>

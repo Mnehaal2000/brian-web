@@ -7,7 +7,7 @@ import img3 from "../assets/whatpage/3.png"
 const WhatPage = () => {
     return (
         <>
-            <div className="min-h-screen flex flex-col" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+            <div className="min-h-screen flex flex-col pt-20 " style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                 <div className="first w-full mt-[20px] flex flex-col lg:flex-row items-center justify-around">
                     <div className="heading w-[300px] lg:w-[580px]">
                         <h3 className='font-bold text-3xl'>WHAT WE DO</h3>

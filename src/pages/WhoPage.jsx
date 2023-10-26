@@ -9,7 +9,7 @@ import img4 from "../assets/whopage/4.png"
 const WhoPage = () => {
     return (
         <>
-            <div className="min-h-screen gap-10 flex flex-col" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+            <div className="min-h-screen gap-10 flex flex-col pt-20" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                 <div className="first w-full mt-[20px] flex flex-col lg:flex-row items-center justify-around">
                     <div className="heading w-[300px] lg:w-[680px]">
                         <h3 className='font-bold text-3xl'>WHO WE ARE</h3>

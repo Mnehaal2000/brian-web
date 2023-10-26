@@ -153,7 +153,7 @@ const HomePage =()=> {
         <img src={img2} className=" w-[50%] lg:w-auto absolute bottom-3 right-3 lg:bottom-[unset] lg:right-[110px]" />
       </div>
       {/* section */}
-      <div className=" home-bg3 w-full min-h-[1480px] px-5 lg:px-32 pb-32 pt-12 relative text-black text-lg lg:text-2xl">
+      <div className=" home-bg3 w-full min-h-[750px] px-5 lg:px-32 pb-20 pt-12 relative text-black text-lg lg:text-2xl">
         <img src={img3} className=" lg:opacity-100 opacity-60 absolute top-[30px] left-1/2 transform -translate-x-1/2 z-0" />
         <div className=" flex lg:flex-row flex-col lg:gap-0 gap-8 justify-between items-center z-10">
           <div className=" w-full lg:max-w-[420px] flex flex-col gap-4 lg:gap-7 z-10">
@@ -169,16 +169,17 @@ const HomePage =()=> {
           <p>Ecocentury Energy is where purpose meets passion, and commitment meets change. Join us in energizing today and empowering tomorrow!</p>
           <Link to="/signup" className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit text-white">Join The Revolution</Link>
         </div>
-        <div className=" mt-8 lg:mt-40 pt-6 relative">
-          <img src={img4} className=" absolute right-0 bottom-[-220px] lg:bottom-[unset] lg:top-0 z-0" />
+
+      </div>
+      {/* section */}
+      <div className=" home-bg4 w-full min-h-[1640px] px-5 lg:px-28 pt-20 pb-16 relative text-black text-lg lg:text-2xl">
+      <div className=" mt-8 mb-60 lg:mb-24 relative">
+          <img src={img4} className=" absolute right-0 bottom-[-240px] lg:bottom-[unset] lg:top-[-40px] z-0" />
           <div className=" w-full max-w-[440px] flex flex-col gap-3 lg:gap-7 z-10">
             <h3 className=" text-[32px] font-bold z-10">Our Commitment</h3>
             <p className=" z-10">At Ecocentury Energy, our purpose is profound - to nurture a thriving environment for every being on this planet. We are committed to energizing nature and ensuring that our world thrives in its finest form. We aspire to create a renowned lifestyle that transcends ordinary living.</p>
           </div>
         </div>
-      </div>
-      {/* section */}
-      <div className=" home-bg4 w-full min-h-[1640px] px-5 lg:px-28 pt-20 pb-16 relative text-black text-lg lg:text-2xl">
         <div className=" grid grid-cols-1 lg:grid-cols-3 space-y-6 lg:space-y-0 lg:space-x-8  text-center">
           <div className=" flex flex-col justify-start items-center gap-5">
             <img src={efficiency} className=" w-[70px] h-[70px]" />
