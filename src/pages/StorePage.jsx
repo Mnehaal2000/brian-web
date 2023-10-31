@@ -1,122 +1,149 @@
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import storefirstbg from '../assets/storepage/storefirstbg.png';
 import storesecondbg from '../assets/storepage/storesecondbg.png';
 import Storecard from '../components/StorePage/Storecard';
 import sale from '../assets/storepage/sale.png'
 import sale2 from '../assets/storepage/sale2.png'
 import sale3 from '../assets/storepage/sale3.png'
+import { db } from "../firebase"
+import { collection, getDocs } from "firebase/firestore";
 
 const StorePage = () => {
-    const StoreCardData = [
-        {
-            id:1,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:2,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:3,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:4,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:5,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:6,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:7,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:8,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:9,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:10,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:11,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:12,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:13,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:14,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:15,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:16,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:17,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-        {
-            id:18,
-            name: "Product Name",
-            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
-            price: "246"
-        },
-    ]
+
+    // const StoreCardData = [
+    //     {
+    //         id:1,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:2,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:3,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:4,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:5,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:6,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:7,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:8,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:9,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:10,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:11,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:12,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:13,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:14,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:15,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:16,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:17,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    //     {
+    //         id:18,
+    //         name: "Product Name",
+    //         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    //         price: "246"
+    //     },
+    // ]
+
+    const [StoreCardData, setStoreCardData] = useState([]);
+
+    let data= []
+
+    const getItems = async () => {
+        try {
+            const querydata = await getDocs(collection(db, "store"));
+            querydata.forEach((doc)=>{
+                const d = {
+                    id:doc.id,
+                    ...doc.data(),
+                }
+                data.push(d)
+            })
+            setStoreCardData(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        getItems()
+    }, [])
 
     const firstrowofcards = StoreCardData.slice(0, 3);
     const secondrowofcards = StoreCardData.slice(3, 6);

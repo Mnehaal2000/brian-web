@@ -55,6 +55,7 @@ import AdminPortfolio from "./components/AdminComponents/Portfolio"
 import AdminBank from "./components/AdminComponents/BankDetails"
 import AdminPartner from "./components/AdminComponents/Partner"
 import News from './components/AdminComponents/News';
+import Store from './components/AdminComponents/Store';
 // admin components end
 
 function App() {
@@ -131,6 +132,7 @@ function App() {
                     <Route path="bank" element={<AuthContextProvider><AdminBank /></AuthContextProvider>} />
                     <Route path="logout" element={<AuthContextProvider><Logout /></AuthContextProvider>} />
                     <Route path="news" element={<AuthContextProvider><News /></AuthContextProvider>} />
+                    <Route path="store" element={<AuthContextProvider><Store /></AuthContextProvider>} />
                   </Route>)}
               </>
             )}
