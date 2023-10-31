@@ -6,6 +6,7 @@ import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { IoIosLogOut } from "react-icons/io";
 import { RiRefund2Line } from "react-icons/ri";
 import { FaClipboardUser } from "react-icons/fa6";
+import { BiNews } from "react-icons/bi";
 import { BsBank } from "react-icons/bs";
 import usericon from "../../assets/dashboard/profile.jpg"
 import AuthContext from "../../AuthContext"
@@ -48,6 +49,7 @@ const AdminSideNav = () => {
     // { name: "Reports", link: "reports", icon: TbReportAnalytics, margin: true },
     // { name: "Support", link: "support", icon: FcSupport },
     // { name: "Settings", link: "settings", icon: FiSettings },
+    { name: "News", link: "news", icon:BiNews},
     { name: "Logout", link: "logout", icon: IoIosLogOut },
   ];
 
