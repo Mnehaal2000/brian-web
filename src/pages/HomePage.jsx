@@ -44,28 +44,91 @@ const HomePage =()=> {
   const faqs = [
     {
       question: "What Sets Ecocentury Energy Apart in the Industry?",
-      answer: "Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future. At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission",
+      answer: (
+        <>
+          Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future.<br></br>
+          At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission
+
+        </>
+      ),
     },
     {
-      question: "What Sets Ecocentury Energy Apart in the Industry?",
-      answer: "Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future. At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission",
+      
+      question: "How Do I Get Started with My First Investment?",
+      answer: (
+        <>
+          To get started with your first investment through EcocenturyEnergy, first you'll need to become a member and to set up your EcocenturyEnergy account. To do so, click the <Link to="/signup" className=" font-bold underline">Sign Up</Link> button on the homepage. After completing your investor profile and paying your membership fee you'll be able to participate in an investment portfolio. <br></br> When you are ready to make your first investment, log in to your EcocenturyEnergy account, visit the portfolio page, and then click the "Invest" button. Following that, choose your desired allocation amount by entering your desired amount for a particular portfolio and then click "Invest" to confirm your investment, your investment will be initiated, and you'll be on your way to participating in sustainable and profitable investments with EcocenturyEnergy.
+        </>
+      ),
     },
     {
-      question: "What Sets Ecocentury Energy Apart in the Industry?",
-      answer: "Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future. At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission",
+      question: "How Are EcocenturyEnergy Returns Generated?",
+      answer: (
+        <>
+          At EcocenturyEnergy, our commitment to sustainability and innovation drives the way we generate returns for our investors. Here's an overview of our approach:
+          <br></br>
+          • Strategic Investments: We invest funds through EcocenturyEnergy and EcocenturyEnergy Funds by carefully analyzing cutting-edge technologies, reinvesting in ourselves, and partnering with communities worldwide. We also invest in well-performing companies and startups with exceptional potential. Many of the startups we support are aligned with our mission, and are invested in us, creating a mutually beneficial ecosystem that generates revenue and purpose.
+          <br></br>
+          • Project-Based Returns: Our returns are generated through investments in projects that promote sustainability and benefit local communities globally. These projects not only drive financial returns but also contribute to our mission of empowering lives and creating a sustainable environment.
+          <br></br>
+          • Member Support: We receive support and voluntary contributions from our members who share our vision and are passionate about supporting our causes and projects. These contributions play a vital role in funding our initiatives and making a positive impact on our projects.
+          <br></br>
+          • Leveraging Marketplaces: Our marketplaces and businesses contribute to generating returns. We strive to create an ecosystem where businesses grow, thrive, and benefit from being part of the Ecocentury community. Fees and charges associated with our services are designed to ensure efficient and cost-effective operations.
+          <br></br>
+          • Transparency and Sustainability: We are dedicated to transparency and sustainability in our investment strategies. Our aim is to maximize returns for our investors while fostering a sustainable world. We continuously refine our strategies to achieve these goals and deliver the best possible returns.
+          <br></br>
+          <br></br>
+          At EcocenturyEnergy, we believe in the power of strategic investments, purpose-driven projects, member support, and transparent practices to generate returns that benefit both our investors and the planet. We remain committed to creating a sustainable and prosperous future for all.
+        </>
+      ),
     },
     {
-      question: "What Sets Ecocentury Energy Apart in the Industry?",
-      answer: "Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future. At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission",
+      
+      question: "When and How Will I Receive Returns from My Investments?",
+      answer: (
+        <>
+          Returns from investments are typically paid out monthly. You can initiate a withdrawal from the 28th to the 31st of every month. The amount of your returns depends on your investment allocation (annual). You can track all payments and distributions in our platform. You have the flexibility to withdraw monthly or to reinvest to reinvest annually.
+          <br></br>
+          We process withdrawals monthly, typically from the 28th to the 31st of each month.You have the flexibility to initiate withdrawals on any of these dates, with all withdrawals completed within this timeframe.
+          <br></br>
+          The annual distribution size varies based on your investment allocation.
+          <br></br>
+          For transparency, you can conveniently track all payments and withdrawals through our platform.
+          <br></br>
+          You can transfer affiliate compensations to your balance at your convenience. You can choose to withdraw them on the same dates as interest withdrawals or reinvest in any portfolio up to the investment threshold.
+          <br></br>
+          Our retirement investments are geared towards long-term planning. A minimum fixed term of five years is required. Over this period, you earn an annual interest rate of x3.5 on your investment.
+          <br></br>
+          Withdrawals from retirement investments can be made after the minimum five-year term, providing a solid foundation for your retirement savings.
+        </>
+      ),
     },
     {
-      question: "What Sets Ecocentury Energy Apart in the Industry?",
-      answer: "Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future. At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission",
+      
+      question: "What Types of Partnerships Does Ecocentury Offer?",
+      answer: (
+        <>
+          We offer two types of partnerships; Individual Partnership and business partnership, whether you're an individual looking to make a meaningful impact or a business aiming for growth while aligning with our mission. You can become a Trailblazer or a Trailblazer Omega to propel your business to greater heights and enjoy a range of incentives .
+          <br></br>
+          <br></br>
+          For detailed information about partnership tiers, and comprehensive benefits, visit our dedicated Partners page to begin your journey with us and make a positive impact 
+        </>
+      ),
     },
     {
-      question: "What Sets Ecocentury Energy Apart in the Industry?",
-      answer: "Our six years of experience in the energy industry, contributing both locally and globally to economic growth, speaks volumes about our unwavering commitment to sustainability, innovation, and a brighter future. At Ecocentury Energy, we are deeply dedicated to a sustainable future. We firmly believe that accessible, affordable, and eco-friendly energy forms the bedrock of global progress. To realize this vision, we spare no effort in investing in cutting-edge technology and forging partnerships with communities worldwide. Together, we are crafting a world powered by superior energy solutions, with a focus on; Maximizing efficiency, Enhancing energy access, Mitigating emissions, Fostering sustainability, powering lives and giving our Investments a mission",
+      
+      question: "What Sustainable Initiatives Does Ecocentury Support?",
+      answer: (
+        <>
+          At Ecocentury, we are committed to fostering a sustainable future for all. We actively support a range of initiatives dedicated to environmental conservation, clean energy, and community empowerment.
+          <br></br>
+          <br></br>
+          By supporting these sustainable initiatives, Ecocentury is not only making a difference but also inviting our members and partners to join us in shaping a world powered by better energy solutions. Your support and collaboration are vital as we work towards a more sustainable and prosperous future together.
+        </>
+      ),
     },
+
+
     // Add more FAQs here
   ];
 
@@ -76,7 +139,7 @@ const HomePage =()=> {
         <div className=" flex flex-col gap-5 lg:gap-8 items-center w-full max-w-[520px] -mt-20 lg:-mt-6 text-center z-10">
           <h2 className=" text-3xl lg:text-[44px] lg:leading-[54px] font-bold">Energizing Today, Empowering Tomorrow!</h2>
           <p>Join us today to revolutionize the world`s ecosystem by bringing sustainable and accessible energy to all. Together, we empower people to live their best lives!</p>
-          <Link className=" text-xl lg:text-2xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit">Join Us Now</Link>
+          <Link to="/signup" className=" text-xl lg:text-2xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit">Join Us Now</Link>
         </div>
         <img src={img1a} className=" w-[70%] lg:w-auto absolute bottom-[10px] lg:bottom-[unset] left-0" />
         <img src={img1b} className=" w-1/2 lg:w-auto absolute bottom-0 lg:bottom-[unset] right-[14px]" />
@@ -90,7 +153,7 @@ const HomePage =()=> {
         <img src={img2} className=" w-[50%] lg:w-auto absolute bottom-3 right-3 lg:bottom-[unset] lg:right-[110px]" />
       </div>
       {/* section */}
-      <div className=" home-bg3 w-full min-h-[1480px] px-5 lg:px-32 pb-32 pt-12 relative text-black text-lg lg:text-2xl">
+      <div className=" home-bg3 w-full min-h-[750px] px-5 lg:px-32 pb-20 pt-12 relative text-black text-lg lg:text-2xl">
         <img src={img3} className=" lg:opacity-100 opacity-60 absolute top-[30px] left-1/2 transform -translate-x-1/2 z-0" />
         <div className=" flex lg:flex-row flex-col lg:gap-0 gap-8 justify-between items-center z-10">
           <div className=" w-full lg:max-w-[420px] flex flex-col gap-4 lg:gap-7 z-10">
@@ -104,18 +167,19 @@ const HomePage =()=> {
         </div>
         <div className=" flex flex-col items-center gap-4 lg:gap-8 px-3 lg:px-10 text-center mt-8 lg:mt-16">
           <p>Ecocentury Energy is where purpose meets passion, and commitment meets change. Join us in energizing today and empowering tomorrow!</p>
-          <Link className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit text-white">Join The Revolution</Link>
+          <Link to="/signup" className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit text-white">Join The Revolution</Link>
         </div>
-        <div className=" mt-8 lg:mt-40 pt-6 relative">
-          <img src={img4} className=" absolute right-0 bottom-[-220px] lg:bottom-[unset] lg:top-0 z-0" />
+
+      </div>
+      {/* section */}
+      <div className=" home-bg4 w-full min-h-[1640px] px-5 lg:px-28 pt-20 pb-16 relative text-black text-lg lg:text-2xl">
+      <div className=" mt-8 mb-60 lg:mb-24 relative">
+          <img src={img4} className=" absolute right-0 bottom-[-240px] lg:bottom-[unset] lg:top-[-40px] z-0" />
           <div className=" w-full max-w-[440px] flex flex-col gap-3 lg:gap-7 z-10">
             <h3 className=" text-[32px] font-bold z-10">Our Commitment</h3>
             <p className=" z-10">At Ecocentury Energy, our purpose is profound - to nurture a thriving environment for every being on this planet. We are committed to energizing nature and ensuring that our world thrives in its finest form. We aspire to create a renowned lifestyle that transcends ordinary living.</p>
           </div>
         </div>
-      </div>
-      {/* section */}
-      <div className=" home-bg4 w-full min-h-[1640px] px-5 lg:px-28 pt-20 pb-16 relative text-black text-lg lg:text-2xl">
         <div className=" grid grid-cols-1 lg:grid-cols-3 space-y-6 lg:space-y-0 lg:space-x-8  text-center">
           <div className=" flex flex-col justify-start items-center gap-5">
             <img src={efficiency} className=" w-[70px] h-[70px]" />
@@ -160,7 +224,7 @@ const HomePage =()=> {
               <p>Access resources for educators to inspire the next generation of eco-conscious leaders, Join Us in Learning and Leading:</p>
               <p>Ready to expand your energy knowledge? Join our community of learners, and together, we can pave the way for a more sustainable future. </p>
               <p className=" font-bold">Join Us In the Journey to a Brighter Future!</p>
-              <Link className=" mt-0 lg:mt-5 text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit text-white">Join Us</Link>
+              <Link to="/signup" className=" mt-0 lg:mt-5 text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit text-white">Join Us</Link>
             </div>
           </div>
         </div>
@@ -198,7 +262,7 @@ const HomePage =()=> {
         </div>
         <div className=" flex flex-col gap-8 items-center w-full text-center">
           <p className="w-full max-w-[820px]">Start Shopping Today! Browse our store now to discover a wide range of sustainable products that align with your values and lifestyle.</p>
-          <Link className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit lg:mt-5">Shop With Us</Link>
+          <Link to="/store" className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit lg:mt-5">Shop With Us</Link>
         </div>
       </div>
       {/* section */}

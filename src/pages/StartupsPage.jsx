@@ -5,7 +5,7 @@ import img2 from "../assets/startupspage/2.png"
 const StartupsPage = () => {
     return (
         <>
-            <div className="min-h-screen gap-10 flex flex-col" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+            <div className="min-h-screen gap-10 flex flex-col pt-20" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                 <div className="first w-full mt-[20px] gap-10 flex flex-col lg:flex-row items-center justify-around">
                     <div>
                         <div className="heading w-[300px] lg:w-[680px]">
