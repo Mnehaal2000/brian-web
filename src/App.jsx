@@ -56,6 +56,7 @@ import AdminBank from "./components/AdminComponents/BankDetails"
 import AdminPartner from "./components/AdminComponents/Partner"
 import News from './components/AdminComponents/News';
 import Store from './components/AdminComponents/Store';
+import PartnersPage from './pages/PartnersPage';
 // admin components end
 
 function App() {
@@ -90,6 +91,7 @@ function App() {
           <Route exact path='/environment' element={<EnvironmentPage />} />
           <Route exact path='/whoweare' element={<WhoPage />} />
           <Route exact path='/whatwedo' element={<WhatPage />} />
+          <Route exact path='/partners' element={<PartnersPage />} />
           {isLoggedIn === false ?
             (<>
               <Route exact path='/signup' element={<SignUpPage />} />
