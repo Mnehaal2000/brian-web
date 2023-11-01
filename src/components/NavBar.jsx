@@ -57,7 +57,7 @@ export default function NavBar() {
     }, []);
 
     return (
-        <nav className={`w-full md:absolute z-[100] top-0 left-0 right-0 bg-transparent hover:bg-white  group shadow ${navbar ? " fixed min-h-screen md:min-h-[auto] h-full" : "absolute"
+        <nav className={`w-full md:absolute z-[100] top-0 left-0 right-0 bg-transparent hover:bg-white transition ease-in-out delay-100 cursor-pointer group shadow ${navbar ? " fixed min-h-screen md:min-h-[auto] h-full" : "absolute"
             } `}>
             <div className="justify-start px-4 mx-auto md:max-w-7xl md:items-center flex md:flex-row flex-col md:px-8 min-h-full ">
                 <div>

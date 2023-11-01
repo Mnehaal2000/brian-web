@@ -6,7 +6,7 @@ const Newscard = ({ article }) => {
     return (
         <>
             <div className="newscard relative mt-5 w-[300px] md:w-[300px] h-[620px] bg-white rounded-[20px] flex flex-col items-center shadow-md">
-                <img src={cardpic} className='md:w-[300px]' alt="image" />
+                <img src={article.imgpath?article.imgpath:cardpic} className='md:w-[300px] h-[240px] rounded-t-xl' alt="image" />
                 <div className='p-4'>
                     <h3 className='text-[#64AA6E] text-sm'>{article.category}</h3>
                     <h2 className='text-black font-bold text-lg mt-1 mb-1'>

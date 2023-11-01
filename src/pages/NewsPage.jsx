@@ -5,6 +5,7 @@ import Newsline from '../assets/newspage/newsline.png';
 import Newscard from '../components/NewsPage/Newscard';
 import { collection, getDocs } from "firebase/firestore";
 import {db} from "../firebase"
+import { Link } from 'react-router-dom';
 
 const NewsPage = () => {
 
@@ -20,7 +21,11 @@ const NewsPage = () => {
         try {
             const querySnapshot = await getDocs(collection(db, "news"));
             querySnapshot.forEach((doc) => {
-                newsArticlesDummy.push(doc.data())
+                const d = {
+                    id:doc.id,
+                    ...doc.data()
+                }
+                newsArticlesDummy.push(d)
               });
               setnewsArticles(newsArticlesDummy)
         } catch (error) {
@@ -136,7 +141,7 @@ const NewsPage = () => {
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
                     {currentNewsArticles.map((article, index) => (
                         <div key={index} className={index === 1 || index === 4 || index === 7 ? 'mt-[-25px]' : ''}>
-                            <Newscard article={article} />
+                            <Link to={`${article.id}`}><Newscard article={article} /></Link>
                         </div>
                     ))}
                 </div>

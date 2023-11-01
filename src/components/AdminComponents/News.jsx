@@ -1,11 +1,29 @@
 import React, { useState } from 'react'
-import { db } from '../../firebase';
+import { db,storage } from '../../firebase';
 import { collection, addDoc } from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
 const News = () => {
 
     const [buttonstatus, setbuttonstatus] = useState('Add');
+    const [imageFile, setImageFile] = useState(null);
 
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        setImageFile(file);
+    }
+
+    const uploadImageToFirebase = async (imageFile) => {
+        try {
+            const storageRef = ref(storage, `NewsImages/${imageFile.name}`);
+            await uploadBytes(storageRef, imageFile);
+            const downloadURL = await getDownloadURL(storageRef);
+            return downloadURL
+        } catch (error) {
+            console.error('Error uploading image to Firebase Storage:', error);
+            return null;
+        }
+    }
 
     const [FormData, setFormData] = useState({
         category: '',
@@ -13,6 +31,7 @@ const News = () => {
         description: '',
         author: '',
         date: '',
+        imgpath:''
     });
 
     const handleInputChange = (e) => {
@@ -23,6 +42,8 @@ const News = () => {
     const addNews = async () => {
         try {
             setbuttonstatus("Adding...")
+            const downloadURL = await uploadImageToFirebase(imageFile);
+            if(downloadURL){
             const docRef = await addDoc(collection(db, "news"),
                 {
                     category: FormData.category,
@@ -30,8 +51,10 @@ const News = () => {
                     description: FormData.description,
                     author: FormData.author,
                     date: FormData.date,
+                    imgpath: downloadURL,
                 })
-            console.log("doc: ", docRef.id)
+                console.log("doc: ", docRef.id)
+            }
             setbuttonstatus('Add')
             setFormData({
                 category: '',
@@ -39,6 +62,7 @@ const News = () => {
                 description: '',
                 author: '',
                 date: '',
+                imgpath:'',
             });
         } catch (error) {
             console.log(error)
@@ -98,6 +122,16 @@ const News = () => {
                             name='date'
                             value={FormData.date}
                             onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className='flex flex-col gap-3 mt-[5px] mb-[5px]'>
+                        <label className="text-white text-lg font-bold mb-4">Item Image</label>
+                        <input
+                            type="file"
+                            accept="image/*"
+                            name="itemimg"
+                            onChange={handleImageChange}
+                            className="p-2 border-2 border-gray-300 rounded-md bg-gray-100 text-gray-700 cursor-pointer transition ease-in-out delay-300 hover:bg-[#408180]"
                         />
                     </div>
                     <div className='flex flex-col gap-3 mt-[5px] mb-[5px]'>

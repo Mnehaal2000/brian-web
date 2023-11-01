@@ -57,6 +57,7 @@ import AdminPartner from "./components/AdminComponents/Partner"
 import News from './components/AdminComponents/News';
 import Store from './components/AdminComponents/Store';
 import PartnersPage from './pages/PartnersPage';
+import NewsDetails from './pages/NewsDetails';
 // admin components end
 
 function App() {
@@ -83,6 +84,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<HomePage />} />
           <Route exact path='/news' element={<NewsPage />} />
+          <Route exact path='/news/:Id' element={<NewsDetails />} />
           <Route exact path='/store' element={<StorePage />} />
           <Route exact path='/empower' element={<EmpowerPage />} />
           <Route exact path='/community' element={<CommunityPage />} />
