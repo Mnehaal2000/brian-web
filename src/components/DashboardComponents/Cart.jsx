@@ -39,7 +39,7 @@ const Cart = () => {
 
     return (
         <>
-            <div className="main w-full flex mb-[50px] flex-col justify-center items-center">
+            <div className="main w-[1000px] lg:w-full flex mb-[50px] flex-col justify-center items-center">
                 <div className="main w-full flex flex-row justify-start">
                     <div className='flex flex-row mt-[20px] ml-[100px] justify-start border border-l-0 border-t-0 border-r-0 border-b-[#F2A229]'>
                         <h3 className='text-3xl font-bold text-[#F2A229]'>Continue to Checkout</h3>

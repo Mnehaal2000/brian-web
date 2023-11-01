@@ -103,7 +103,7 @@ const Membership = () => {
 
     return (
         <>
-            <div className="main w-full mb-[90px] flex flex-col justify-center items-center">
+            <div className="main w-[1000px] lg:w-full mb-[90px] flex flex-col justify-center items-center">
                 <div className="w-[900px] mt-[30px] flex flex-col gap-[20px] justify-center">
                     <div className='flex flex-col gap-5 mt-[20px] mb-[20px]'>
                         <div className='flex flex-row gap-5 items-center'><p className='text-white font-bold text-[24px]'>Member</p><img className='w-[50px] h-[50px]' src={usericon} alt="" /></div>

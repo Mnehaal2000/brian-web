@@ -1,101 +1,129 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Newsbg from '../assets/newspage/Newsbg.png';
 import Newshead from '../assets/newspage/newshead.png';
 import Newsline from '../assets/newspage/newsline.png';
 import Newscard from '../components/NewsPage/Newscard';
+import { collection, getDocs } from "firebase/firestore";
+import {db} from "../firebase"
+import { Link } from 'react-router-dom';
 
 const NewsPage = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
+    const [newsArticles, setnewsArticles] = useState([]);
+    
 
     const cardsPerPage = 9;
 
-    const newsArticles = [
-        {
-            category: 'Energy Investment',
-            title: 'Cum socis natoque penatibus et magnis...',
-            description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
-            author: 'Nehaal',
-            date: 'July 7, 2023',
-        },
-        {
-            category: 'Energy Investment',
-            title: 'Cum socis natoque penatibus et magnis...',
-            description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
-            author: 'Nehaal',
-            date: 'July 7, 2023',
-        },
-        {
-            category: 'Energy Investment',
-            title: 'Cum socis natoque penatibus et magnis...',
-            description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
-            author: 'Nehaal',
-            date: 'July 7, 2023',
-        },
-        {
-            category: 'Energy Investment',
-            title: 'Cum socis natoque penatibus et magnis...',
-            description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
-            author: 'Nehaal',
-            date: 'July 7, 2023',
-        },
-        {
-            category: 'Energy Investment',
-            title: 'Cum socis natoque penatibus et magnis...',
-            description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
-            author: 'Nehaal',
-            date: 'July 7, 2023',
-        },
-        {
-            category: 'Energy Investment',
-            title: 'Cum socis natoque penatibus et magnis...',
-            description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
-            author: 'Nehaal',
-            date: 'July 7, 2023',
-        },
-        {
-            category: 'Energy Investment',
-            title: 'Cum socis natoque penatibus et magnis...',
-            description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
-            author: 'Nehaal',
-            date: 'July 7, 2023',
-        },
-        {
-            category: 'Energy Investment',
-            title: 'Cum socis natoque penatibus et magnis...',
-            description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
-            author: 'Nehaal',
-            date: 'July 7, 2023',
-        },
-        {
-            category: 'Energy Investment',
-            title: 'Cum socis natoque penatibus et magnis...',
-            description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
-            author: 'Nehaal',
-            date: 'July 7, 2023',
-        },
-        {
-            category: 'Energy Investment',
-            title: 'Cum socis natoque penatibus et magnis...',
-            description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
-            author: 'Nehaal',
-            date: 'July 7, 2023',
-        },
-        {
-            category: 'Energy Investment',
-            title: 'Cum socis natoque penatibus et magnis...',
-            description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
-            author: 'Nehaal',
-            date: 'July 7, 2023',
-        },
-        {
-            category: 'Energy Investment',
-            title: 'Cum socis natoque penatibus et magnis...',
-            description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
-            author: 'Nehaal',
-            date: 'July 7, 2023',
-        },
-    ];
+    let newsArticlesDummy = []
+
+    const getNews = async () => {
+        try {
+            const querySnapshot = await getDocs(collection(db, "news"));
+            querySnapshot.forEach((doc) => {
+                const d = {
+                    id:doc.id,
+                    ...doc.data()
+                }
+                newsArticlesDummy.push(d)
+              });
+              setnewsArticles(newsArticlesDummy)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(()=>{
+        getNews()
+    },[])
+
+    // const newsArticles = [
+    //     {
+    //         category: 'Energy Investment',
+    //         title: 'Cum socis natoque penatibus et magnis...',
+    //         description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
+    //         author: 'Nehaal',
+    //         date: 'July 7, 2023',
+    //     },
+    //     {
+    //         category: 'Energy Investment',
+    //         title: 'Cum socis natoque penatibus et magnis...',
+    //         description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
+    //         author: 'Nehaal',
+    //         date: 'July 7, 2023',
+    //     },
+    //     {
+    //         category: 'Energy Investment',
+    //         title: 'Cum socis natoque penatibus et magnis...',
+    //         description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
+    //         author: 'Nehaal',
+    //         date: 'July 7, 2023',
+    //     },
+    //     {
+    //         category: 'Energy Investment',
+    //         title: 'Cum socis natoque penatibus et magnis...',
+    //         description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
+    //         author: 'Nehaal',
+    //         date: 'July 7, 2023',
+    //     },
+    //     {
+    //         category: 'Energy Investment',
+    //         title: 'Cum socis natoque penatibus et magnis...',
+    //         description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
+    //         author: 'Nehaal',
+    //         date: 'July 7, 2023',
+    //     },
+    //     {
+    //         category: 'Energy Investment',
+    //         title: 'Cum socis natoque penatibus et magnis...',
+    //         description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
+    //         author: 'Nehaal',
+    //         date: 'July 7, 2023',
+    //     },
+    //     {
+    //         category: 'Energy Investment',
+    //         title: 'Cum socis natoque penatibus et magnis...',
+    //         description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
+    //         author: 'Nehaal',
+    //         date: 'July 7, 2023',
+    //     },
+    //     {
+    //         category: 'Energy Investment',
+    //         title: 'Cum socis natoque penatibus et magnis...',
+    //         description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
+    //         author: 'Nehaal',
+    //         date: 'July 7, 2023',
+    //     },
+    //     {
+    //         category: 'Energy Investment',
+    //         title: 'Cum socis natoque penatibus et magnis...',
+    //         description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
+    //         author: 'Nehaal',
+    //         date: 'July 7, 2023',
+    //     },
+    //     {
+    //         category: 'Energy Investment',
+    //         title: 'Cum socis natoque penatibus et magnis...',
+    //         description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
+    //         author: 'Nehaal',
+    //         date: 'July 7, 2023',
+    //     },
+    //     {
+    //         category: 'Energy Investment',
+    //         title: 'Cum socis natoque penatibus et magnis...',
+    //         description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
+    //         author: 'Nehaal',
+    //         date: 'July 7, 2023',
+    //     },
+    //     {
+    //         category: 'Energy Investment',
+    //         title: 'Cum socis natoque penatibus et magnis...',
+    //         description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Cum sociis natoque penatibus et magnis dis parturient montes, nascetur',
+    //         author: 'Nehaal',
+    //         date: 'July 7, 2023',
+    //     },
+    // ];
+    
     const startIndex = (currentPage - 1) * cardsPerPage;
     const endIndex = startIndex + cardsPerPage;
     const currentNewsArticles = newsArticles.slice(startIndex, endIndex);
@@ -109,11 +137,11 @@ const NewsPage = () => {
                 </span>
             </div>
             <div className="flex-grow w-full max-w-6xl mx-auto p-[38px] lg:p-10 mb-20">
-                <img src={Newsline} alt="" />
+                <img className='mb-[30px]' src={Newsline} alt="" />
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
                     {currentNewsArticles.map((article, index) => (
-                        <div key={index} className={index === 1 || index ===4 ||index===7 ? 'mt-[-25px]' : ''}>
-                            <Newscard article={article} />
+                        <div key={index} className={index === 1 || index === 4 || index === 7 ? 'mt-[-25px]' : ''}>
+                            <Link to={`${article.id}`}><Newscard article={article} /></Link>
                         </div>
                     ))}
                 </div>

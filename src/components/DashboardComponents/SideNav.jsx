@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import { MdOutlineDashboard, MdOutlineCardMembership } from "react-icons/md";
 import { TbReportAnalytics } from "react-icons/tb";
 import { AiOutlineUser } from "react-icons/ai";
@@ -12,10 +12,12 @@ import { RiRefund2Line } from "react-icons/ri";
 import { FaPersonCane, FaClipboardUser } from "react-icons/fa6";
 import { FaPeopleCarry } from "react-icons/fa";
 import usericon from "../../assets/dashboard/profile.jpg"
+import AuthContext from "../../AuthContext"
 
 const SideNav = () => {
   const [isFundingOpen, setIsFundingOpen] = useState(false);
   const [isWithdrawalOpen, setIsWithdrawalOpen] = useState(false);
+  const {currentUser} = useContext(AuthContext)
 
   const menus = [
     { name: "Dashboard", link: "home", icon: MdOutlineDashboard },
@@ -176,9 +178,9 @@ const SideNav = () => {
           </div>
         ))}
 
-        <div className="flex mt-[5px] flex-row gap-4 hover:ring-2 cursor-pointer transition-all justify-center items-center w-[240px] h-[70px] rounded-xl" style={{ background: "linear-gradient(#29A9E3,#232731)" }}>
-          <img className="w-[46px] h-[46px] rounded-full" src={usericon} alt="" />
-          <span className="text-white font-medium text-2xl">Brian</span>
+        <div className="flex mt-[5px] flex-row gap-4 hover:ring-2 cursor-pointer transition-all justify-center items-center w-[35px] lg:w-[240px] h-[70px] rounded-xl" style={{ background: "linear-gradient(#29A9E3,#232731)" }}>
+          <img className="lg:w-[46px] w-[35px] h-[70px] lg:h-[46px] rounded-xl lg:rounded-full" src={usericon} alt="" />
+          <span className="text-white lg:block hidden font-medium text-[13px]">{currentUser.email?currentUser.email:"Brian"}</span>
         </div>
 
       </div>

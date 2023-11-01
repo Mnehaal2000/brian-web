@@ -3,7 +3,7 @@ import userimg from "../../assets/dashboard/profile.jpg"
 
 const TopBar = () => {
     return (
-        <div className="topBar w-full flex flex-col shadow-md pb-10">
+        <div className="topBar w-[1000px] lg:w-full flex flex-col shadow-md pb-10">
             <div className="icons w-full flex justify-end">
                 <div className="flex flex-row gap-2 items-center mt-5 mb-5 mr-[45px]">
 

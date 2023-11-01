@@ -7,7 +7,7 @@ import img3 from "../assets/whatpage/3.png"
 const WhatPage = () => {
     return (
         <>
-            <div className="min-h-screen flex flex-col" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+            <div className="min-h-screen flex flex-col pt-20 " style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                 <div className="first w-full mt-[20px] flex flex-col lg:flex-row items-center justify-around">
                     <div className="heading w-[300px] lg:w-[580px]">
                         <h3 className='font-bold text-3xl'>WHAT WE DO</h3>
@@ -47,7 +47,7 @@ const WhatPage = () => {
                     <h3 className='font-bold text-3xl text-center'>Empowering Lives</h3>
                     <p className='w-[300px] lg:w-[800px] mt-[-20px] text-center'>Empowerment Through Opportunities: Empowering lives is our mantra. We invest in communities, foster startups, and create opportunities that empower individuals and organizations alike. Through our initiatives, we aim to elevate lives, making them more prosperous and self-reliant.</p>
                     <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>Our commitment goes beyond words; it's a tangible force driving change in the world. EcocenturyEnergy is dedicated to setting industry benchmarks, reducing environmental impact, and uplifting communities. Join us on this transformative journey toward a sustainable, prosperous, and equitable future</p>
-                    <button className='cursor-pointer rounded-md mb-[70px] bg-[#059C4B] w-[280px] h-[51px] text-white text-2xl'>
+                    <button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-20 rounded-[36px] text-white text-2xl'>
                         Join Us
                     </button>
                 </div>

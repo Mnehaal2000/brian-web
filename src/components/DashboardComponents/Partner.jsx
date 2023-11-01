@@ -14,7 +14,7 @@ const Partner = () => {
     }, [])
 
     return (
-        <div className="main w-full flex mb-[50px] flex-col justify-center items-center">
+        <div className="main w-[1000px] lg:w-full flex mb-[50px] flex-col justify-center items-center">
             {!isInd && !isBus && (
                 <div className="main w-full mt-[20px] flex flex-row justify-center gap-[23px] items-center">
                     <div

@@ -7,7 +7,7 @@ import img3 from "../assets/energypage/3.png"
 const EnergyPage = () => {
   return (
     <>
-     <div className="min-h-screen gap-10 flex flex-col" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+     <div className="min-h-screen gap-10 flex flex-col pt-20" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                 <div className="first w-full mt-[20px] gap-10 flex flex-col lg:flex-row items-center justify-around">
                     <div>
                         <div className="heading w-[300px] lg:w-[680px]">
@@ -48,7 +48,7 @@ const EnergyPage = () => {
                 <div className="seventh w-full gap-10 flex flex-col items-center justify-around">
                     <h3 className='font-bold text-3xl text-center'>Join Us in Powering Tomorrow</h3>
                     <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>The energy of the future is sustainable, efficient, and eco-conscious. At EcocenturyEnergy, we invite you to join us on this transformative journey towards a world powered by innovation and fueled by sustainable energy. Together, we can light the path to a brighter, cleaner future for generations to come.</p>
-                <button className='cursor-pointer mb-[70px] bg-[#059C4B] w-[280px] h-[51px] text-white text-2xl'>
+                <button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-20 rounded-[36px] text-white text-2xl'>
                 Join Us
                 </button>
                 </div>

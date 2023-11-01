@@ -3,7 +3,7 @@ import React from 'react';
 const Support = () => {
     return (
         <>
-            <div className="main w-full flex mb-[50px] flex-col justify-center items-center">
+            <div className="main w-[1000px] lg:w-full flex mb-[50px] flex-col justify-center items-center">
                 <div className="main w-[300px] lg:w-[600px] mt-[60px] flex flex-row justify-start">
                     <h3 className='text-white font-bold text-2xl'>Submit a Support Ticket</h3>
                 </div>

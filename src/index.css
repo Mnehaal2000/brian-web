@@ -13,9 +13,16 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }  */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
 .navbar-collapse button {
   background-color: #198754 !important;
 }
+
 
 a {
   color: black;
@@ -100,6 +107,33 @@ body {
 
 #loom-companion-mv3 {
   display: none;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: black !important;
+  font-size: 28px !important;
+}
+
+.slick-next {
+  right: -55px !important;
+}
+
+.slick-prev {
+  left: -55px !important;
+}
+
+.slick-dots {
+  bottom: -35px;
+}
+
+@media (max-width: 767px) {
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+  }
+  .slick-dots {
+    bottom: -22px !important;
+  }
 }
 
 /* .css-1jts3tn-MuiPaper-root {

@@ -9,12 +9,12 @@ import img4 from "../assets/whopage/4.png"
 const WhoPage = () => {
     return (
         <>
-            <div className="min-h-screen gap-10 flex flex-col" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+            <div className="min-h-screen gap-10 flex flex-col pt-20" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                 <div className="first w-full mt-[20px] flex flex-col lg:flex-row items-center justify-around">
                     <div className="heading w-[300px] lg:w-[680px]">
                         <h3 className='font-bold text-3xl'>WHO WE ARE</h3>
                         <p className='w-[300px] lg:w-[680px] mt-[15px]'>At Ecocentury Energy we are more than just an energy company; we are a global force for positive change. Our organization is built on a foundation of innovation, sustainability, and a deep commitment to shaping a brighter future for all.</p>
-                        <button className='w-[200px]  mt-[10px] rounded-md h-[50px] bg-[#12664F] text-white'>Join Us Now</button>
+                        <button className='w-[200px]  mt-[10px] py-4 px-12 rounded-[36px] bg-[#12664F] text-white'>Join Us Now</button>
                     </div>
                     <img className='w-[300px] h-[300px] xl:w-[591px] xl:h-[445px]' src={img1} alt="1" />
                 </div>
@@ -55,10 +55,10 @@ const WhoPage = () => {
 
                 <div className="sixth w-full gap-10 flex flex-col items-center justify-around">
                     <h3 className='font-bold text-3xl text-center'>Technology and Collaboration</h3>
-                    <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>Technology is at the heart of our operations. We embrace innovation to develop and implement advanced energy solutions. Collaboration is the key to our success, and we actively seek partnerships and alliances to accelerate our mission.</p>
-                    <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>As a global organization with a clear purpose, mission, and vision, [Your Company Name] is committed to making a lasting impact. Together with our partners, employees, and stakeholders, we are driving the transformation of the energy industry and creating a sustainable world for generations to come.
+                    <p className='w-[300px] lg:w-[1100px] mt-[10px] text-center text-xl'>Technology is at the heart of our operations. We embrace innovation to develop and implement advanced energy solutions. Collaboration is the key to our success, and we actively seek partnerships and alliances to accelerate our mission.</p>
+                    <p className='w-[300px] lg:w-[1100px] mt-[10px] text-center text-xl'>As a global organization with a clear purpose, mission, and vision, [Your Company Name] is committed to making a lasting impact. Together with our partners, employees, and stakeholders, we are driving the transformation of the energy industry and creating a sustainable world for generations to come.
                         Join us on this remarkable journey towards a brighter, more sustainable future.</p>
-                    <button className='cursor-pointer rounded-md mb-[70px] bg-[#059C4B] w-[280px] h-[51px] text-white text-2xl'>
+                    <button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-12 rounded-[36px] text-white text-2xl'>
                         Join Us
                     </button>
                 </div>
@@ -66,12 +66,12 @@ const WhoPage = () => {
 
                 <div className="seventh w-full gap-10 flex flex-col items-center justify-around">
                     <h3 className='font-bold text-3xl text-center'>Ecocentury Lifestyle Community</h3>
-                    <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>At Ecocentury Energy, we believe in the power of community, united by a common purpose: to ignite change and create a sustainable, thriving world. Our commitment to sustainability isn't just a movement; it's a lifestyle we embrace wholeheartedly.</p>
-                    <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>When you become a member of Ecocentury Energy, you're not just joining a company; you're becoming part of an extraordinary community that shares a deep passion for a brighter future. Our community is a testament to the values we hold dear, and together, we embark on a journey to make a meaningful impact on our lives, the lives of our children, future generations, and the world at large.</p>
-                    <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>In our community, sustainability isn't merely a trend; it's a way of life. We strive to live our best lives today while working diligently to secure a sustainable and prosperous future for all. Every step we take today, every decision we make, brings us closer to creating a world where environmental consciousness, innovation, and compassion flourish.</p>
-                    <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>As a member of the Ecocentury Lifestyle Community, you are not just a witness to change – you are a catalyst for it. Together, we are champions of progress, advocates for environmental stewardship, and champions of a future we are proud to pass on. Join us in shaping a world where sustainable living isn't just a choice; it's our collective legacy. Welcome to our community- where your passion, your voice, and your actions matter. Together, we are the driving force behind a brighter and more sustainable future for all.</p>
+                    <p className='w-[300px] lg:w-[1100px] mt-[10px] text-center text-xl'>At Ecocentury Energy, we believe in the power of community, united by a common purpose: to ignite change and create a sustainable, thriving world. Our commitment to sustainability isn't just a movement; it's a lifestyle we embrace wholeheartedly.</p>
+                    <p className='w-[300px] lg:w-[1100px] mt-[10px] text-center text-xl'>When you become a member of Ecocentury Energy, you're not just joining a company; you're becoming part of an extraordinary community that shares a deep passion for a brighter future. Our community is a testament to the values we hold dear, and together, we embark on a journey to make a meaningful impact on our lives, the lives of our children, future generations, and the world at large.</p>
+                    <p className='w-[300px] lg:w-[1100px] mt-[10px] text-center text-xl'>In our community, sustainability isn't merely a trend; it's a way of life. We strive to live our best lives today while working diligently to secure a sustainable and prosperous future for all. Every step we take today, every decision we make, brings us closer to creating a world where environmental consciousness, innovation, and compassion flourish.</p>
+                    <p className='w-[300px] lg:w-[1100px] mt-[10px] text-center text-xl'>As a member of the Ecocentury Lifestyle Community, you are not just a witness to change – you are a catalyst for it. Together, we are champions of progress, advocates for environmental stewardship, and champions of a future we are proud to pass on. Join us in shaping a world where sustainable living isn't just a choice; it's our collective legacy. Welcome to our community- where your passion, your voice, and your actions matter. Together, we are the driving force behind a brighter and more sustainable future for all.</p>
                     <h3 className='font-bold text-center'>Join us in creating a world of lasting change!</h3>
-                    <button className='cursor-pointer rounded-md mb-[70px] bg-[#059C4B] w-[280px] h-[51px] text-white text-2xl'>
+                    <button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-12 rounded-[36px] text-white text-2xl'>
                     Become a Member
                     </button>
                 </div>

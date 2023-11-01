@@ -1,4 +1,3 @@
-import React from 'react'
 import bg from "../assets/startupspage/bg.png"
 import img1 from "../assets/startupspage/1.png"
 import img2 from "../assets/startupspage/2.png"
@@ -6,7 +5,7 @@ import img2 from "../assets/startupspage/2.png"
 const StartupsPage = () => {
     return (
         <>
-            <div className="min-h-screen gap-10 flex flex-col" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+            <div className="min-h-screen gap-10 flex flex-col pt-20" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                 <div className="first w-full mt-[20px] gap-10 flex flex-col lg:flex-row items-center justify-around">
                     <div>
                         <div className="heading w-[300px] lg:w-[680px]">
@@ -38,7 +37,7 @@ const StartupsPage = () => {
                     <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>If you're a business looking to align with our mission and tap into our ecosystem of innovation, there's no better time to join us. By partnering with Ecocentury Energy, you become part of a dynamic community that's shaping the future of sustainable energy.</p>
                     <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>[redirecting link Partner with Us as a Business] to explore the possibilities of collaboration and growth. Our dedicated partnership page provides all the information you need to get started, including how to apply and the benefits of becoming a part of the Ecocentury Energy family.</p>
                     <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>Join us on this exciting journey of innovation, sustainability, and growth. Together, we can create a brighter and more sustainable future for our planet and generations to come.</p>
-                <button className='cursor-pointer mb-[70px] bg-[#059C4B] w-[280px] h-[51px] text-white text-2xl'>
+                <button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-20 rounded-[36px] text-white text-2xl'>
                 Partner With Us
                 </button>
                 </div>

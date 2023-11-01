@@ -103,7 +103,7 @@ const AccountStatement = () => {
 
     return (
         <>
-            <div className="main w-full flex mb-[50px] flex-col justify-center items-center">
+            <div className="main w-[1000px] lg:w-full flex mb-[50px] flex-col justify-center items-center">
                 <div className="main w-[900px] mt-[20px] flex flex-row justify-center gap-[23px] items-center">
                     <div className='w-[400px] xl:w-[450px] h-[326px] flex flex-col rounded-lg justify-center items-center gap-4 ' style={{ background: "linear-gradient(to right, #29A9E3, #272C36)" }}>
                         <img className='w-[70] h-[70]' src={icon1} alt="" />

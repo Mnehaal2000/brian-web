@@ -14,7 +14,7 @@ const Achievements = () => {
     };
     return (
         <>
-            <div className="main w-full flex flex-col mb-[40px] justify-center items-center">
+            <div className="main w-[1000px] lg:w-full flex flex-col mb-[40px] justify-center items-center">
 
                 <div className='w-[900px] mt-[30px] flex flex-row lg:gap-[57px] justify-center'>
                     <div className="w-[320px] h-[168px] flex flex-col justify-center gap-1 items-center p-5 rounded-md" style={{ background: "linear-gradient(#29A9E3, #272C36)" }}>
