@@ -358,7 +358,7 @@ const SignUpPage = () => {
                             className="w-full px-3 py-2 border border-black rounded-md bg-white"
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            value={formik.values.State}
+                            value={formik.values.ZIPCode}
                         />
                         {formik.touched.ZIPCode && formik.errors.ZIPCode ? (
                             <div className="text-red-500">{formik.errors.ZIPCode}</div>

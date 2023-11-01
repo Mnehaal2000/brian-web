@@ -12,6 +12,7 @@ import NavBar from "./components/NavBar"
 import SignInPage from './pages/SignInPage';
 import HomePage from './pages/HomePage';
 import NewsPage from './pages/NewsPage';
+import NewsDetails from './pages/NewsDetails';
 import StorePage from './pages/StorePage';
 import EmpowerPage from './pages/EmpowerPage';
 import CommunityPage from './pages/CommunityPage';
@@ -57,7 +58,6 @@ import AdminPartner from "./components/AdminComponents/Partner"
 import News from './components/AdminComponents/News';
 import Store from './components/AdminComponents/Store';
 import PartnersPage from './pages/PartnersPage';
-import NewsDetails from './pages/NewsDetails';
 // admin components end
 
 function App() {
