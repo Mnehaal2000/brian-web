@@ -148,7 +148,7 @@ const HomePage =()=> {
       <div className=" home-bg2 w-full min-h-[680px] lg:min-h-[700px] flex justify-start items-start lg:py-0 py-20 lg:items-center relative text-black text-xl lg:text-2xl px-5 lg:px-32">
         <div className=" flex flex-col gap-8 items-start w-full max-w-[614px] z-10">
           <p>While the need for energy is universal, our approach is distinctive. At Ecocentury Energy, we're not just meeting energy needs; we're transforming the energy landscape. We're not only reducing emissions; we're pioneering the path to a net-zero future. Our relentless pursuit of sustainable solutions ensures a cleaner, healthier planet for generations to come</p>
-          <Link className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px]  bg-green-secondary font-semibold w-fit text-white">Learn More</Link>
+          <Link to="/whoweare" className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px]  bg-green-secondary font-semibold w-fit text-white">Learn More</Link>
         </div>
         <img src={img2} className=" w-[50%] lg:w-auto absolute bottom-3 right-3 lg:bottom-[unset] lg:right-[110px]" />
       </div>
@@ -215,12 +215,12 @@ const HomePage =()=> {
         <div className=" flex lg:flex-row flex-col items-center mt-10 lg:mt-28">
           <img className=" lg:w-1/2" src={img5} />
           <div className=" lg:w-1/2">
-            <h2 className=" text-[30px] lg:text-[44px] font-bold mb-2 lg:mb-5">Our Commitment</h2>
+            {/* <h2 className=" text-[30px] lg:text-[44px] font-bold mb-2 lg:mb-5">Our Commitment</h2> */}
             <div className=" flex flex-col gap-4">
               <p>At Ecocentury Energy, we believe that knowledge is the catalyst for change. Our commitment to sustainability extends to educating individuals and communities about the importance of responsible energy use. Explore Our Educational Resources: </p>
-              <p className=" font-bold">• Learn about the fundamentals of clean energy. </p>
-              <p className=" font-bold">• Discover tips for reducing your energy consumption.</p>
-              <p className=" font-bold">• Stay updated on the latest advancements in the energy industry.</p>
+              <Link to="/empower"><p className=" font-bold hover:underline cursor-pointer">• Learn about the fundamentals of clean energy. </p></Link>
+              <Link to="/empower"><p className=" font-bold hover:underline cursor-pointer">• Discover tips for reducing your energy consumption.</p></Link>
+              <Link to="/empower"><p className=" font-bold hover:underline cursor-pointer">• Stay updated on the latest advancements in the energy industry.</p></Link>
               <p>Access resources for educators to inspire the next generation of eco-conscious leaders, Join Us in Learning and Leading:</p>
               <p>Ready to expand your energy knowledge? Join our community of learners, and together, we can pave the way for a more sustainable future. </p>
               <p className=" font-bold">Join Us In the Journey to a Brighter Future!</p>
@@ -232,9 +232,9 @@ const HomePage =()=> {
       {/* section */}
       <div className=" home-bg5 lg:py-0 py-10 lg:px-0 px-5 w-full min-h-[750px] flex justify-center items-center relative text-white text-lg lg:text-2xl">
         <div className=" flex flex-col gap-8 items-center w-full max-w-[820px] lg:-mt-6 text-center">
-          <h2 className=" text-[26px] lg:text-[44px] font-bold">Partner with Us: Become a Trailblazers or a Trailblazers Omega?</h2>
+          <h2 className=" text-[26px] leading-[36px] md:leading-[60px] lg:text-[44px] font-bold">Partner with Us: Become a Trailblazers or a Trailblazers Omega?</h2>
           <p className="w-full max-w-[620px]">At Ecocentury Energy, we believe that the journey to a sustainable future is best travelled together. Our partnership opportunities are designed to welcome both individuals and businesses into our vibrant community.<span className=" block mt-4">Become a partner to enjoy a range of incentives and impact your business today!</span></p>
-          <Link className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit mt-0 lg:mt-5">Partner With Us</Link>
+          <Link to="/partners" className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit mt-0 lg:mt-5">Partner With Us</Link>
         </div>
       </div>
       {/* section */}
@@ -302,7 +302,7 @@ const HomePage =()=> {
         </div>
         <div className=" gap-5 lg:gap-14 flex lg:flex-row flex-col items-center">
           <h2 className=" text-[24px] lg:text-[32px] font-bold text-black">Frequently Asked Questions</h2>
-         <Link className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit">Send us an Email</Link>
+         <Link to="#" className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit">Send us an Email</Link>
         </div>
       </div>
       {/* section */}

@@ -8,6 +8,8 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
   const [userRole, setUserRole] = useState(null);
+  const [userhere, setuserhere] = useState(null);
+  
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, async (user) => {
@@ -16,6 +18,7 @@ export const AuthContextProvider = ({ children }) => {
           const docRef = doc(db, "managers", user.uid);
           const docSnap = await getDoc(docRef);
           setCurrentUser(user);
+          setuserhere(true)
 
           if (docSnap.exists()) {
             setUserRole("manager");
@@ -29,6 +32,7 @@ export const AuthContextProvider = ({ children }) => {
       } else {
         setUserRole(null);
         setCurrentUser(null);
+        setuserhere(false)
       }
     });
 
@@ -38,7 +42,7 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ userRole , currentUser }}>
+    <AuthContext.Provider value={{ userRole , currentUser ,userhere}}>
       {children}
     </AuthContext.Provider>
   );

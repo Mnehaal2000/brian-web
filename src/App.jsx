@@ -64,18 +64,7 @@ import PartnersPage from './pages/PartnersPage';
 function App() {
 
   const isDashboardRoute = window.location.pathname.startsWith('/dashboard') || window.location.pathname.startsWith('/adminportal');
-  const { currentUser, userRole } = useContext(AuthContext)
-  const [isLoggedIn, setisLoggedIn] = useState(false);
-  
-
-  useEffect(() => {
-    if (currentUser && Object.keys(currentUser).length !== 0) {
-      // console.log(userRole, currentUser)
-      setisLoggedIn(true);
-    } else {
-      setisLoggedIn(false);
-    }
-  }, [currentUser]);
+  const { userRole ,userhere } = useContext(AuthContext)
 
   const ref = useRef(null);
   useEffect(() => {
@@ -101,7 +90,7 @@ function App() {
           <Route exact path='/whoweare' element={<WhoPage />} />
           <Route exact path='/whatwedo' element={<WhatPage />} />
           <Route exact path='/partners' element={<PartnersPage />} />
-          {isLoggedIn === false ?
+          {userhere === false ?
             (<>
               <Route exact path='/signup' element={<SignUpPage />} />
               <Route exact path='/signin' element={<SignInPage />} />
