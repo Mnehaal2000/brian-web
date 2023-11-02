@@ -125,7 +125,7 @@ const News = () => {
                         />
                     </div>
                     <div className='flex flex-col gap-3 mt-[5px] mb-[5px]'>
-                        <label className="text-white text-lg font-bold mb-4">Item Image</label>
+                        <label className="text-white text-lg font-bold mb-4">News Image</label>
                         <input
                             type="file"
                             accept="image/*"

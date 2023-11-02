@@ -4,7 +4,8 @@ import {
 } from "react-router-dom";
 import { AuthContextProvider } from './AuthContext';
 import AuthContext from "./AuthContext"
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState,useRef } from 'react';
+import LoadingBar from 'react-top-loading-bar';
 
 //basic web pages start
 import Footer from './components/Footer'
@@ -76,11 +77,17 @@ function App() {
     }
   }, [currentUser]);
 
+  const ref = useRef(null);
+  useEffect(() => {
+    ref.current.complete();
+  }, []);
+
 
   return (
     <>
       <BrowserRouter>
         {!isDashboardRoute && <NavBar />}
+        <LoadingBar shadow={true} height={5} color="#059C4B" ref={ref} />
         <Routes>
           <Route exact path='/' element={<HomePage />} />
           <Route exact path='/news' element={<NewsPage />} />
