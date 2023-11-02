@@ -2,9 +2,21 @@ import { Link } from "react-router-dom"
 import fb from "../assets/social-logos/facebook.png"
 import insta from "../assets/social-logos/insta.png"
 import twitter from "../assets/social-logos/twitter.png"
+import ContactPopUp from "./ContactPopUp"
+import React, { useState } from "react"
 
 
 const Footer = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
+  const openContactForm = () => {
+    setIsContactFormOpen(true);
+  };
+
+  const closeContactForm = () => {
+    setIsContactFormOpen(false);
+  };
+
   return (
     <>
       <div className=" bg-footer w-full flex flex-col items-center justify-center gap-8 md:gap-12">
@@ -25,42 +37,45 @@ const Footer = () => {
               <h3 className=" text-base">Want to get in touch? We will reach out to you.</h3>
               <div className=" flex gap-3 mt-4">
                 <input type=" email" className=" px-2 py-2 rounded border border-white text-[#B7B7B7] text-xs bg-transparent" placeholder="Your E-Mail"></input>
-                <button className=" rounded text-center px-10 py-2 bg-[#F2AF29] ">Contact</button>
+                <button onClick={openContactForm} className=" rounded text-center px-10 py-2 bg-[#F2AF29] ">Contact</button>
+                {isContactFormOpen && (
+                  <ContactPopUp isOpen={isContactFormOpen} onClose={closeContactForm} />
+                )}
               </div>
             </div>
             <div className=" flex gap-7 items-center">
-              <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-full border border-white"><img src={fb}/></div>
-              <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-full border border-white"><img src={insta}/></div>
-              <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-full border border-white"><img src={twitter}/></div>
+              <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-full border border-white"><img src={fb} /></div>
+              <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-full border border-white"><img src={insta} /></div>
+              <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-full border border-white"><img src={twitter} /></div>
             </div>
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16  gap-y-2 md:max-h-[174px] text-black text-xs md:text-base accent-black underline mb-10">
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-            <Link>Our Globalization</Link>
-          </div>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link>
+        </div>
       </div>
     </>
   )

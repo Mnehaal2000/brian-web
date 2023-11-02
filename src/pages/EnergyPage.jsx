@@ -3,6 +3,7 @@ import bg from "../assets/energypage/bg.png"
 import img1 from "../assets/energypage/1.png"
 import img2 from "../assets/energypage/2.png"
 import img3 from "../assets/energypage/3.png"
+import { Link } from 'react-router-dom'
 
 const EnergyPage = () => {
   return (
@@ -48,9 +49,9 @@ const EnergyPage = () => {
                 <div className="seventh w-full gap-10 flex flex-col items-center justify-around">
                     <h3 className='font-bold text-3xl text-center'>Join Us in Powering Tomorrow</h3>
                     <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>The energy of the future is sustainable, efficient, and eco-conscious. At EcocenturyEnergy, we invite you to join us on this transformative journey towards a world powered by innovation and fueled by sustainable energy. Together, we can light the path to a brighter, cleaner future for generations to come.</p>
-                <button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-20 rounded-[36px] text-white text-2xl'>
+                <Link to="/signup"><button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-20 rounded-[36px] text-white text-2xl'>
                 Join Us
-                </button>
+                </button></Link>
                 </div>
             </div>
     </>

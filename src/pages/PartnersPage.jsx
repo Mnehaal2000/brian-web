@@ -7,6 +7,7 @@ import w3 from "../assets/partnerspage/w3.png"
 import p1 from "../assets/partnerspage/p1.png"
 import p2 from "../assets/partnerspage/p2.png"
 import p3 from "../assets/partnerspage/p3.png"
+import { Link } from 'react-router-dom'
 
 const PartnersPage = () => {
     return (
@@ -48,12 +49,12 @@ const PartnersPage = () => {
                         <div className='md:w-[490px] flex flex-col justify-center items-center gap-5 w-[300px] h-[550px] md:h-[450px]'>
                             <h1 className='font-semibold text-[28px] text-center'>Trailblazers</h1>
                             <p className='font-light text-[20px] text-center'>This tier is for individuals and small businesses eager to start their sustainable journey. As a Trailblazer, you gain exclusive access to our Trailblazer packages, providing you with unique rewards, special deals, and more. Join the Trailblazers and be part of our vibrant community dedicated to making a positive impact on the environment.</p>
-                            <button className='w-[250px] rounded-sm bg-[#059C4B] h-[71px] text-white text-[24px]'>Partner</button>
+                            <Link to="/signin"><button className='w-[250px] rounded-sm bg-[#059C4B] h-[71px] text-white text-[24px]'>Partner</button></Link>
                         </div>
                         <div className='md:w-[490px] flex flex-col justify-center items-center gap-5 w-[300px] md:h-[450px] h-[680px]'>
                             <h1 className='font-semibold text-[28px] text-center'>Trailblazers Omega</h1>
                             <p className='font-light text-[20px] text-center'>Taking your commitment to sustainability and business growth to the next level, Trailblazers Omega is designed for larger enterprises. As a Trailblazers Omega partner, you enjoy a host of premium benefits, including access to our exclusive marketplace to list your products, higher rewards, participation in exclusive deals, and much more. Embrace the future of sustainability with Trailblazers Omega.</p>
-                            <button className='w-[250px] rounded-sm bg-[#059C4B] h-[71px] text-white text-[24px]'>Partner</button>
+                            <Link to="/signin"><button className='w-[250px] rounded-sm bg-[#059C4B] h-[71px] text-white text-[24px]'>Partner</button></Link>
                         </div>
                     </div>
                 

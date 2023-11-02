@@ -1,5 +1,6 @@
 import React from 'react'
 import storecardpic from "../../assets/storepage/storecardpic.png"
+import { Link } from 'react-router-dom'
 
 const Storecard = ({ product }) => {
     return (
@@ -12,7 +13,7 @@ const Storecard = ({ product }) => {
                     <div className='mt-10 flex gap-2 flex-row absolute bottom-5 left-5'>
                         <div className='flex flex-row justify-between items-center gap-[20px]'>
                             <span className='text-[#64AA6E] font-extrabold text-[20px]'>${product.itemprice}</span>
-                            <button className='rounded-md font-semibold text-white w-[150px] h-[40px] bg-[#059C4B]'>Add to Cart</button>
+                            <Link to="/signin"><button className='rounded-md font-semibold text-white w-[150px] h-[40px] bg-[#059C4B]'>Add to Cart</button></Link>
                         </div>
                     </div>
                 </div>

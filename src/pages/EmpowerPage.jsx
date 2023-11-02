@@ -7,6 +7,7 @@ import img4 from "../assets/empowerpage/4.png"
 import img5 from "../assets/empowerpage/5.png"
 import img6 from "../assets/empowerpage/6.png"
 import img7 from "../assets/empowerpage/7.png"
+import { Link } from 'react-router-dom'
 
 const EmpowerPage = () => {
     return (
@@ -83,9 +84,9 @@ const EmpowerPage = () => {
                     <h3 className='font-bold text-3xl text-center'>Conclusion</h3>
                     <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>Education is the first step towards creating a sustainable future. Whether you're new to the world of energy or a seasoned enthusiast, our Energy Education resources are here to empower you with knowledge and inspire positive change. Together, we can build a brighter, greener tomorrow.
                         Empower Your Future with Sustainable Investments! Take the first step toward a brighter, more prosperous tomorrow!</p>
-                <button className='cursor-pointer mb-[70px] bg-[#059C4B] w-[280px] h-[51px] text-white text-2xl'>
-                Join Us
-                </button>
+                    <Link to="/signup"><button className='cursor-pointer mb-[70px] bg-[#059C4B] w-[280px] h-[51px] text-white text-2xl'>
+                        Join Us
+                    </button></Link>
                 </div>
             </div>
         </>

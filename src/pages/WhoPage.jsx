@@ -4,6 +4,7 @@ import img1 from "../assets/whopage/1.png"
 import img2 from "../assets/whopage/2.png"
 import img3 from "../assets/whopage/3.png"
 import img4 from "../assets/whopage/4.png"
+import { Link } from 'react-router-dom'
 
 
 const WhoPage = () => {
@@ -14,7 +15,7 @@ const WhoPage = () => {
                     <div className="heading w-[300px] lg:w-[680px]">
                         <h3 className='font-bold text-3xl'>WHO WE ARE</h3>
                         <p className='w-[300px] lg:w-[680px] mt-[15px]'>At Ecocentury Energy we are more than just an energy company; we are a global force for positive change. Our organization is built on a foundation of innovation, sustainability, and a deep commitment to shaping a brighter future for all.</p>
-                        <button className='w-[200px]  mt-[10px] py-4 px-12 rounded-[36px] bg-[#12664F] text-white'>Join Us Now</button>
+                        <Link to="/signup"><button className='w-[200px]  mt-[10px] py-4 px-12 rounded-[36px] bg-[#12664F] text-white'>Join Us Now</button></Link>
                     </div>
                     <img className='w-[300px] h-[300px] xl:w-[591px] xl:h-[445px]' src={img1} alt="1" />
                 </div>
@@ -58,9 +59,9 @@ const WhoPage = () => {
                     <p className='w-[300px] lg:w-[1100px] mt-[10px] text-center text-xl'>Technology is at the heart of our operations. We embrace innovation to develop and implement advanced energy solutions. Collaboration is the key to our success, and we actively seek partnerships and alliances to accelerate our mission.</p>
                     <p className='w-[300px] lg:w-[1100px] mt-[10px] text-center text-xl'>As a global organization with a clear purpose, mission, and vision, [Your Company Name] is committed to making a lasting impact. Together with our partners, employees, and stakeholders, we are driving the transformation of the energy industry and creating a sustainable world for generations to come.
                         Join us on this remarkable journey towards a brighter, more sustainable future.</p>
-                    <button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-12 rounded-[36px] text-white text-2xl'>
+                        <Link to="/signup"><button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-12 rounded-[36px] text-white text-2xl'>
                         Join Us
-                    </button>
+                    </button></Link>
                 </div>
 
 
@@ -71,9 +72,9 @@ const WhoPage = () => {
                     <p className='w-[300px] lg:w-[1100px] mt-[10px] text-center text-xl'>In our community, sustainability isn't merely a trend; it's a way of life. We strive to live our best lives today while working diligently to secure a sustainable and prosperous future for all. Every step we take today, every decision we make, brings us closer to creating a world where environmental consciousness, innovation, and compassion flourish.</p>
                     <p className='w-[300px] lg:w-[1100px] mt-[10px] text-center text-xl'>As a member of the Ecocentury Lifestyle Community, you are not just a witness to change – you are a catalyst for it. Together, we are champions of progress, advocates for environmental stewardship, and champions of a future we are proud to pass on. Join us in shaping a world where sustainable living isn't just a choice; it's our collective legacy. Welcome to our community- where your passion, your voice, and your actions matter. Together, we are the driving force behind a brighter and more sustainable future for all.</p>
                     <h3 className='font-bold text-center'>Join us in creating a world of lasting change!</h3>
-                    <button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-12 rounded-[36px] text-white text-2xl'>
+                    <Link to="/signin"><button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-12 rounded-[36px] text-white text-2xl'>
                     Become a Member
-                    </button>
+                    </button></Link>
                 </div>
 
             </div>

@@ -3,6 +3,7 @@ import img1 from "../assets/communitypage/1.png"
 import img2 from "../assets/communitypage/2.png"
 import bg from "../assets/communitypage/bg.png"
 import AsyncSelect from 'react-select/async';
+import { Link } from 'react-router-dom';
 
 const CommunityPage = () => {
     const [Country, setCountry] = useState('');
@@ -64,13 +65,13 @@ const CommunityPage = () => {
                     <div className='w-full flex flex-col gap-7 justify-center items-center'>
                         <h3 className='font-bold text-center mt-[20px] text-2xl'>Brazil</h3>
                         <p className='text-center w-[300px] xl:w-[590px]'>In Brazil, we found hope in the smiles of children who inspired us with their dreams. Together, we're creating brighter futures</p>
-                        <button className='mb-[30px] bg-[#059C4B] w-[350px] xl:w-[500px] h-[51px] md:text-normal text-xs sm:text-small text-white'>
+                        <Link to="/signup"><button className='mb-[30px] bg-[#059C4B] w-[350px] xl:w-[500px] h-[51px] md:text-normal text-xs sm:text-small text-white'>
                             Join us in our journey of compassion and change in Brazil
-                        </button>
+                        </button></Link>
                     </div>
                     <div className='w-full flex flex-col gap-7 justify-center items-center'>
                         <h3 className='font-bold text-center mt-[20px] text-1xl'>Empower Lives Through Your Donation Today - Bring Smiles to the Less Privileged</h3>
-                        <p className='text-center text-center w-[300px] xl:w-[800px]'>Make a difference with us. You have the power to contribute to our global charity efforts. Choose to donate to specific countries or select unique charity and non-profit organizations from our list. Every contribution you make supports impactful projects worldwide.</p>
+                        <p className='text-center w-[300px] xl:w-[800px]'>Make a difference with us. You have the power to contribute to our global charity efforts. Choose to donate to specific countries or select unique charity and non-profit organizations from our list. Every contribution you make supports impactful projects worldwide.</p>
                     </div>
                     <div className='w-full flex flex-col md:flex-row gap-7 mt-[40px] justify-center items-center'>
                         <div className='mb-[10px] md:mb-[30px]'>

@@ -3,6 +3,7 @@ import bg from "../assets/whatpage/bg.png"
 import img1 from "../assets/whatpage/1.png"
 import img2 from "../assets/whatpage/2.png"
 import img3 from "../assets/whatpage/3.png"
+import { Link } from 'react-router-dom'
 
 const WhatPage = () => {
     return (
@@ -47,9 +48,9 @@ const WhatPage = () => {
                     <h3 className='font-bold text-3xl text-center'>Empowering Lives</h3>
                     <p className='w-[300px] lg:w-[800px] mt-[-20px] text-center'>Empowerment Through Opportunities: Empowering lives is our mantra. We invest in communities, foster startups, and create opportunities that empower individuals and organizations alike. Through our initiatives, we aim to elevate lives, making them more prosperous and self-reliant.</p>
                     <p className='w-[300px] lg:w-[800px] mt-[10px] text-center'>Our commitment goes beyond words; it's a tangible force driving change in the world. EcocenturyEnergy is dedicated to setting industry benchmarks, reducing environmental impact, and uplifting communities. Join us on this transformative journey toward a sustainable, prosperous, and equitable future</p>
-                    <button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-20 rounded-[36px] text-white text-2xl'>
+                    <Link to="/signup"><button className='cursor-pointer mb-[70px] bg-[#059C4B] py-4 px-20 rounded-[36px] text-white text-2xl'>
                         Join Us
-                    </button>
+                    </button></Link>
                 </div>
             </div>
         </>

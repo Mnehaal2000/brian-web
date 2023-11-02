@@ -24,10 +24,21 @@ import mobileLinked from "../assets/homepage/mobile-linkedin.png"
 import mobileTele from "../assets/homepage/mobile-telegram.png"
 import mobileTwitter from "../assets/homepage/mobile-twitter.png"
 import FeedbackSlider from "../components/FeedbackSlider"
+import ContactPopUp from "../components/ContactPopUp"
 
 
-const HomePage =()=> {
+
+const HomePage = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState(-1);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
+  const openContactForm = () => {
+    setIsContactFormOpen(true);
+  };
+
+  const closeContactForm = () => {
+    setIsContactFormOpen(false);
+  };
 
   const toggleAnswer = (index) => {
     if (index === openFaqIndex) {
@@ -53,7 +64,7 @@ const HomePage =()=> {
       ),
     },
     {
-      
+
       question: "How Do I Get Started with My First Investment?",
       answer: (
         <>
@@ -83,7 +94,7 @@ const HomePage =()=> {
       ),
     },
     {
-      
+
       question: "When and How Will I Receive Returns from My Investments?",
       answer: (
         <>
@@ -104,19 +115,19 @@ const HomePage =()=> {
       ),
     },
     {
-      
+
       question: "What Types of Partnerships Does Ecocentury Offer?",
       answer: (
         <>
           We offer two types of partnerships; Individual Partnership and business partnership, whether you're an individual looking to make a meaningful impact or a business aiming for growth while aligning with our mission. You can become a Trailblazer or a Trailblazer Omega to propel your business to greater heights and enjoy a range of incentives .
           <br></br>
           <br></br>
-          For detailed information about partnership tiers, and comprehensive benefits, visit our dedicated Partners page to begin your journey with us and make a positive impact 
+          For detailed information about partnership tiers, and comprehensive benefits, visit our dedicated Partners page to begin your journey with us and make a positive impact
         </>
       ),
     },
     {
-      
+
       question: "What Sustainable Initiatives Does Ecocentury Support?",
       answer: (
         <>
@@ -173,7 +184,7 @@ const HomePage =()=> {
       </div>
       {/* section */}
       <div className=" home-bg4 w-full min-h-[1640px] px-5 lg:px-28 pt-20 pb-16 relative text-black text-lg lg:text-2xl">
-      <div className=" mt-8 mb-60 lg:mb-24 relative">
+        <div className=" mt-8 mb-60 lg:mb-24 relative">
           <img src={img4} className=" absolute right-0 bottom-[-240px] lg:bottom-[unset] lg:top-[-40px] z-0" />
           <div className=" w-full max-w-[440px] flex flex-col gap-3 lg:gap-7 z-10">
             <h3 className=" text-[32px] font-bold z-10">Our Commitment</h3>
@@ -301,15 +312,18 @@ const HomePage =()=> {
 
         </div>
         <div className=" gap-5 lg:gap-14 flex lg:flex-row flex-col items-center">
+          {isContactFormOpen && (
+            <ContactPopUp isOpen={isContactFormOpen} onClose={closeContactForm} />
+          )}
           <h2 className=" text-[24px] lg:text-[32px] font-bold text-black">Frequently Asked Questions</h2>
-         <Link to="#" className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit">Send us an Email</Link>
+          <Link to="#" onClick={openContactForm} className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px] bg-green-secondary font-semibold w-fit">Send us an Email</Link>
         </div>
       </div>
       {/* section */}
       <div className=" w-full px-5 lg:px-52 py-10 lg:py-20 flex flex-col gap-6 lg:gap-12 items-center">
         <div className=" w-full flex flex-col gap-7 lg:gap-14 items-center">
           <h2 className=" text-[30px] lg:text-[40px] text-green-secondary mx-auto">Investor Feedback</h2>
-          <FeedbackSlider/>
+          <FeedbackSlider />
           {/* <div className=" w-full flex lg:flex-row flex-col lg:gap-0 gap-8 items-center lg:items-start justify-between">
             <div className=" lg:pb-0 pb-6 border-b lg:border-b-0 border-gray-300 flex flex-col items-center text-center lg:text-start lg:items-start gap-5 w-full max-w-[455px] text-xl lg:text-[28px] text-black">
               <p className=" text-[24px] lg:text-[32px] font-semibold">“ Investing with Impact ”</p>
@@ -328,7 +342,7 @@ const HomePage =()=> {
               </div>
             </div>
           </div> */}
-         <Link className=" text-xl lg:text-2xl py-4 px-12 rounded-[36px] bg-green-secondary text-white font-semibold w-fit mx-auto">Add a Feedback</Link>
+          <Link className=" text-xl lg:text-2xl py-4 px-12 rounded-[36px] bg-green-secondary text-white font-semibold w-fit mx-auto">Add a Feedback</Link>
 
         </div>
         <div className=" w-full flex flex-col gap-5 lg:gap-8 items-center mt-10 lg:mt-14">
