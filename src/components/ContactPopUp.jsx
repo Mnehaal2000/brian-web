@@ -32,7 +32,7 @@ const ContactPopUp = ({ isOpen, onClose }) => {
                 <div className='w-full'>
                 <form className='flex flex-col justify-center items-center'>
                     <div className="mb-4  flex gap-1 flex-col md:flex-row md:gap-2 w-full justify-between items-center">
-                        <label htmlFor="name" className="block text-gray-700 font-semibold">
+                        <label htmlFor="name" className="block text-gray-700 text-[16px] font-semibold">
                             Name
                         </label>
                         <input
@@ -46,7 +46,7 @@ const ContactPopUp = ({ isOpen, onClose }) => {
                         />
                     </div>
                     <div className="mb-4 flex gap-1 flex-col md:flex-row md:gap-2 w-full justify-between items-center">
-                        <label htmlFor="email" className="block text-gray-700 font-semibold">
+                        <label htmlFor="email" className="block text-gray-700 text-[16px] font-semibold">
                             Email
                         </label>
                         <input
@@ -60,7 +60,7 @@ const ContactPopUp = ({ isOpen, onClose }) => {
                         />
                     </div>
                     <div className="mb-4 flex gap-1 flex-col md:flex-row md:gap-2 w-full justify-between items-center">
-                        <label htmlFor="subject" className="block text-gray-700 font-semibold">
+                        <label htmlFor="subject" className="block text-gray-700 text-[16px] font-semibold">
                             Subject
                         </label>
                         <input
@@ -74,7 +74,7 @@ const ContactPopUp = ({ isOpen, onClose }) => {
                         />
                     </div>
                     <div className="mb-4 flex gap-1 flex-col md:flex-row md:gap-2 w-full justify-between md:items-start items-center">
-                        <label htmlFor="message" className="block text-gray-700 font-semibold">
+                        <label htmlFor="message" className="block text-gray-700 text-[16px] font-semibold">
                             Message
                         </label>
                         <textarea
