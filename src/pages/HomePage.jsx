@@ -342,7 +342,7 @@ const HomePage = () => {
               </div>
             </div>
           </div> */}
-          <Link className=" text-xl lg:text-2xl py-4 px-12 rounded-[36px] bg-green-secondary text-white font-semibold w-fit mx-auto">Add a Feedback</Link>
+          <Link to="/signin" className=" text-xl lg:text-2xl py-4 px-12 rounded-[36px] bg-green-secondary text-white font-semibold w-fit mx-auto">Add a Feedback</Link>
 
         </div>
         <div className=" w-full flex flex-col gap-5 lg:gap-8 items-center mt-10 lg:mt-14">

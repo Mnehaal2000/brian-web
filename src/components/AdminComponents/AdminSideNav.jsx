@@ -25,7 +25,7 @@ const AdminSideNav = () => {
       icon: RiRefund2Line,
       submenus: [
         { name: "Deposit Money", link: "deposit", icon: RiRefund2Line },
-        // { name: "Deposit History", link: "funding-history", icon: RiRefund2Line },
+        { name: "Deposit History", link: "funding-history", icon: RiRefund2Line },
       ],
       isOpen: isFundingOpen,
     },
@@ -33,7 +33,7 @@ const AdminSideNav = () => {
       name: "Withdrawal", link: "#", icon: FaMoneyCheckDollar,
       submenus: [
         { name: "Withdraw Money", link: "withdraw", icon: FaMoneyCheckDollar },
-        // { name: "Withdrawal History", link: "withdraw-history", icon: FaMoneyCheckDollar },
+        { name: "Withdrawal History", link: "withdraw-history", icon: FaMoneyCheckDollar },
       ],
       isOpen: isWithdrawalOpen,
     },

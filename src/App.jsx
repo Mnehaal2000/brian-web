@@ -53,7 +53,9 @@ import Feedbacks from "./components/DashboardComponents/Feedbacks"
 import AdminPortal from "./pages/AdminPortal"
 import AdminHome from "./components/AdminComponents/Home"
 import AdminDeposit from "./components/AdminComponents/Deposit"
+import AdminDepositHistory from "./components/AdminComponents/DepositHistory"
 import AdminWithdraw from "./components/AdminComponents/Withdraw"
+import AdminWithdrawHistory from "./components/AdminComponents/WithdrawHistory"
 import AdminPortfolio from "./components/AdminComponents/Portfolio"
 import AdminBank from "./components/AdminComponents/BankDetails"
 import AdminPartner from "./components/AdminComponents/Partner"
@@ -129,7 +131,9 @@ function App() {
                   <Route path="/adminportal/*" element={<AuthContextProvider><AdminPortal /></AuthContextProvider>} >
                     <Route path="home" element={<AuthContextProvider><AdminHome /></AuthContextProvider>} />
                     <Route path="deposit" element={<AuthContextProvider><AdminDeposit /></AuthContextProvider>} />
+                    <Route path="funding-history" element={<AuthContextProvider><AdminDepositHistory /></AuthContextProvider>} />
                     <Route path="withdraw" element={<AuthContextProvider><AdminWithdraw /></AuthContextProvider>} />
+                    <Route path="withdraw-history" element={<AuthContextProvider><AdminWithdrawHistory /></AuthContextProvider>} />
                     <Route path="portfolio" element={<AuthContextProvider><AdminPortfolio /></AuthContextProvider>} />
                     <Route path="partner" element={<AuthContextProvider><AdminPartner /></AuthContextProvider>} />
                     <Route path="bank" element={<AuthContextProvider><AdminBank /></AuthContextProvider>} />
