@@ -159,7 +159,7 @@ const HomePage = () => {
       <div className=" home-bg2 w-full min-h-[680px] lg:min-h-[700px] flex justify-start items-start lg:py-0 py-20 lg:items-center relative text-black text-xl lg:text-2xl px-5 lg:px-32">
         <div className=" flex flex-col gap-8 items-start w-full max-w-[614px] z-10">
           <p>While the need for energy is universal, our approach is distinctive. At Ecocentury Energy, we're not just meeting energy needs; we're transforming the energy landscape. We're not only reducing emissions; we're pioneering the path to a net-zero future. Our relentless pursuit of sustainable solutions ensures a cleaner, healthier planet for generations to come</p>
-          <Link to="/whoweare" className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px]  bg-green-secondary font-semibold w-fit text-white">Learn More</Link>
+          <Link to="/whatwedo" className=" text-xl lg:text-3xl py-4 px-12 rounded-[36px]  bg-green-secondary font-semibold w-fit text-white">Learn More</Link>
         </div>
         <img src={img2} className=" w-[50%] lg:w-auto absolute bottom-3 right-3 lg:bottom-[unset] lg:right-[110px]" />
       </div>

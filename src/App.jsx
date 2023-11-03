@@ -45,6 +45,7 @@ import Settings from './components/DashboardComponents/Settings';
 import Achievements from './components/DashboardComponents/Achievements';
 import Notifications from './components/DashboardComponents/Notifications';
 import Reports from './components/DashboardComponents/Reports';
+import Feedbacks from "./components/DashboardComponents/Feedbacks"
 //user dashboard end
 
 
@@ -59,6 +60,7 @@ import AdminPartner from "./components/AdminComponents/Partner"
 import News from './components/AdminComponents/News';
 import Store from './components/AdminComponents/Store';
 import PartnersPage from './pages/PartnersPage';
+import AdminFeedbacks from './components/AdminComponents/Feedbacks';
 // admin components end
 
 function App() {
@@ -116,6 +118,7 @@ function App() {
                     <Route path="acc-statement" element={<AuthContextProvider><AccountStatement /></AuthContextProvider>} />
                     <Route path="portfolio" element={<AuthContextProvider><Portfolio /></AuthContextProvider>} />
                     <Route path="support" element={<AuthContextProvider><Support /></AuthContextProvider>} />
+                    <Route path="feedback" element={<AuthContextProvider><Feedbacks /></AuthContextProvider>} />
                     <Route path="green-futures" element={<AuthContextProvider><GreenFutures /></AuthContextProvider>} />
                     <Route path="settings" element={<AuthContextProvider><Settings /></AuthContextProvider>} />
                     <Route path="logout" element={<AuthContextProvider><Logout /></AuthContextProvider>} />
@@ -133,6 +136,7 @@ function App() {
                     <Route path="logout" element={<AuthContextProvider><Logout /></AuthContextProvider>} />
                     <Route path="news" element={<AuthContextProvider><News /></AuthContextProvider>} />
                     <Route path="store" element={<AuthContextProvider><Store /></AuthContextProvider>} />
+                    <Route path="feedbacks" element={<AuthContextProvider><AdminFeedbacks /></AuthContextProvider>} />
                   </Route>)}
               </>
             )}

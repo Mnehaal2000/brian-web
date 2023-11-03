@@ -59,7 +59,7 @@ const Settings = () => {
                 <div className='w-[900px] items-center mt-[30px] rounded-lg h-[846px] border border-white flex flex-col gap-[23px]' style={{ background: "linear-gradient(to right, #29A9E3,#272C36)" }}>
                     <div className='w-[750px] mt-[20px] flex flex-col gap-5 justify-start'>
                         <img className='w-[100px] h-[100px]' src={usericon} alt="" />
-                        <button className='bg-transparent text-white w-[269px] h-[41px] rounded-lg border border-white'>UPLOAD A NEW PROFILE PHOTO</button>
+                        <button className='bg-transparent text-white w-[269px] h-[41px] rounded-lg border border-white'>UPLOAD A PROFILE PHOTO</button>
                     </div>
                     <div className='w-[750px] mt-[20px]'>
                         <div className='grid grid-cols-3 gap-5'>
@@ -324,7 +324,7 @@ const Settings = () => {
 
 
 
-                <div className='w-[900px] items-center mt-[30px] rounded-lg h-[346px] border border-white flex flex-col gap-[23px]' style={{ background: "linear-gradient(#29A9E3,#272C36)" }}>
+                <div className='w-[900px] items-center mt-[30px] rounded-lg h-[375px] border border-white flex flex-col gap-[23px]' style={{ background: "linear-gradient(#29A9E3,#272C36)" }}>
                     <div className='w-[750px] mt-[20px] flex flex-col gap-5 justify-start'>
                         <div className='w-[750px] mt-[20px] flex flex-col gap-5 justify-start'>
                             <h3 className='text-white text-2xl font-bold'>Two Factor Authentication</h3>

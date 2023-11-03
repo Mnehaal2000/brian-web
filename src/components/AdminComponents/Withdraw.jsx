@@ -29,7 +29,11 @@ const Withdraw = () => {
             querySnapshot.forEach((doc) => {
                 if(doc.data().Status==="pending")
                 {
-                    data.push(doc.data());
+                    let d = {
+                        id:doc.id,
+                        ...doc.data()
+                    }
+                    data.push(d);
                 }
                 setTableData(data)
             });
@@ -45,8 +49,8 @@ const Withdraw = () => {
             const querySnapshot = await getDocs(withdrawCollectionRef);
 
             for (const doc of querySnapshot.docs) {
-                const data = doc.data();
-                if (data.transactionId === selectedRowId) {
+                const data = doc.id;
+                if (data === selectedRowId) {
 
                     await updateDoc(doc.ref, {
                         Status: "rejected"
@@ -70,8 +74,8 @@ const Withdraw = () => {
             const querySnapshot = await getDocs(withdrawCollectionRef);
 
             for (const doc of querySnapshot.docs) {
-                const data = doc.data();
-                if (data.transactionId === selectedRowId) {
+                const data = doc.id;
+                if (data === selectedRowId) {
 
                     await updateDoc(doc.ref, {
                         Status: "approved"
@@ -93,14 +97,14 @@ const Withdraw = () => {
 
     const handleSaveRowEdits = async ({ exitEditingMode, row, values }) => {
         if (!Object.keys(validationErrors).length) {
-            const selectedRowId = values.transactionId;
+            const selectedRowId = values.id;
             try {
                 const withdrawsCollectionRef = collection(db, "withdraws");
                 const querySnapshot = await getDocs(withdrawsCollectionRef);
     
                 for (const doc of querySnapshot.docs) {
-                    const data = doc.data();
-                    if (data.transactionId === selectedRowId) {
+                    const data = doc.id;
+                    if (data === selectedRowId) {
                         await updateDoc(doc.ref, values);
                         console.log("Document updated successfully.");
                         break;
@@ -123,7 +127,7 @@ const Withdraw = () => {
 
     const handleDeleteRow = useCallback(
         async (row) => {
-          const selectedRowId = row.original.transactionId;
+          const selectedRowId = row.original.id;
       
           if (!confirm(`Are you sure you want to delete # ${selectedRowId}?`)) {
             return;
@@ -134,8 +138,8 @@ const Withdraw = () => {
             const querySnapshot = await getDocs(withdrawsCollectionRef);
       
             for (const doc of querySnapshot.docs) {
-              const data = doc.data();
-              if (data.transactionId === selectedRowId) {
+              const data = doc.id;
+              if (data === selectedRowId) {
                 await deleteDoc(doc.ref);
                 console.log(`Document with transactionId ${selectedRowId} deleted successfully.`);
                 break;
@@ -143,7 +147,7 @@ const Withdraw = () => {
             }
       
             const updatedTableData = tableData.filter(
-              (rowData) => rowData.transactionId !== selectedRowId
+              (rowData) => rowData.id !== selectedRowId
             );
             setTableData(updatedTableData);
           } catch (error) {
@@ -179,6 +183,10 @@ const Withdraw = () => {
                 accessorKey: 'Email',
                 header: 'Email',
             },
+            {
+                accessorKey: 'id',
+                header: 'Withdraw Id',
+            },
         ],
         [],
     );
@@ -203,7 +211,7 @@ const Withdraw = () => {
         <>
             <div className="main w-[1000px] lg:w-full flex flex-col justify-center items-center">
                 <div className="w-full mb-[50px] items-center mt-4 sm:mt-8 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24 flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-16 justify-center">
-                    <div className="bg-[#014D64] w-full sm:w-[500px] md:w-[700px] lg:w-[900px] xl:w-[1120px] 2xl:w-[1120px] h-[auto] flex flex-col p-5 rounded-md">
+                    <div className="bg-[#014D64] w-full sm:w-[500px] md:w-[700px] lg:w-[900px] xl:w-[970px] 2xl:w-[1120px] h-[auto] flex flex-col p-5 rounded-md">
                         <div className="flex flex-row justify-end">
                             <span className="font-bold text-white text-3xl mb-2 mt-2 sm:mb-4 sm:mt-4 md:mb-3 md:mt-3 lg:mb-3 lg:mt-3 xl:mb-3 xl:mt-3 2xl:mb-3 2xl:mt-3">{userRole}</span>
                         </div>
@@ -252,8 +260,8 @@ const Withdraw = () => {
 
                                         if (selectedRows.length === 1) {
                                             const selectedRow = selectedRows[0];
-                                            const selectedRowId = selectedRow.original.transactionId;
-                                            alert('Rejecting Withdraw with TransactionId: ' + selectedRowId);
+                                            const selectedRowId = selectedRow.original.id;
+                                            alert('Rejecting Withdraw with id: ' + selectedRowId);
                                             handleWithdrawReject(selectedRowId)
                                         } else {
                                             alert('Please select a single row to reject.');
@@ -264,8 +272,8 @@ const Withdraw = () => {
 
                                         if (selectedRows.length === 1) {
                                             const selectedRow = selectedRows[0];
-                                            const selectedRowId = selectedRow.original.transactionId;
-                                            alert('Approving Withdraw with TransactionId: ' + selectedRowId);
+                                            const selectedRowId = selectedRow.original.id;
+                                            alert('Approving Withdraw with id: ' + selectedRowId);
                                             handleWithdrawApprove(selectedRowId)
                                         } else {
                                             alert('Please select a single row to approve.');
@@ -277,7 +285,7 @@ const Withdraw = () => {
                                         <div style={{ display: 'flex', gap: '0.5rem' }}>
                                             <Button
                                                 color="error"
-                                                disabled={!table.getIsSomeRowsSelected()}
+                                                //disabled={!table.getIsSomeRowsSelected()}
                                                 onClick={handleReject}
                                                 variant="contained"
                                             >
@@ -285,7 +293,7 @@ const Withdraw = () => {
                                             </Button>
                                             <Button
                                                 color="success"
-                                                disabled={!table.getIsSomeRowsSelected()}
+                                                //disabled={!table.getIsSomeRowsSelected()}
                                                 onClick={handleApprove}
                                                 variant="contained"
                                             >

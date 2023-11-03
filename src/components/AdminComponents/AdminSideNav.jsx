@@ -7,7 +7,8 @@ import { IoIosLogOut } from "react-icons/io";
 import { RiRefund2Line } from "react-icons/ri";
 import { FaClipboardUser } from "react-icons/fa6";
 import { BiNews, BiStore } from "react-icons/bi";
-import { BsBank } from "react-icons/bs";
+import { BsBank,BsBackspace } from "react-icons/bs";
+import {VscFeedback} from "react-icons/vsc"
 import usericon from "../../assets/dashboard/profile.jpg"
 import AuthContext from "../../AuthContext"
 
@@ -51,6 +52,8 @@ const AdminSideNav = () => {
     // { name: "Settings", link: "settings", icon: FiSettings },
     { name: "News", link: "news", icon: BiNews },
     { name: "Store", link: "store", icon: BiStore },
+    { name: "Feedback", link: "feedbacks", icon: VscFeedback },
+    { name: "Back to Site", link: "/", icon: BsBackspace },
     { name: "Logout", link: "logout", icon: IoIosLogOut },
   ];
 

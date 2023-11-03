@@ -1,34 +1,27 @@
-import React, { useCallback, useMemo, useContext, useState, useEffect } from 'react';
+import React, { useMemo, useContext, useState, useEffect } from 'react';
 import { MaterialReactTable } from 'material-react-table';
 import {
-    Box,
     Button,
-    IconButton,
-    Tooltip,
     createTheme, ThemeProvider, useTheme
 } from '@mui/material';
-import { Delete, Edit } from '@mui/icons-material';
-import { collection, getDocs,deleteDoc, updateDoc } from "firebase/firestore";
+import { collection, getDocs, deleteDoc, updateDoc } from "firebase/firestore";
 import { db } from '../../firebase';
 import AuthContext from "../../AuthContext"
 
-const Deposit = () => {
-
+const Feedbacks = () => {
     const { userRole } = useContext(AuthContext)
 
     useEffect(() => {
-        getAllDeposits();
+        getAllFeedbacks();
     }, [])
 
     let data = [
     ];
-
-    const getAllDeposits = async () => {
+    const getAllFeedbacks = async () => {
         try {
-            const querySnapshot = await getDocs(collection(db, "deposits"));
+            const querySnapshot = await getDocs(collection(db, "feedbacks"));
             querySnapshot.forEach((doc) => {
-                if(doc.data().Status==="pending")
-                {
+                if (doc.data().status === "pending") {
                     let d = {
                         id:doc.id,
                         ...doc.data()
@@ -42,18 +35,18 @@ const Deposit = () => {
         }
     }
 
-    const handleDepositReject = async (selectedRowId) => {
+    const handleFeedbackReject = async (selectedRowId) => {
         try {
-            const depositsCollectionRef = collection(db, "deposits");
+            const feedbacksCollectionRef = collection(db, "feedbacks");
 
-            const querySnapshot = await getDocs(depositsCollectionRef);
+            const querySnapshot = await getDocs(feedbacksCollectionRef);
 
             for (const doc of querySnapshot.docs) {
                 const data = doc.id;
                 if (data === selectedRowId) {
 
                     await updateDoc(doc.ref, {
-                        Status: "rejected"
+                        status: "rejected"
                     });
                     console.log("Document updated successfully.");
                     return;
@@ -67,18 +60,18 @@ const Deposit = () => {
     };
 
 
-    const handleDepositApprove = async (selectedRowId) => {
+    const handleFeedbackApprove = async (selectedRowId) => {
         try {
-            const depositsCollectionRef = collection(db, "deposits");
+            const FeedbacksCollectionRef = collection(db, "feedbacks");
 
-            const querySnapshot = await getDocs(depositsCollectionRef);
+            const querySnapshot = await getDocs(FeedbacksCollectionRef);
 
             for (const doc of querySnapshot.docs) {
                 const data = doc.id;
                 if (data === selectedRowId) {
 
                     await updateDoc(doc.ref, {
-                        Status: "approved"
+                        status: "approved"
                     });
                     console.log("Document updated successfully.");
                     return;
@@ -91,103 +84,31 @@ const Deposit = () => {
         }
     }
 
+
     const [tableData, setTableData] = useState([]);
-    const [validationErrors, setValidationErrors] = useState({});
 
-
-    const handleSaveRowEdits = async ({ exitEditingMode, row, values }) => {
-        if (!Object.keys(validationErrors).length) {
-            const selectedRowId = values.id;
-            try {
-                const depositsCollectionRef = collection(db, "deposits");
-                const querySnapshot = await getDocs(depositsCollectionRef);
-    
-                for (const doc of querySnapshot.docs) {
-                    const data = doc.id;
-                    if (data === selectedRowId) {
-                        await updateDoc(doc.ref, values);
-                        console.log("Document updated successfully.");
-                        break;
-                    }
-                }
-    
-                tableData[row.index] = values;
-                setTableData([...tableData]);
-    
-                exitEditingMode(); 
-            } catch (error) {
-                console.error("Error updating document:", error);
-            }
-        }
-    };
-
-    const handleCancelRowEdits = () => {
-        setValidationErrors({});
-    };
-
-    const handleDeleteRow = useCallback(
-        async (row) => {
-          const selectedRowId = row.original.id;
-      
-          if (!confirm(`Are you sure you want to delete # ${selectedRowId}?`)) {
-            return;
-          }
-      
-          try {
-            const depositsCollectionRef = collection(db, "deposits");
-            const querySnapshot = await getDocs(depositsCollectionRef);
-      
-            for (const doc of querySnapshot.docs) {
-              const data = doc.id;
-              if (data === selectedRowId) {
-                await deleteDoc(doc.ref);
-                console.log(`Document with transactionId ${selectedRowId} deleted successfully.`);
-                break;
-              }
-            }
-      
-            const updatedTableData = tableData.filter(
-              (rowData) => rowData.id !== selectedRowId
-            );
-            setTableData(updatedTableData);
-          } catch (error) {
-            console.error("Error deleting document:", error);
-          }
-        },
-        [tableData]
-      );
-      
 
     const columns = useMemo(
         () => [
             {
-                accessorKey: 'Name',
-                header: 'Name',
-                size: 140,
-            },
-            {
-                accessorKey: 'depositMethod',
-                header: 'Deposit Method',
-                size: 140,
-            },
-            {
                 accessorKey: 'id',
-                header: 'Deposit Id',
+                header: 'Feedback Id',
                 size: 140,
             },
             {
-                accessorKey: 'depositAmount',
-                header: 'Deposit Amount',
+                accessorKey: 'user',
+                header: 'user',
+                size: 140,
             },
             {
-                accessorKey: 'transactionId',
-                header: 'Transaction Id',
-                size: 80,
+                accessorKey: 'feedback_subject',
+                header: 'Subject',
+                size: 140,
             },
             {
-                accessorKey: 'Email',
-                header: 'Email',
-            },
+                accessorKey: 'feedback',
+                header: 'Feedback',
+            }
         ],
         [],
     );
@@ -208,10 +129,13 @@ const Deposit = () => {
         [globalTheme],
     );
 
+
+
     return (
         <>
             <div className="main w-[1000px] lg:w-full flex flex-col justify-center items-center">
                 <div className="w-full mb-[50px] items-center mt-4 sm:mt-8 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24 flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-16 justify-center">
+                    <h1 className='font-semibold md:text-[40px] text-[25px] text-white'>Feedbacks</h1>
                     <div className="bg-[#014D64] w-full sm:w-[500px] md:w-[700px] lg:w-[900px] xl:w-[970px] 2xl:w-[1120px] h-[auto] flex flex-col p-5 rounded-md">
                         <div className="flex flex-row justify-end">
                             <span className="font-bold text-white text-3xl mb-2 mt-2 sm:mb-4 sm:mt-4 md:mb-3 md:mt-3 lg:mb-3 lg:mt-3 xl:mb-3 xl:mt-3 2xl:mb-3 2xl:mt-3">{userRole}</span>
@@ -238,23 +162,6 @@ const Deposit = () => {
                                 enableRowSelection
                                 editingMode="modal" //default
                                 enableColumnOrdering
-                                enableEditing
-                                onEditingRowSave={handleSaveRowEdits}
-                                onEditingRowCancel={handleCancelRowEdits}
-                                renderRowActions={({ row, table }) => (
-                                    <Box sx={{ display: 'flex', gap: '1rem' }}>
-                                        <Tooltip arrow placement="left" title="Edit">
-                                            <IconButton onClick={() => table.setEditingRow(row)}>
-                                                <Edit />
-                                            </IconButton>
-                                        </Tooltip>
-                                        <Tooltip arrow placement="right" title="Delete">
-                                            <IconButton color="error" onClick={() => handleDeleteRow(row)}>
-                                                <Delete />
-                                            </IconButton>
-                                        </Tooltip>
-                                    </Box>
-                                )}
                                 renderTopToolbarCustomActions={({ table }) => {
                                     const handleReject = () => {
                                         const selectedRows = table.getSelectedRowModel().flatRows;
@@ -262,8 +169,8 @@ const Deposit = () => {
                                         if (selectedRows.length === 1) {
                                             const selectedRow = selectedRows[0];
                                             const selectedRowId = selectedRow.original.id;
-                                            alert('Rejecting Deposit with id: ' + selectedRowId);
-                                            handleDepositReject(selectedRowId)
+                                            alert('Rejecting Deposit with TransactionId: ' + selectedRowId);
+                                            handleFeedbackReject(selectedRowId)
                                         } else {
                                             alert('Please select a single row to reject.');
                                         }
@@ -274,8 +181,8 @@ const Deposit = () => {
                                         if (selectedRows.length === 1) {
                                             const selectedRow = selectedRows[0];
                                             const selectedRowId = selectedRow.original.id;
-                                            alert('Approving Deposit with id: ' + selectedRowId);
-                                            handleDepositApprove(selectedRowId)
+                                            alert('Approving Deposit with TransactionId: ' + selectedRowId);
+                                            handleFeedbackApprove(selectedRowId)
                                         } else {
                                             alert('Please select a single row to approve.');
                                         }
@@ -286,7 +193,7 @@ const Deposit = () => {
                                         <div style={{ display: 'flex', gap: '0.5rem' }}>
                                             <Button
                                                 color="error"
-                                                //disabled={!table.getIsSomeRowsSelected()}
+                                                // disabled={!table.getIsSomeRowsSelected()}
                                                 onClick={handleReject}
                                                 variant="contained"
                                             >
@@ -294,7 +201,7 @@ const Deposit = () => {
                                             </Button>
                                             <Button
                                                 color="success"
-                                                //disabled={!table.getIsSomeRowsSelected()}
+                                                //  disabled={!table.getIsSomeRowsSelected()}
                                                 onClick={handleApprove}
                                                 variant="contained"
                                             >
@@ -313,4 +220,4 @@ const Deposit = () => {
     )
 }
 
-export default Deposit
+export default Feedbacks

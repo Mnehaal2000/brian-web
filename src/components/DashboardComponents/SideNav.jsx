@@ -7,10 +7,11 @@ import { Link, useLocation } from "react-router-dom";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { IoIosLogOut } from "react-icons/io";
 import { FcSupport } from "react-icons/fc";
-import { BsCart, BsBell, BsTrophy } from "react-icons/bs";
+import { BsCart, BsBell, BsTrophy,BsBackspace } from "react-icons/bs";
 import { RiRefund2Line } from "react-icons/ri";
 import { FaPersonCane, FaClipboardUser } from "react-icons/fa6";
 import { FaPeopleCarry } from "react-icons/fa";
+import {VscFeedback} from "react-icons/vsc"
 import usericon from "../../assets/dashboard/profile.jpg"
 import AuthContext from "../../AuthContext"
 
@@ -50,7 +51,9 @@ const SideNav = () => {
     { name: "Achievements", link: "achievements", icon: BsTrophy },
     { name: "Reports", link: "reports", icon: TbReportAnalytics, margin: true },
     { name: "Support", link: "support", icon: FcSupport },
+    { name: "Feedback", link: "feedback", icon: VscFeedback },
     { name: "Settings", link: "settings", icon: FiSettings },
+    { name: "Back to Site", link: "/", icon: BsBackspace },
     { name: "Logout", link: "logout", icon: IoIosLogOut },
   ];
 
