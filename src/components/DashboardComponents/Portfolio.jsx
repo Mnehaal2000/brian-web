@@ -37,7 +37,8 @@ const Portfolio = () => {
                 method: selectedMethod,
                 amount: selectedAmount,
                 name: docSnap.data().Name,
-                email: docSnap.data().Email
+                email: docSnap.data().Email,
+                status:'pending'
             };
 
             addDoc(collection(db, 'portfolios'), portfolioData)
@@ -70,8 +71,10 @@ const Portfolio = () => {
                             style={{ background: "linear-gradient(#0AC15F,#00A34C)" }}
                         >
                             <option className='text-black' value="eco-innovation">Eco Innovation</option>
-                            <option className='text-black' value="bank-transfer">Bank Transfer</option>
-                            <option className='text-black' value="paypal">PayPal</option>
+                            <option className='text-black' value="eco-carbon-free">Eco-carbon Free</option>
+                            <option className='text-black' value="lower-emissions">Lower Emissions</option>
+                            <option className='text-black' value="net-zero-emissions">Net-Zero Emissions</option>
+                            <option className='text-black' value="eco-power">Eco-Power</option>
                         </select>
                     </div>
                     <div className='flex mt-[20px] flex-col'>

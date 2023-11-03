@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import { Link } from "react-router-dom";
 import logoIcon from "../assets/homepage/Ecocentury energy.png"
 import { auth, db } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { getDoc, doc } from "firebase/firestore";
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 
 export default function NavBar() {
@@ -130,12 +132,183 @@ export default function NavBar() {
                             <li>
                                 <Link onClick={closeNavbar} to="/whatwedo">What we do</Link>
                             </li>
+
+
+
+
+
+
+
+
+
+
                             <li>
-                                <Link onClick={closeNavbar} to="/energy">Energy & Innovation</Link>
+                                <Menu as="div" className="relative inline-block text-left">
+                                    <div>
+                                        <Menu.Button className="inline-flex items-center ">
+                                            Energy & Innovation
+                                            <ChevronDownIcon
+                                                className="ml-2 -mr-1 h-8 w-5 text-black-200 hover:text-violet-100"
+                                                aria-hidden="true"
+                                            />
+                                        </Menu.Button>
+                                    </div>
+                                    <Transition
+                                        as={Fragment}
+                                        enter="transition ease-out duration-100"
+                                        enterFrom="transform opacity-0 scale-95"
+                                        enterTo="transform opacity-100 scale-100"
+                                        leave="transition ease-in duration-75"
+                                        leaveFrom="transform opacity-100 scale-100"
+                                        leaveTo="transform opacity-0 scale-95"
+                                    >
+                                        <Menu.Items className="absolute z-[9999] left-[-10px] mt-4 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                            <div className="px-1 py-1 ">
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link to="/environment">
+                                                            <button
+                                                                className={`${active ? 'bg-[#7FCCF0] text-white' : 'text-gray-900'
+                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                                            >
+                                                                environment
+                                                            </button>
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                            </div>
+                                            <div className="px-1 py-1 ">
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link to="/energy">
+                                                            <button
+                                                                className={`${active ? 'bg-[#7FCCF0] text-white' : 'text-gray-900'
+                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                                            >
+                                                                Energy & Innovation
+                                                            </button>
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                            </div>
+                                            <div className="px-1 py-1 ">
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link to="/community">
+                                                            <button
+                                                                className={`${active ? 'bg-[#7FCCF0] text-white' : 'text-gray-900'
+                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                                            >
+                                                                community
+                                                            </button>
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                            </div>
+                                            <div className="px-1 py-1 ">
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link to="/empower">
+                                                            <button
+                                                                className={`${active ? 'bg-[#7FCCF0] text-white' : 'text-gray-900'
+                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                                            >
+                                                                empower
+                                                            </button>
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                            </div>
+                                            <div className="px-1 py-1 ">
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link to="/news">
+                                                            <button
+                                                                className={`${active ? 'bg-[#7FCCF0] text-white' : 'text-gray-900'
+                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                                            >
+                                                                news
+                                                            </button>
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                            </div>
+                                        </Menu.Items>
+                                    </Transition>
+                                </Menu>
                             </li>
+
+
+
+
+
+
+
+
                             <li>
+                                <Menu as="div" className="relative inline-block text-left">
+                                    <div>
+                                        <Menu.Button className="inline-flex items-center ">
+                                            Partner
+                                            <ChevronDownIcon
+                                                className="ml-2 -mr-1 h-8 w-5 text-black-200 hover:text-violet-100"
+                                                aria-hidden="true"
+                                            />
+                                        </Menu.Button>
+                                    </div>
+                                    <Transition
+                                        as={Fragment}
+                                        enter="transition ease-out duration-100"
+                                        enterFrom="transform opacity-0 scale-95"
+                                        enterTo="transform opacity-100 scale-100"
+                                        leave="transition ease-in duration-75"
+                                        leaveFrom="transform opacity-100 scale-100"
+                                        leaveTo="transform opacity-0 scale-95"
+                                    >
+                                        <Menu.Items className="absolute z-[9999] left-[-10px] mt-4 w-[260px] origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                            <div className="px-1 py-1 ">
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link to="/startups">
+                                                            <button
+                                                                className={`${active ? 'bg-[#7FCCF0] text-white' : 'text-gray-900'
+                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                                            >
+                                                                ecocentury startups & ventures
+                                                            </button>
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                            </div>
+                                            <div className="px-1 py-1 ">
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link to="/partners">
+                                                            <button
+                                                                className={`${active ? 'bg-[#7FCCF0] text-white' : 'text-gray-900'
+                                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                                            >
+                                                                partner with us
+                                                            </button>
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                            </div>
+                                        </Menu.Items>
+                                    </Transition>
+                                </Menu>
+                            </li>
+
+
+
+
+
+
+
+
+                            {/* <li>
                                 <Link onClick={closeNavbar} to="/startups">Ecocentury Startups & Ventures</Link>
-                            </li>
+                            </li> */}
                             {/* <li>
                                 <Link onClick={closeNavbar} to="/news">Resources</Link>
                             </li> */}
@@ -146,7 +319,7 @@ export default function NavBar() {
                         </ul>
 
                         <div className="mt-3 space-y-2 lg:hidden ">
-                            <Link onClick={closeNavbar} to="/signin" className=" inline-block w-full text-center py-3 px-10 bg-green-primary rounded-3xl text-white" >Login</Link>
+                            <a href={Linkto} onClick={closeNavbar} className=" inline-block w-full text-center py-3 px-10 bg-green-primary rounded-3xl text-white" >{Linktext}</a>
                         </div>
                     </div>
                 </div>

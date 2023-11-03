@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import Select from 'react-select';
 import AsyncSelect from 'react-select/async';
 import { useFormik } from 'formik';
@@ -6,40 +6,41 @@ import * as Yup from 'yup';
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
-import { createUserWithEmailAndPassword} from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignUpPage = () => {
-     const [err, setErr] = useState(false);
-     const [loading, setLoading] = useState(false);
-     const navigate = useNavigate();
+    const [err, setErr] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [terms, setterms] = useState(false);
+
+    const navigate = useNavigate();
 
     const loadCountries = async (inputValue) => {
-        if(inputValue)
-        {
+        if (inputValue) {
             try {
                 const response = await fetch(`https://restcountries.com/v3.1/name/${inputValue}`);
                 if (!response.ok) {
-                  throw new Error(`Failed to fetch data: ${response.statusText}`);
+                    throw new Error(`Failed to fetch data: ${response.statusText}`);
                 }
                 const data = await response.json();
-            
+
                 // Map the API response to an array of country options
                 const countryOptions = data.map((country) => ({
-                  label: country.name.common,
-                  value: country.cca2,
+                    label: country.name.common,
+                    value: country.cca2,
                 }));
-            
+
                 return countryOptions;
-              } catch (error) {
+            } catch (error) {
                 console.error('Error loading countries:', error);
                 return [];
-              }
+            }
         }
-        else{
+        else {
             console.log('')
         }
-      };
-      
+    };
+
 
 
     const validationSchema = Yup.object({
@@ -82,37 +83,44 @@ const SignUpPage = () => {
             ZIPCode: '',
         },
         validationSchema,
-        onSubmit: async(values) => {
+        onSubmit: async (values) => {
+
+            if (!terms) {
+                // Display an error message or handle it as needed
+                alert("Please accept the terms and conditions.");
+                return;
+              }
+
             // Your form submission logic here
             setLoading(true);
-          
-            try {
-              // Create user
-              const res = await createUserWithEmailAndPassword(auth,values.Email,values.ConfirmPassword);
-          
-              // Create user on firestore in "users" collection
-              await setDoc(doc(db, "users", res.user.uid), {
-                uid: res.user.uid,
-                FirstName:values.FirstName,
-                LastName:values.LastName,
-                Email:values.Email,
-                Phone:values.Phone,
-                UserName:values.UserName,
-                Gender:values.Gender,
-                Country:values.Country,
-                Name:values.Name,
-                AddressLine1:values.AddressLine1,
-                AddressLine2:values.AddressLine2,
-                City:values.City,
-                State:values.State,
-                ZIPCode:values.ZIPCode,
 
-              });
-              navigate("/dashboard/home")
+            try {
+                // Create user
+                const res = await createUserWithEmailAndPassword(auth, values.Email, values.ConfirmPassword);
+
+                // Create user on firestore in "users" collection
+                await setDoc(doc(db, "users", res.user.uid), {
+                    uid: res.user.uid,
+                    FirstName: values.FirstName,
+                    LastName: values.LastName,
+                    Email: values.Email,
+                    Phone: values.Phone,
+                    UserName: values.UserName,
+                    Gender: values.Gender,
+                    Country: values.Country,
+                    Name: values.Name,
+                    AddressLine1: values.AddressLine1,
+                    AddressLine2: values.AddressLine2,
+                    City: values.City,
+                    State: values.State,
+                    ZIPCode: values.ZIPCode,
+
+                });
+                navigate("/dashboard/home")
             } catch (err) {
-              console.log(err);
-              setErr(true);
-              setLoading(false);
+                console.log(err);
+                setErr(true);
+                setLoading(false);
             }
             console.log(values);
         },
@@ -364,9 +372,12 @@ const SignUpPage = () => {
                             <div className="text-red-500">{formik.errors.ZIPCode}</div>
                         ) : null}
                     </div>
-                    <span className='w-full md:w-[350px] text-center mt-4 mb-4 text-black'>
-                        I consent to receive electronic communications regarding my activity on this portal and agree to the Terms of Use & Privacy Policy.
-                    </span>
+                    <div className="flex flex-row justify-center items-center gap-1">
+                        <input checked={terms} onChange={(e) => setterms(e.target.checked)} type="checkbox" name="terms" id="terms" />
+                        <p className='w-full md:w-[350px] text-center mt-4 mb-4 text-black'>
+                            I consent to receive electronic communications regarding my activity on this portal and agree to the <span className="text-black hover:underline cursor-pointer">Terms of Use</span> & <span className="text-black hover:underline cursor-pointer">Privacy Policy.</span>
+                        </p>
+                    </div>
                     <button type='submit' className='bg-[#12664F] w-full md:w-[400px] h-[40px] text-md font-bold text-white rounded-3xl'>Sign Up</button>
                     {loading && "Registering..."}
                     {err && <span>Something went wrong</span>}
@@ -390,7 +401,7 @@ const SignUpPage = () => {
             </div>
 
             <div className="paras mt-2 mb-20 w-[250px] flex flex-col gap-5 md:w-[700px]">
-                
+
                 <div className=" flex items-start gap-2"><span className=" text-4xl text-black font-bold">*</span><span className="text-black text-md">When you sign up, you have the option to pay now (recommended) or later. However, if you choose to pay later you must complete your membership fee payment within 3 days, which equals 72 hours. Otherwise you will be cut off from the system.</span></div>
                 <div className=" flex items-start gap-2"><span className=" text-4xl text-black font-bold">*</span><span className="text-black text-md">Alternatively, you can choose to pay $50 immediately. If you pay the remaining $450 within 30 days, the $100 fee will still be waived. After 30 days, the payment will be $550 for the year, which you can opt to pay in $50 monthly installments, covering the $600 lifetime membership fee.</span></div>
                 <div className=" flex items-start gap-2"><span className=" text-4xl text-black font-bold">*</span><span className="text-black text-md">By becoming a member, you embark on a journey toward a more sustainable future. Membership grants you access to invest and earn from our offerings, As a member, you have the potential for unlimited earnings, whether as an affiliate or by exploring even more opportunities.</span></div>

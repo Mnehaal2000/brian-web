@@ -32,6 +32,7 @@ const PartnerBus = () => {
   const submithandler = async () => {
     try {
       const busData = {
+        status:'pending',
         partner_type: "business",
         firstName,
         lastName,
@@ -245,7 +246,8 @@ const PartnerBus = () => {
                 value={paymentMethod}
                 onChange={(e) => setPaymentMethod(e.target.value)}
               >
-                <option className='text-black' value="credit-card">Crypto</option>
+                <option className='text-black' value="">Choose an option</option>
+                <option className='text-black' value="crypto">Crypto</option>
                 <option className='text-black' value="bank-transfer">Bank Transfer</option>
                 <option className='text-black' value="paypal">PayPal</option>
               </select>

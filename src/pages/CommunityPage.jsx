@@ -1,11 +1,26 @@
 import React, { useState } from 'react'
 import img1 from "../assets/communitypage/1.png"
+// slick images
 import img2 from "../assets/communitypage/2.png"
+// slick images end
 import bg from "../assets/communitypage/bg.png"
 import AsyncSelect from 'react-select/async';
 import { Link } from 'react-router-dom';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const CommunityPage = () => {
+
+    const settings = {
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows:false,
+    };
+
     const [Country, setCountry] = useState('');
 
     const loadCountries = async (inputValue) => {
@@ -56,11 +71,24 @@ const CommunityPage = () => {
                 </div>
                 <div className="min-h-screen flex flex-col" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                     <h3 className='mb-10 mt-10 text-center font-bold text-3xl'>Supporting Communities Globally</h3>
-                    <div className="h-[622px] flex flex-col relative"
+                    {/* <div className="h-[622px] flex flex-col relative"
                         style={{
                             background: `url(${img2}) lightgray 50% / cover no-repeat`,
                         }}>
 
+                    </div> */}
+                    <div className="h-[622px] flex flex-col relative">
+                        <Slider {...settings}>
+                            <div className="h-[622px] flex flex-col relative">
+                                <img src={img1} alt="Slide 1" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="h-[622px] flex flex-col relative">
+                                <img src={img2} alt="Slide 2" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="h-[622px] flex flex-col relative">
+                                <img src={img1} alt="Slide 3" className="w-full h-full object-cover" />
+                            </div>
+                        </Slider>
                     </div>
                     <div className='w-full flex flex-col gap-7 justify-center items-center'>
                         <h3 className='font-bold text-center mt-[20px] text-2xl'>Brazil</h3>
@@ -87,7 +115,7 @@ const CommunityPage = () => {
                                 }}
                                 value={Country}
                             />
-                            {Country&&<p className='text-xs text-center'>Country: {Country}</p>}
+                            {Country && <p className='text-xs text-center'>Country: {Country}</p>}
                             <p className='text-xs text-center'>(Your support helps us continue our mission in this region)</p>
                         </div>
                         <div className='mb-[30px]'>

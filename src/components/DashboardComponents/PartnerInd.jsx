@@ -26,6 +26,7 @@ const PartnerInd = () => {
   const submithandler = async () => {
     try {
       const invData = {
+        status:'pending',
         partner_type: "individual",
         firstName,
         lastName,
