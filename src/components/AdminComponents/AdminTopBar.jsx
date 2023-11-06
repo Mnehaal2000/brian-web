@@ -8,7 +8,7 @@ const AdminTopBar = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentTime(new Date());
-        }, 60000);
+        }, 1000);
 
         return () => {
             clearInterval(interval);
@@ -24,7 +24,7 @@ const AdminTopBar = () => {
                 <div className="dash flex flex-col items-center justify-center gap-1">
                     <p className='md:text-4xl text-[20px] text-white font-bold'>Admin Dashboard</p>
                     <div className="bg-black p-4 w-full mt-[10px] rounded-lg shadow-lg">
-                        <p className="text-green-400 text-2xl text-center">{currentTime.toLocaleTimeString().slice(0, 5)} PM</p>
+                        <p className="text-green-400 text-2xl text-center">{currentTime.toLocaleTimeString()}</p>
                     </div>
                 </div>
 
