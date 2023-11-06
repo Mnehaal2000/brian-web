@@ -133,8 +133,8 @@ const Feedbacks = () => {
 
     return (
         <>
-            <div className="main w-[1000px] lg:w-full flex flex-col justify-center items-center">
-                <div className="w-full mb-[50px] items-center mt-4 sm:mt-8 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24 flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-16 justify-center">
+            <div className="main w-[500px] lg:w-full flex flex-col justify-center items-center">
+                <div className="w-full mb-[50px] pr-2 pl-2 items-start lg:items-center mt-4 sm:mt-8 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24 flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-16 justify-center">
                     <h1 className='font-semibold md:text-[40px] text-[25px] text-white'>Feedbacks</h1>
                     <div className="bg-[#014D64] w-full sm:w-[500px] md:w-[700px] lg:w-[900px] xl:w-[970px] 2xl:w-[1120px] h-[auto] flex flex-col p-5 rounded-md">
                         <div className="flex flex-row justify-end">

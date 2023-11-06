@@ -16,19 +16,19 @@ const AdminTopBar = () => {
     }, []);
 
     return (
-        <div className="topBar w-[1000px] lg:w-full flex flex-col shadow-md pb-10">
+        <div className="topBar w-[300px] lg:w-full items-center justify-center flex flex-col shadow-md pb-10">
             <div className="icons w-full flex justify-end">
                 <div className="flex flex-row gap-2 items-center mt-5 mb-5 mr-[45px]"></div>
             </div>
-            <div className='flex w-full flex-row items-center justify-between'>
-                <div className="dash flex flex-col gap-1 ml-[40px]">
-                    <p className='text-4xl text-white font-bold'>Admin Dashboard</p>
-                    <div className="bg-black p-4 rounded-lg shadow-lg">
-                        <p className="text-green-400 text-2xl text-center">{currentTime.toLocaleTimeString().slice(0,5)} PM</p>
+            {/* <div className='flex w-full flex-row items-center justify-center'> */}
+                <div className="dash flex flex-col items-center justify-center gap-1">
+                    <p className='md:text-4xl text-[20px] text-white font-bold'>Admin Dashboard</p>
+                    <div className="bg-black p-4 w-full mt-[10px] rounded-lg shadow-lg">
+                        <p className="text-green-400 text-2xl text-center">{currentTime.toLocaleTimeString().slice(0, 5)} PM</p>
                     </div>
                 </div>
 
-                <div className='flex flex-row gap-5 items-center justify-center mr-[40px]'>
+                {/* <div className='flex flex-row gap-5 items-center justify-center mr-[40px]'>
                     <div className="relative">
                         <input style={{ background: "linear-gradient(to right, #29A9E3, #00A34C)" }} type="search" name="q" className="py-2 placeholder-white text-sm text-white pl-10 w-[325px] outline-none h-[56px] rounded-[11px]" placeholder="Type here to search something..." autoComplete="off" />
                         <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -46,8 +46,8 @@ const AdminTopBar = () => {
                             </svg>
                         </span>
                     </div>
-                </div>
-            </div>
+                </div> */}
+            {/* </div> */}
         </div>
     );
 }

@@ -24,3 +24,9 @@
   input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1); /* Invert the colors to make it white */
 }
+
+.MuiTableContainer-root.css-1vlry5a-MuiTableContainer-root::-webkit-scrollbar {
+  /* Basic scrollbar styles */
+  height: 5px !important;
+}
+
