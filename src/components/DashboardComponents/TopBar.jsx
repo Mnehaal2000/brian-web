@@ -4,7 +4,7 @@ import userimg from "../../assets/dashboard/profile.jpg"
 const TopBar = () => {
     return (
         <div className="topBar w-[1000px] lg:w-full flex flex-col shadow-md pb-10">
-            <div className="icons w-full flex justify-end">
+            {/* <div className="icons w-full flex justify-end">
                 <div className="flex flex-row gap-2 items-center mt-5 mb-5 mr-[45px]">
 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer">
@@ -23,14 +23,14 @@ const TopBar = () => {
 
 
                 </div>
-            </div>
-            <div className='flex w-full flex-row items-center justify-between'>
+            </div> */}
+            <div className='flex w-full flex-row mt-[25px] items-center justify-between'>
                 <div className="dash flex flex-col gap-1 ml-[40px]">
                     <p className='text-4xl text-white font-bold'>Dashboard</p>
                     <p className=' text-white'>See your account information here</p>
                 </div>
 
-                <div className='flex flex-row gap-5 items-center justify-center mr-[40px]'>
+                {/* <div className='flex flex-row gap-5 items-center justify-center mr-[40px]'>
                     <div className="relative">
                         <input style={{ background: "linear-gradient(to right, #29A9E3, #00A34C)" }} type="search" name="q" className="py-2 placeholder-white text-sm text-white pl-10 w-[325px] outline-none h-[56px] rounded-[11px]" placeholder="Type here to search something..." autoComplete="off" />
                         <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -48,7 +48,7 @@ const TopBar = () => {
                             </svg>
                         </span>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );

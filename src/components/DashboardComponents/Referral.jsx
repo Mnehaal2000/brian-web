@@ -127,7 +127,7 @@ const Referral = () => {
                             Select Rank to View
                         </label>
                         <select
-                            className="bg-transparent p-5 mt-[10px] mb-[30px] w-[130px] h-[70px] border border-white outline-none rounded-md text-lg text-white"
+                            className="bg-transparent p-5 mt-[10px] mb-[30px] w-[200px] h-[70px] border border-white outline-none rounded-md text-lg text-white"
                             name="payment"
                             id="payment"
                         >

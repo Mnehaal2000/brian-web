@@ -82,119 +82,119 @@ const PartnerBus = () => {
 
   return (
     <>
-      <div className="main w-[1000px] lg:w-full flex mb-[50px] flex-col justify-center items-center">
+      <div className="main w-[900px] lg:w-full flex mb-[50px] flex-col justify-center items-center">
         <div className='title w-full mt-[40px] flex flex-row justify-start'>
           <p className='text-white text-2xl font-bold ml-[40px]'>Become a Business Partner</p>
         </div>
-        <div className='w-[1000px] mt-[40px]'>
+        <div className='w-[900px] mt-[40px]'>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col">
               <label htmlFor="firstname" className="text-white">First Name</label>
-              <input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" id="firstname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" id="firstname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="lastname" className="text-white">Last Name</label>
-              <input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" id="lastname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" id="lastname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="email" className="text-white">Email Address</label>
-              <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" id="email" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" id="email" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="payment" className="text-white">Payment Method</label>
-              <input type="text" id="payment" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input type="text" id="payment" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="account" className="text-white">Account Details</label>
-              <input value={accountDetails} onChange={(e) => setAccountDetails(e.target.value)} type="text" id="account" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={accountDetails} onChange={(e) => setAccountDetails(e.target.value)} type="text" id="account" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="phone" className="text-white">Referral Code</label>
-              <input value={referralCode} onChange={(e) => setReferralCode(e.target.value)} type="text" id="phone" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={referralCode} onChange={(e) => setReferralCode(e.target.value)} type="text" id="phone" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
           </div>
         </div>
         <div className='title w-full mt-[40px] flex flex-row justify-start'>
           <p className='text-white text-2xl font-bold ml-[40px]'>Social Media</p>
         </div>
-        <div className='w-[1000px] mt-[40px]'>
+        <div className='w-[900px] mt-[40px]'>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col">
               <label htmlFor="facebook" className="text-white">Facebook</label>
-              <input value={facebook} onChange={(e) => setFacebook(e.target.value)} type="text" id="facebook" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={facebook} onChange={(e) => setFacebook(e.target.value)} type="text" id="facebook" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="instagram" className="text-white">Instagram</label>
-              <input value={instagram} onChange={(e) => setInstagram(e.target.value)} type="text" id="instagram" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={instagram} onChange={(e) => setInstagram(e.target.value)} type="text" id="instagram" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="twitter" className="text-white">Twitter</label>
-              <input value={twitter} onChange={(e) => setTwitter(e.target.value)} type="text" id="twitter" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={twitter} onChange={(e) => setTwitter(e.target.value)} type="text" id="twitter" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="others" className="text-white">Others</label>
-              <input value={others} onChange={(e) => setOthers(e.target.value)} type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+              <input value={others} onChange={(e) => setOthers(e.target.value)} type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
           </div>
         </div>
         <div className='title w-full mt-[40px] flex flex-row justify-start'>
           <p className='text-white text-2xl font-bold ml-[40px]'>Organization Information</p>
         </div>
-        <div className='w-[1000px] mt-[40px]'>
+        <div className='w-[900px] mt-[40px]'>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col">
               <label htmlFor="firstname" className="text-white">Organization Name</label>
               <input
                 value={organizationName}
                 onChange={(e) => setOrganizationName(e.target.value)}
-                type="text" id="firstname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+                type="text" id="firstname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="lastname" className="text-white">Address</label>
               <input
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                type="text" id="lastname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+                type="text" id="lastname" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="email" className="text-white">Website</label>
               <input
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
-                type="text" id="email" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+                type="text" id="email" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="payment" className="text-white">Email</label>
               <input
                 value={orgEmail}
                 onChange={(e) => setOrgEmail(e.target.value)}
-                type="text" id="payment" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+                type="text" id="payment" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="account" className="text-white">Phone Number</label>
               <input
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-                type="text" id="account" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+                type="text" id="account" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
               <label htmlFor="phone" className="text-white">Social Medias</label>
               <input
                 value={socialMedias}
                 onChange={(e) => setSocialMedias(e.target.value)}
-                type="text" placeholder='You can add up to 5 social medias' id="phone" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+                type="text" placeholder='You can add up to 5 social medias' id="phone" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
           </div>
         </div>
         <div className='title w-full mt-[40px] flex flex-row justify-start'>
           <p className='text-white text-2xl font-bold ml-[40px]'>Select Industry</p>
         </div>
-        <div className='w-[1000px] mt-[40px]'>
+        <div className='w-[900px] mt-[40px]'>
           <div className="grid grid-cols-2 gap-4">
 
             <div className="flex flex-col">
               <select
-                className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white"
+                className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white"
                 name="industry"
                 id="industry"
                 value={industry}
@@ -212,24 +212,24 @@ const PartnerBus = () => {
               <input
                 value={q1}
                 onChange={(e) => setq1(e.target.value)}
-                type="text" id="twitter" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+                type="text" id="twitter" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col">
-              <label htmlFor="others" className="text-white">What do you want to get the most from this partnership ?</label>
+              <label htmlFor="others" className="text-white text-[15px]">What do you want to get the most from this partnership ?</label>
               <input
                 value={q2}
                 onChange={(e) => setq2(e.target.value)}
-                type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+                type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
 
 
 
-            <div className="flex w-[1000px] flex-col">
+            <div className="flex w-[900px] flex-col">
               <label htmlFor="others" className="text-white">How did you hear about us? Through a friend or sponsor? (Attach Sponsor ID) optional</label>
               <input
                 value={q3}
                 onChange={(e) => setq3(e.target.value)}
-                type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[1000px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
+                type="text" id="others" className="bg-transparent p-5 mt-[10px] mb-[30px] w-[865px] h-[70px] border border-white outline-none rounded-md text-lg text-white" />
             </div>
             <div className="flex flex-col"></div>
 
@@ -240,7 +240,7 @@ const PartnerBus = () => {
                 Select a Payment Method *
               </label>
               <select
-                className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white"
+                className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white"
                 name="payment"
                 id="payment"
                 value={paymentMethod}
@@ -257,7 +257,7 @@ const PartnerBus = () => {
                 Amount in (USD)
               </label>
               <input
-                className="bg-transparent p-5 mt-[10px] mb-[30px] w-[500px] h-[70px] border border-white outline-none rounded-md text-lg text-white"
+                className="bg-transparent p-5 mt-[10px] mb-[30px] w-[400px] h-[70px] border border-white outline-none rounded-md text-lg text-white"
                 name="payment"
                 id="payment"
                 type='number'
@@ -275,9 +275,9 @@ const PartnerBus = () => {
 
 
 
-        <div className="main w-[1000px] flex mb-[50px] mt-[50px] flex-col gap-[40px] justify-center items-center">
+        <div className="main w-[900px] flex mb-[50px] mt-[50px] flex-col gap-[40px] justify-center items-center">
           <button
-            className='w-[500px]  hover:bg-blue-600 hover:text-white transition-all duration-150 cursor-pointer rounded-lg h-[85px] font-bold text-white text-3xl'
+            className='w-[400px]  hover:bg-blue-600 hover:text-white transition-all duration-150 cursor-pointer rounded-lg h-[85px] font-bold text-white text-3xl'
             style={{ background: "linear-gradient(#29A9E3, #272C36)" }}
             onClick={submithandler}
           >

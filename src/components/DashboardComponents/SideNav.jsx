@@ -116,7 +116,7 @@ const SideNav = () => {
                   >
                     {menu?.name}
                   </h2>
-                  <div className={`ml-auto transform ${menu.name === "Funding" ? (isFundingOpen ? 'rotate-0' : '-rotate-90') : (isWithdrawalOpen ? 'rotate-0' : '-rotate-90')} transition-transform`}>
+                  <div className={`ml-auto lg:block hidden transform ${menu.name === "Funding" ? (isFundingOpen ? 'rotate-0' : '-rotate-90') : (isWithdrawalOpen ? 'rotate-0' : '-rotate-90')} transition-transform`}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5 text-white"
