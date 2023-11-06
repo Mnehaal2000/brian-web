@@ -372,9 +372,9 @@ const SignUpPage = () => {
                             <div className="text-red-500">{formik.errors.ZIPCode}</div>
                         ) : null}
                     </div>
-                    <div className="flex flex-row justify-center items-center gap-1">
-                        <input checked={terms} onChange={(e) => setterms(e.target.checked)} type="checkbox" name="terms" id="terms" />
-                        <p className='w-full md:w-[350px] text-center mt-4 mb-4 text-black'>
+                    <div className="flex flex-row justify-center relative items-center gap-1">
+                        <input className="absolute top-[1.4rem] left-[-17px]" checked={terms} onChange={(e) => setterms(e.target.checked)} type="checkbox" name="terms" id="terms" />
+                        <p className='w-full md:w-[350px] text-start mt-4 mb-4 text-black'>
                             I consent to receive electronic communications regarding my activity on this portal and agree to the <span className="text-black hover:underline cursor-pointer">Terms of Use</span> & <span className="text-black hover:underline cursor-pointer">Privacy Policy.</span>
                         </p>
                     </div>

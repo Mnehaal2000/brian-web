@@ -44,13 +44,28 @@ const Footer = () => {
               </div>
             </div>
             <div className=" flex gap-7 items-center">
-              <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-full border border-white"><img src={fb} /></div>
-              <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-full border border-white"><img src={insta} /></div>
-              <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-full border border-white"><img src={twitter} /></div>
+              <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-full border border-white hover:border-green-500 hover:border-[3px] delay-300 ease-in-out cursor-pointer transform transition-transform hover:scale-110"><img src={fb} /></div>
+              <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-full border border-white hover:border-green-500 hover:border-[3px] delay-300 ease-in-out cursor-pointer transform transition-transform hover:scale-110"><img src={insta} /></div>
+              <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-full border border-white hover:border-green-500 hover:border-[3px] delay-300 ease-in-out cursor-pointer transform transition-transform hover:scale-110"><img src={twitter} /></div>
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16  gap-y-2 md:max-h-[174px] text-black text-xs md:text-base accent-black underline mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8  gap-y-2 md:max-h-[174px] text-black text-xs md:text-base accent-black underline mb-10">
+          <Link to="/">Home</Link>
+          <Link to="/news">News & Resources</Link>
+          <Link to="/store">Store</Link>
+          <Link to="/whoweare">Who We Are</Link>
+          <Link to="/whatwedo">What We Do</Link>
+          <Link to="/energy">Energy & Innovation</Link>
+          <Link to="/environment">Environment & Sustainability</Link>
+          <Link to="/startups">Ecocentury Startups & Ventures</Link>
+          <Link to="/community">Community</Link>
+          <Link to="/#">Terms of use</Link>
+          <Link to="/#">Privacy & policy</Link>
+          <Link to="/partners">Partner With Us</Link>
+          <Link to="/empower">Empowering Minds</Link>
+          
+          {/* <Link>Our Globalization</Link>
           <Link>Our Globalization</Link>
           <Link>Our Globalization</Link>
           <Link>Our Globalization</Link>
@@ -60,21 +75,7 @@ const Footer = () => {
           <Link>Our Globalization</Link>
           <Link>Our Globalization</Link>
           <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
-          <Link>Our Globalization</Link>
+          <Link>Our Globalization</Link> */}
         </div>
       </div>
     </>

@@ -350,23 +350,23 @@ const HomePage = () => {
           <p className=" w-full max-w-[1020px] text-xl lg:text-[28px] ">Want to stay in the loop about all the latest happenings at Ecocentury Energy? Follow us on our social media channels for exclusive updates, news, and promotions. You can find us on Instagram, Facebook, Twitter, Telegram, and LinkedIn. Don't miss out!</p>
           <div className=" flex items-center justify-center gap-6 lg:gap-28 flex-wrap">
             <div className=" w-full max-w-[256px] flex flex-col items-center justify-center text-center gap-1 lg:gap-8 text-xl text-green-secondary">
-              <img src={mobileInsta} />
+              <img className="w-[100px]" src={mobileInsta} />
               <p>Discover our eco-journey on Instagram</p>
             </div>
             <div className=" w-full max-w-[256px] flex flex-col items-center justify-center text-center gap-1 lg:gap-8 text-xl text-green-secondary">
-              <img src={mobileFb} />
+              <img className="w-[100px]" src={mobileFb} />
               <p>Join our green revolution on Facebook</p>
             </div>
             <div className=" w-full max-w-[256px] flex flex-col items-center justify-center text-center gap-1 lg:gap-8 text-xl text-green-secondary">
-              <img src={mobileTwitter} />
+              <img className="w-[100px]" src={mobileTwitter} />
               <p>Tweet along with us for sustainability updates on</p>
             </div>
             <div className=" w-full max-w-[256px] flex flex-col items-center justify-center text-center gap-1 lg:gap-8 text-xl text-green-secondary">
-              <img src={mobileTele} />
+              <img className="w-[100px]" src={mobileTele} />
               <p>Stay in the loop with our Telegram channel</p>
             </div>
             <div className=" w-full max-w-[256px] flex flex-col items-center justify-center text-center gap-1 lg:gap-8 text-xl text-green-secondary">
-              <img src={mobileLinked} />
+              <img className="w-[100px]" src={mobileLinked} />
               <p>Connect with us professionally on LinkedIn</p>
             </div>
           </div>
