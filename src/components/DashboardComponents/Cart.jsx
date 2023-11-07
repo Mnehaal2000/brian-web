@@ -1,41 +1,66 @@
-import React, { useState } from 'react'
-import carticon from "../../assets/dashboard/cart/carticon.png"
-import itemicon from "../../assets/dashboard/cart/item.png"
+import React, { useState, useContext } from 'react';
+import carticon from "../../assets/dashboard/cart/carticon.png";
+// import itemicon from "../../assets/dashboard/cart/item.png";
+import AuthContext from "../../AuthContext"
+import { db } from "../../firebase"
+import { addDoc, doc, collection } from 'firebase/firestore';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Cart = () => {
+    const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const [items, setItems] = useState(initialCart);
+    const { currentUser } = useContext(AuthContext)
 
-    const [items, setItems] = useState([
-        { id: 1, name: 'Solar Energy', quantity: 1, price: 30 },
-        { id: 2, name: 'Solar Energy', quantity: 1, price: 20 },
-        { id: 3, name: 'Solar Energy', quantity: 1, price: 60 },
-        { id: 4, name: 'Solar Energy', quantity: 1, price: 40 },
-        { id: 5, name: 'Solar Energy', quantity: 1, price: 90 },
-    ]);
+    // const handleDecrease = (index) => {
+    //     setItems((prevItems) => {
+    //         const updatedItems = [...prevItems];
+    //         if (updatedItems[index].quantity > 1) {
+    //             updatedItems[index] = { ...updatedItems[index], quantity: updatedItems[index].quantity - 1 };
+    //         }
+    //         return updatedItems;
+    //     });
+    // };
 
+    // const handleIncrease = (index) => {
+    //     setItems((prevItems) => {
+    //         const updatedItems = [...prevItems];
+    //         updatedItems[index] = { ...updatedItems[index], quantity: updatedItems[index].quantity + 1 };
+    //         return updatedItems;
+    //     });
+    // };
 
-    const handleDecrease = (id) => {
-        setItems((prevItems) => {
-            return prevItems.map((item) => {
-                if (item.id === id && item.quantity > 1) {
-                    return { ...item, quantity: item.quantity - 1 };
-                }
-                return item;
+    // console.log(currentUser)
+
+    const totalPrice = items.reduce((total, item) => total + parseInt(item.itemprice) * item.quantity, 0)
+
+    const checkout = async () => {
+        try {
+            const docRef = await addDoc(collection(db, "purchases"), {
+                email: currentUser.email,
+                user_id: currentUser.uid,
+                cartItems: items,
+                date: new Date().toLocaleDateString(),
+                order_total: totalPrice,
+                sub_total: totalPrice + 160,
+                promo_code: "",
+                status: "pending"
             });
-        });
-    };
-
-    const handleIncrease = (id) => {
-        setItems((prevItems) => {
-            return prevItems.map((item) => {
-                if (item.id === id) {
-                    return { ...item, quantity: item.quantity + 1 };
-                }
-                return item;
-            });
-        });
-    };
-
-    const totalPrice = items.reduce((acc, item) => acc + item.quantity * item.price, 0);
+            if (docRef.id) {
+                toast.success('🦄 Order submitted!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return (
         <>
@@ -52,30 +77,30 @@ const Cart = () => {
                         {items.map((item) => (
                             <div key={item.id} className='flex pl-5 pr-5 flex-row h-[110px] items-center border border-l-0 border-t-0 border-r-0 border-b-1 justify-between'>
                                 <div className='w-[90px] h-[90px] items-center justify-center flex-col flex border rounded-md mb-[7px] mt-[7px]'>
-                                    <img src={itemicon} alt="" />
+                                    <img src={item.itemimg} alt="" />
                                 </div>
-                                <p className='text-white'>{item.name}</p>
+                                <p className='text-white'>{item.itemname.length <= 11 ? item.itemname : item.itemname.slice(0, 10)}...</p>
                                 <div className='flex flex-row justify-center items-center gap-3'>
-                                    <span
+                                    {/* <span
                                         className='text-white text-[30px] hover:cursor-pointer hover:text-blue-600'
                                         onClick={() => handleDecrease(item.id)}
                                     >
                                         -
-                                    </span>
+                                    </span> */}
                                     <div className='w-[40px] h-[40px] items-center justify-center flex-col flex border mb-[7px] mt-[7px] text-white'>
                                         {item.quantity}
                                     </div>
-                                    <span
+                                    {/* <span
                                         className='text-white text-[30px] hover:cursor-pointer hover:text-blue-600'
                                         onClick={() => handleIncrease(item.id)}
                                     >
                                         +
-                                    </span>
+                                    </span> */}
                                 </div>
-                                <p className='text-white'>{item.price}$</p>
+                                <p className='text-white'>{item.itemprice}$</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white hover:cursor-pointer hover:text-red-600">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
                             </div>
                         ))}
 
@@ -86,7 +111,7 @@ const Cart = () => {
                         </div>
                         <div className='flex pl-5 pr-5 flex-row h-[84px] items-center border border-l-0 border-t-0 border-r-0 border-b-1 justify-between'>
                             <h2 className=' text-white'>Order Total</h2>
-                            <h2 className=' text-white'>{totalPrice?totalPrice:"1,345"}$</h2>
+                            <h2 className=' text-white'>{totalPrice ? totalPrice : "1,345"}$</h2>
                         </div>
                         <div className='flex pl-5 pr-5 flex-row h-[84px] items-center border border-l-0 border-t-0 border-r-0 border-b-1 justify-between'>
                             <h2 className=' text-white'>Promo Code</h2>
@@ -102,7 +127,7 @@ const Cart = () => {
                         </div>
                         <div className='flex pl-5 pr-5 flex-row h-[84px] items-center justify-between'>
                             <h2 className=' text-white'>Subtotal</h2>
-                            <h2 className=' text-white'>{totalPrice+160}$</h2>
+                            <h2 className=' text-white'>{totalPrice + 160}$</h2>
                         </div>
                     </div>
                 </div>
@@ -113,10 +138,21 @@ const Cart = () => {
                     </div>
                     <div className='w-[540px] h-[70px] flex flex-row gap-6 justify-center'>
                         <a href="/store"><button className='bg-[#F2A229] rounded-md w-[229px] h-[56px] font-bold text-white'>Continue Shopping</button></a>
-                        <button className='bg-[#0AC15F] rounded-md w-[229px] h-[56px] font-bold text-white'>CHECKOUT</button>
+                        <button onClick={checkout} className='bg-[#0AC15F] active:bg-green-900 focus:bg-green-900 rounded-md w-[229px] h-[56px] font-bold text-white'>CHECKOUT</button>
                     </div>
                 </div>
-
+                <ToastContainer
+                    position="top-right"
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                />
             </div>
         </>
     )

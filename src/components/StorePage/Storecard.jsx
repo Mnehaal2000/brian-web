@@ -16,7 +16,7 @@ const Storecard = ({ product }) => {
         dispatch({ type: 'ADD_TO_CART', product: product });
       }
     };
-    console.log(store.getState())
+    // console.log(store.getState())
     
     return (
         <>

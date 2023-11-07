@@ -32,8 +32,8 @@ const Cart = () => {
                     </div>
                 </>) : (
                     <>
-                        <div className="mx-auto fixed top-10 right-0 z-[99999] mt-8 max-w-2xl md:mt-12">
-                            <div className="bg-white shadow">
+                        <div className="mx-auto fixed right-0 bottom-0 z-[99999] mt-8 max-w-2xl md:mt-12">
+                            <div className="bg-white rounded-t-2xl shadow-2xl">
                                 <div className="px-4 py-6 sm:px-8 sm:py-10">
                                     <div className="flow-root">
                                         <ul className="-my-8 h-[300px] overflow-y-auto pr-5">
