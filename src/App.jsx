@@ -63,6 +63,7 @@ import News from './components/AdminComponents/News';
 import Store from './components/AdminComponents/Store';
 import PartnersPage from './pages/PartnersPage';
 import AdminFeedbacks from './components/AdminComponents/Feedbacks';
+import Carts from "./components/AdminComponents/Carts"
 // admin components end
 
 function App() {
@@ -139,6 +140,7 @@ function App() {
                     <Route path="bank" element={<AuthContextProvider><AdminBank /></AuthContextProvider>} />
                     <Route path="logout" element={<AuthContextProvider><Logout /></AuthContextProvider>} />
                     <Route path="news" element={<AuthContextProvider><News /></AuthContextProvider>} />
+                    <Route path="carts" element={<AuthContextProvider><Carts /></AuthContextProvider>} />
                     <Route path="store" element={<AuthContextProvider><Store /></AuthContextProvider>} />
                     <Route path="feedbacks" element={<AuthContextProvider><AdminFeedbacks /></AuthContextProvider>} />
                   </Route>)}
