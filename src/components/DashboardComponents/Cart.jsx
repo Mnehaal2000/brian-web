@@ -34,31 +34,46 @@ const Cart = () => {
     const totalPrice = items.reduce((total, item) => total + parseInt(item.itemprice) * item.quantity, 0)
 
     const checkout = async () => {
-        try {
-            const docRef = await addDoc(collection(db, "purchases"), {
-                email: currentUser.email,
-                user_id: currentUser.uid,
-                cartItems: items,
-                date: new Date().toLocaleDateString(),
-                order_total: totalPrice,
-                sub_total: totalPrice + 160,
-                promo_code: "",
-                status: "pending"
-            });
-            if (docRef.id) {
-                toast.success('🦄 Order submitted!', {
-                    position: "top-right",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
+        if (items.length > 0) {
+            try {
+                const docRef = await addDoc(collection(db, "purchases"), {
+                    email: currentUser.email,
+                    user_id: currentUser.uid,
+                    cartItems: items,
+                    date: new Date().toLocaleDateString(),
+                    order_total: totalPrice,
+                    sub_total: totalPrice + 160,
+                    promo_code: "",
+                    status: "pending"
                 });
+                if (docRef.id) {
+                    toast.success('🦄 Order submitted!', {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                    localStorage.removeItem('cart')
+                }
+            } catch (error) {
+                console.log(error)
             }
-        } catch (error) {
-            console.log(error)
+        }
+        else {
+            toast.warn('🦄 Cart Empty!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
     }
 
@@ -103,6 +118,14 @@ const Cart = () => {
                                 </svg>
                             </div>
                         ))}
+                        {items.length === 0 && (<>
+                            <div className='items-center h-[400px] justify-center flex gap-5 flex-col'>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-white w-[30px] h-[30px]">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                                </svg>
+                                <h1 className='text-3xl font-bold text-white'>Cart Empty</h1>
+                            </div>
+                        </>)}
 
                     </div>
                     <div className='w-[540px] flex flex-col h-[540px] border rounded-lg border-black' style={{ background: "linear-gradient(to right, #29A9E3, #272C36)" }}>
@@ -111,11 +134,11 @@ const Cart = () => {
                         </div>
                         <div className='flex pl-5 pr-5 flex-row h-[84px] items-center border border-l-0 border-t-0 border-r-0 border-b-1 justify-between'>
                             <h2 className=' text-white'>Order Total</h2>
-                            <h2 className=' text-white'>{totalPrice ? totalPrice : "1,345"}$</h2>
+                            <h2 className=' text-white'>{totalPrice ? totalPrice : "Nan "}$</h2>
                         </div>
                         <div className='flex pl-5 pr-5 flex-row h-[84px] items-center border border-l-0 border-t-0 border-r-0 border-b-1 justify-between'>
                             <h2 className=' text-white'>Promo Code</h2>
-                            <h2 className=' text-white'>Sale31</h2>
+                            <h2 className=' text-white'>None</h2>
                         </div>
                         <div className='flex pl-5 pr-5 flex-row h-[84px] items-center border border-l-0 border-t-0 border-r-0 border-b-1 justify-between'>
                             <h2 className=' text-white'>Shipping</h2>

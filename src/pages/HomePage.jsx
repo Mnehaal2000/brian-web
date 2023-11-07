@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState ,useContext} from "react"
 import { Link } from "react-router-dom"
 import { Transition } from '@headlessui/react'
 import img1a from "../assets/homepage/img-1a.png"
@@ -25,12 +25,14 @@ import mobileTele from "../assets/homepage/mobile-telegram.png"
 import mobileTwitter from "../assets/homepage/mobile-twitter.png"
 import FeedbackSlider from "../components/FeedbackSlider"
 import ContactPopUp from "../components/ContactPopUp"
+import AuthContext from "../AuthContext"
 
 
 
 const HomePage = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState(-1);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const {userhere} = useContext(AuthContext)
 
   const openContactForm = () => {
     setIsContactFormOpen(true);
@@ -342,7 +344,8 @@ const HomePage = () => {
               </div>
             </div>
           </div> */}
-          <Link to="/signin" className=" text-xl lg:text-2xl py-4 px-12 rounded-[36px] bg-green-secondary text-white font-semibold w-fit mx-auto">Add a Feedback</Link>
+          {userhere?(<a href="/dashboard/feedback" className=" text-xl lg:text-2xl py-4 px-12 rounded-[36px] bg-green-secondary text-white font-semibold w-fit mx-auto">Add a Feedback</a>)
+          :(<Link to="/signin" className=" text-xl lg:text-2xl py-4 px-12 rounded-[36px] bg-green-secondary text-white font-semibold w-fit mx-auto">Add a Feedback</Link>)}
 
         </div>
         <div className=" w-full flex flex-col gap-5 lg:gap-8 items-center mt-10 lg:mt-14">
