@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import storefirstbg from '../assets/storepage/storefirstbg.png';
 import storesecondbg from '../assets/storepage/storesecondbg.png';
 import Storecard from '../components/StorePage/Storecard';
@@ -7,6 +7,7 @@ import sale2 from '../assets/storepage/sale2.png'
 import sale3 from '../assets/storepage/sale3.png'
 import { db } from "../firebase"
 import { collection, getDocs } from "firebase/firestore";
+import Cart from '../components/Cart';
 
 const StorePage = () => {
 
@@ -123,15 +124,16 @@ const StorePage = () => {
 
     const [StoreCardData, setStoreCardData] = useState([]);
 
-    let data= []
+    let data = []
 
     const getItems = async () => {
         try {
             const querydata = await getDocs(collection(db, "store"));
-            querydata.forEach((doc)=>{
+            querydata.forEach((doc) => {
                 const d = {
-                    id:doc.id,
+                    id: doc.id,
                     ...doc.data(),
+                    quantity:1
                 }
                 data.push(d)
             })
@@ -186,6 +188,7 @@ const StorePage = () => {
                         <div className="promos flex flex-col justify-center mt-5 mb-3 items-center">
                             <div className="promo flex flex-row px-5 text-center">
                                 <span className='text-black p-1  font-bold'>Can’t find a product you’re looking for? Use the search icon to search the category or name of the product.</span>
+                                <Cart />
                             </div>
                         </div>
                         <div className="search flex flex-col justify-center mb-5 items-center">

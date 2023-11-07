@@ -112,7 +112,7 @@ const Cart = () => {
 
                     </div>
                     <div className='w-[540px] h-[70px] flex flex-row gap-6 justify-center'>
-                        <button className='bg-[#F2A229] rounded-md w-[229px] h-[56px] font-bold text-white'>Continue Shopping</button>
+                        <a href="/store"><button className='bg-[#F2A229] rounded-md w-[229px] h-[56px] font-bold text-white'>Continue Shopping</button></a>
                         <button className='bg-[#0AC15F] rounded-md w-[229px] h-[56px] font-bold text-white'>CHECKOUT</button>
                     </div>
                 </div>
