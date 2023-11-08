@@ -19,6 +19,7 @@ const CommunityPage = () => {
         autoplay: true,
         autoplaySpeed: 3000,
         arrows:false,
+        pauseOnHover:true, 
     };
 
     const [Country, setCountry] = useState('');
@@ -77,26 +78,41 @@ const CommunityPage = () => {
                         }}>
 
                     </div> */}
-                    <div className="h-[622px] flex flex-col relative">
+                    <div className=" flex flex-col relative">
                         <Slider {...settings}>
-                            <div className="h-[622px] flex flex-col relative">
-                                <img src={img1} alt="Slide 1" className="w-full h-full object-cover" />
+                            <div className="flex flex-col relative">
+                                <img src={img1} alt="Slide 1" className="w-full h-[622px] object-cover" />
+                                <div className='w-full flex flex-col gap-7 justify-center items-center text-2xl'>
+                                    <h3 className='font-bold text-center mt-[20px] text-2xl'>Brazil</h3>
+                                    <p className='text-center w-[300px] xl:w-[590px]'>In Brazil, we found hope in the smiles of children who inspired us with their dreams. Together, we're creating brighter futures</p>
+                                    <Link to="/signup"><button className='mb-[30px] bg-[#059C4B] w-[350px] xl:w-[500px] h-[51px] md:text-normal text-xs sm:text-small text-white'>
+                                        Join us in our journey of compassion and change in Brazil
+                                    </button></Link>
+                                </div>
                             </div>
-                            <div className="h-[622px] flex flex-col relative">
-                                <img src={img2} alt="Slide 2" className="w-full h-full object-cover" />
+                            <div className=" flex flex-col relative">
+                                <img src={img2} alt="Slide 2" className="w-full h-[622px] object-cover" />
+                                <div className='w-full flex flex-col gap-7 justify-center items-center text-2xl'>
+                                    <h3 className='font-bold text-center mt-[20px] text-2xl'>USA</h3>
+                                    <p className='text-center w-[300px] xl:w-[590px]'>In Brazil, we found hope in the smiles of children who inspired us with their dreams. Together, we're creating brighter futures</p>
+                                    <Link to="/signup"><button className='mb-[30px] bg-[#059C4B] w-[350px] xl:w-[500px] h-[51px] md:text-normal text-xs sm:text-small text-white'>
+                                        Join us in our journey of compassion and change in USA
+                                    </button></Link>
+                                </div>
                             </div>
-                            <div className="h-[622px] flex flex-col relative">
-                                <img src={img1} alt="Slide 3" className="w-full h-full object-cover" />
+                            <div className=" flex flex-col relative">
+                                <img src={img1} alt="Slide 3" className="w-full h-[622px] object-cover" />
+                                <div className='w-full flex flex-col gap-7 justify-center items-center text-2xl'>
+                                    <h3 className='font-bold text-center mt-[20px] text-2xl'>Argentina</h3>
+                                    <p className='text-center w-[300px] xl:w-[590px]'>In Brazil, we found hope in the smiles of children who inspired us with their dreams. Together, we're creating brighter futures</p>
+                                    <Link to="/signup"><button className='mb-[30px] bg-[#059C4B] w-[350px] xl:w-[500px] h-[51px] md:text-normal text-xs sm:text-small text-white'>
+                                        Join us in our journey of compassion and change in Argentina
+                                    </button></Link>
+                                </div>
                             </div>
                         </Slider>
                     </div>
-                    <div className='w-full flex flex-col gap-7 justify-center items-center'>
-                        <h3 className='font-bold text-center mt-[20px] text-2xl'>Brazil</h3>
-                        <p className='text-center w-[300px] xl:w-[590px]'>In Brazil, we found hope in the smiles of children who inspired us with their dreams. Together, we're creating brighter futures</p>
-                        <Link to="/signup"><button className='mb-[30px] bg-[#059C4B] w-[350px] xl:w-[500px] h-[51px] md:text-normal text-xs sm:text-small text-white'>
-                            Join us in our journey of compassion and change in Brazil
-                        </button></Link>
-                    </div>
+
                     <div className='w-full flex flex-col gap-7 justify-center items-center'>
                         <h3 className='font-bold text-center mt-[20px] text-1xl'>Empower Lives Through Your Donation Today - Bring Smiles to the Less Privileged</h3>
                         <p className='text-center w-[300px] xl:w-[800px]'>Make a difference with us. You have the power to contribute to our global charity efforts. Choose to donate to specific countries or select unique charity and non-profit organizations from our list. Every contribution you make supports impactful projects worldwide.</p>

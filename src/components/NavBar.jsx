@@ -42,6 +42,12 @@ export default function NavBar() {
 
     useEffect(() => {
 
+        if(navbar){
+            document.body.style.position = 'fixed'; 
+        } else {
+            document.body.style.position = ''; 
+        }
+
         const handleResize = () => {
             // Set navbar state to false for screen widths greater than 767px
             if (window.innerWidth < 1024) {
@@ -56,10 +62,12 @@ export default function NavBar() {
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, []);
+
+
+    }, [navbar]);
 
     return (
-        <nav className={`w-full lg:absolute z-[100] top-0 left-0 right-0 bg-transparent hover:bg-white transition ease-in-out delay-100 cursor-pointer group shadow ${navbar ? " fixed min-h-screen lg:min-h-[auto] h-full" : "absolute"
+        <nav className={`w-full lg:absolute z-[100] top-0 left-0 right-0 bg-transparent hover:bg-white transition ease-in-out delay-100 cursor-pointer group shadow ${navbar ? " fixed bottom-0 overflow-hidden" : "absolute"
             } `}>
             <div className="justify-start px-4 mx-auto lg:max-w-7xl lg:items-center flex lg:flex-row flex-col lg:px-8 min-h-full ">
                 <div>
@@ -125,22 +133,13 @@ export default function NavBar() {
                         className={` flex-1 justify-between pb-3 mt-8  lg:pb-0 lg:mt-0 min-h-full  ${navbar ? "flex  flex-col " : "lg:block hidden"
                             }`}
                     >
-                        <ul className="items-center justify-start pl-8 space-y-8 lg:flex lg:space-x-6 lg:space-y-0 text-white group-hover:text-black text-xs lg:text-sm font-bold">
+                        <ul className="items-center justify-start pl-8 space-y-6 lg:flex lg:space-x-6 lg:space-y-0 text-white group-hover:text-black text-xs lg:text-sm font-bold">
                             <li>
                                 <Link onClick={closeNavbar} to="/whoweare">Who we are</Link>
                             </li>
                             <li>
                                 <Link onClick={closeNavbar} to="/whatwedo">What we do</Link>
                             </li>
-
-
-
-
-
-
-
-
-
 
                             <li>
                                 <Menu as="div" className="relative inline-block text-left">
@@ -319,7 +318,7 @@ export default function NavBar() {
                         </ul>
 
                         <div className="mt-3 space-y-2 lg:hidden ">
-                            <a href={Linkto} onClick={closeNavbar} className=" inline-block w-full text-center py-3 px-10 bg-green-primary rounded-3xl text-white" >{Linktext}</a>
+                            <a href={Linkto} onClick={closeNavbar} className=" inline-block w-full text-center py-3 px-10  bg-green-primary rounded-3xl text-white" >{Linktext}</a>
                         </div>
                     </div>
                 </div>
